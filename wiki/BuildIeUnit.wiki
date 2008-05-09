@@ -10,9 +10,9 @@ Do the following to build IeUnit:
  * Checkout the source tree:
 {{{
     svn checkout https://ieunit.googlecode.com/svn/trunk/ ieunit --username {your-user-name}
-
-    or for read-only checkout:
-
+}}}
+    Or for read-only checkout:
+{{{
     svn checkout http ://ieunit.googlecode.com/svn/trunk/ ieunit
 }}}
  * Chdir into ieunit directory, and start Visual Studio C#.NEt and load the soluation IeUnit.sln.
