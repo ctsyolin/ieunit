@@ -11,7 +11,7 @@ Do the following to build IeUnit:
 {{{
     svn checkout https://ieunit.googlecode.com/svn/trunk/ ieunit --username {your-user-name}
 }}}
-    Or for read-only checkout:
+Or for read-only checkout:
 {{{
     svn checkout http ://ieunit.googlecode.com/svn/trunk/ ieunit
 }}}
