@@ -1,0 +1,65 @@
+function TableTest() {
+    assimilate(this, new IeUnit());
+    this.setUp = function() {
+        openLocalFile("TestTables.html");
+    };
+    this.tearDown = function() {
+        this.closeWindow();
+    };
+
+    this.testTableWithId = function(){
+        this.assertTextContains(this.findObjById("Table1"), "11");
+        this.assertTextContains(this.findTableCell("Table1",0,0), "11");
+        this.assertTextContains(this.findObjById("Table1"), "22");
+        this.assertTextContains(this.findTableCell("Table1",0,1), "22");
+        this.assertTextContains(this.findObjById("Table2"), "XX");
+        this.assertTextContains(this.findTableCell("Table2",0,0), "XX");
+        this.assertTextContains(this.findObjById("Table2"), "YY");
+        this.assertTextContains(this.findTableCell("Table2",0,1), "YY");
+        this.assertTextContains(this.findObjById("Table2"), "xx");
+        this.assertTextContains(this.findTableCell("Table2",1,0), "xx");
+        this.assertTextContains(this.findObjById("Table2"), "yy");
+        this.assertTextContains(this.findTableCell("Table2",1,1), "yy");
+        this.assertTextContains(this.findObjById("Table1"), "aa");
+        this.assertTextContains(this.findTableCell("Table1",1,0), "aa");
+        this.assertTextContains(this.findObjById("Table1"), "bb");
+        this.assertTextContains(this.findTableCell("Table1",1,1), "bb");
+        this.assertTextContains(this.findObjById("Table3"), "777");
+        this.assertTextContains(this.findTableCell("Table3",0,0), "777");
+        this.assertTextContains(this.findObjById("Table3"), "888");
+        this.assertTextContains(this.findTableCell("Table3",0,1), "888");
+        this.assertTextContains(this.findObjById("Table3"), "999");
+        this.assertTextContains(this.findTableCell("Table3",0,2), "999");
+        this.assertTextContains(this.findObjById("Table1"), "AA");
+        this.assertTextContains(this.findTableCell("Table1",2,0), "AA");
+        this.assertTextContains(this.findTableCell("Table1",2,1), "BB");
+        this.assertTextContains(this.findTableCell("Table1",2,2), "CC");
+    };
+
+    this.testTableWithoutId = function(){
+        this.assertTextContains(this.findTableCell(3,0,0), "11");
+        this.assertTextContains(this.findTableCell(3,0,1), "22");
+        this.assertTextContains(this.findTableCell(4,0,0), "XX");
+        this.assertTextContains(this.findTableCell(4,0,1), "YY");
+        this.assertTextContains(this.findTableCell(4,1,0), "xx");
+        this.assertTextContains(this.findTableCell(4,1,1), "yy");
+        this.assertTextContains(this.findTableCell(5,0,0), "777");
+        this.assertTextContains(this.findTableCell(5,0,1), "888");
+        this.assertTextContains(this.findTableCell(5,0,2), "999");
+        this.assertTextContains(this.findTableCell(3,1,0), "aa");
+        this.assertTextContains(this.findTableCell(3,1,1), "bb");
+        this.assertTextContains(this.findTableCell(3,2,0), "AA");
+        this.assertTextContains(this.findTableCell(3,2,1), "BB");
+        this.assertTextContains(this.findTableCell(3,2,2), "CC");
+    };
+
+    this.testAssertTextContains = function() {
+        try {
+            this.assertTextContains(this.findObjById("Table3"), "12345678", "Failure expected");
+            this.assertFail("assertTextContains() test failed");
+        } catch (ex) {
+            this.assertContains(ex.description, "Failure expected"); 
+        }
+    }
+}
+

@@ -1,0 +1,3 @@
+this.waitForModalDialog("Modal Popup Window");
+this.setField("yourName", "Alex");
+this.clickButton("submit");

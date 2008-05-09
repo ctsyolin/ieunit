@@ -1,0 +1,72 @@
+<package>
+<job id="IeTextRunner">
+<script language="JavaScript" src="Config.wjs"></script>
+<script language="JavaScript" src="IeRunner.wjs"></script>
+<script language="JavaScript">
+
+var _jsToLoad = new Array();
+var _fso = new ActiveXObject("Scripting.FileSystemObject");
+
+function log(msg) { WScript.Echo(msg); }
+
+var libDirs = FindLibDirs();
+_jsToLoad = FindJavaScripts(libDirs);
+
+var initScript = "if (_isDebugging) debugger;\n";
+if (_fso.FileExists("SmartBookmark.init")) {
+    var fs = _fso.OpenTextFile("SmartBookmark.init", 1, false, -2);
+    initScript += fs.ReadAll();
+    fs.Close();
+}
+
+var jsString; // the javascript string to be executed.
+var sbkFile = "";    // the current file or script string.
+
+if (WScript.Arguments.length >= 2) {
+    if ( WScript.Arguments(0)=="-d" )  {
+        _isDebugging = true;
+        sbkFile = WScript.Arguments(1);
+    } else {
+        sbkFile =  WScript.Arguments(0);
+    }
+} else if (WScript.Arguments.length>0) {
+    sbkFile = WScript.Arguments(0);
+}
+
+try {
+    // setup IeUnit methods and properties.
+    for(var i=0; i<_jsToLoad.length; i++) {
+        var fName = _jsToLoad[i];
+        var fs    = _fso.OpenTextFile(fName, 1, false, -2);
+        var jsString = fs.ReadAll();
+        fs.Close();
+        eval(jsString);
+    }
+
+    // execute the the smarkmark scirpt itself.
+    if ( sbkFile != "" ){
+        var fs = _fso.OpenTextFile(sbkFile, 1, false, -2);
+        var jsString =  
+                "function SmartBookmarkTest() {\n"
+                + "assimilate(this, new IeUnit());\n"
+                + "_ = _currentCase = this;\n"
+                + initScript + "\n" 
+                + fs.ReadAll() + "\n"
+                + "}; \n"
+                + "new SmartBookmarkTest();\n";  // execute the script.
+        eval(jsString);
+    } else {
+        WScript.Echo("Missing smart-bookmark file name");
+        WScript.Echo("Usage: cscript SmartBookmark.wsf [-d] <smartbookmark-file-name>");
+    }
+} catch(ex) {
+    log("ERROR: " + ex.description);
+    log("       Script File: " + sbkFile);
+    if (ex.stackTrace != undefined) {
+        log("   Program stack trace: ");
+        log(ex.stackTrace);
+    }
+}
+</script>
+</job>
+</package>

@@ -1,0 +1,6 @@
+OPEN ntsrv1.mecca.ca
+USER jamesxli  AlexLi
+cd /visumap.net/backup
+bin
+put QuickFocusSrc.zip
+quit

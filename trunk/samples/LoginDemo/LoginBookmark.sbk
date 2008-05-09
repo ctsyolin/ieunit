@@ -1,0 +1,8 @@
+// This script enables user to login with the following single command:
+//
+// cscript.exe ..\..\lib\IeRun.wsf LoginBookmark.sbk
+//
+this.openWindow("http://ieunit.sourceforge.net/samples/LoginDemo/Login.html");
+this.setField(0, "IeUnit");
+this.setField(1, "DemoPwd");
+this.clickButton("Login");

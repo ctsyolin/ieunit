@@ -1,0 +1,20 @@
+function GetPageUrl() {
+    assimilate(this, new IeUnit());
+
+    //
+    // Notice: the DHTML API doesn't allow client to read
+    // the URL of current page. To get the URL we need to 
+    // use the Win32Dom as demonstrated in this test case
+    //
+    this.testGetUrl = function() {
+        var tstUrl = "http://ieunit.sourceforge.net/";
+        _.openWindow(tstUrl);
+        var ieWin = _.waitForWindow("IeUnit - web site testing framework - Microsoft Internet Explorer");
+        // Dump the whole IE Dom tree.
+        // _.log( ieWin.GetDomTree() );
+        var addr = _.findWindow(ieWin, "Edit");
+        _.assertEquals(tstUrl, addr.text);
+        _.closeWindow();
+    };
+}
+

@@ -1,0 +1,569 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>IeUnit - The Test Framwork</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <link href="style.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <table class="libnavb" width="95%" id="Table1">
+            <tbody>
+                <tr>
+                    <td width="33%"><a href="GettingStarted.html">Getting started</a></td>
+                    <td width="33%" align="center"><a href="UserGuide.html">User guide</a></td>
+                    <td width="33%" align="right"><a href="ExtendingIeUnit.html">Extending IeUnit</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 align="center">IeUnit</h1>
+        <div align="center">
+        </div>
+        <h2>The Test Framework</h2>
+        <p>With IeUnit framework a typical unit test for a web page comprises the following 
+            steps:<br>
+        </p>
+        <ol>
+            <li>
+            Load a web page into the Internet Explorer browser
+            <li>
+            Verify the content of the page.
+            <li>
+            Change the value of some elements on the page.
+            <li>
+            Submit the page.
+            <li>
+            Repeat the step 2 to 4 when necessary.
+            <li>
+                Close the page and report the test result.
+            </li>
+        </ol>
+        <p>For the step 1 and 6 we use methods <tt>openWindow()</tt> and <tt>closeWindow()</tt>. 
+            &nbsp;Also, the method <tt>seekWindow()</tt><tt> </tt>and <tt>seekAndSetWindow() </tt>
+            allow a test script to attach to an existing&nbsp; browser window. For the step 
+            3 to 4 we normally first find a DHTML element in the page then use DHTML APIs 
+            to access the object. In the following sections we'll discuss these tasks in 
+            more details.<br>
+        </p>
+        <h3>Finding Elements in HTML Pages</h3>
+        <p>
+            According the DHTML model a web page is represented by a document object. The 
+            visual elements of a web page are represented by child objects (also called 
+            child elements) of the document object. The document object together with its 
+            child objects forms the so called DOM tree for the web page. The most frequent 
+            operations in an IeUnit test script are localizing objects in the DOM tree for 
+            visual elements on a web page.<br>
+        </p>
+        <p>IeUnit framework makes the root document object available for test scripts 
+            through the property <tt>this.doc</tt> within a test case that assimilated a <tt>IeUnit</tt>
+            object. Out-going from this root document object we can find child elements 
+            through the DHTML APIs. There are often many different ways to find child 
+            objects. It is however not always simple to find those elements we are 
+            interested in.<br>
+        </p>
+        <p>
+            IeUnit framework provides many methods to help find elements on web pages. 
+            Before we get into details of different searching methods let us clarify an 
+            important quality concept of unit test. We say that a test suite is stable if 
+            small changes of the tested application cause only few unit tests to fail. 
+            Higher stability means higher quality and usefulness. Nothing is more 
+            frustrating for a software project if a large number of unit tests fail 
+            everyday. &nbsp;In order to create stable test suites we should make sure that 
+            each unit test focuses on an individual feature. There more independent the 
+            unit tests are from each other, the more stable is the test suite.<br>
+        </p>
+        <p>
+            The following are some guides to find elements with IeUnit framework:
+        </p>
+        <ol>
+            <li>
+                <b>Direct IeDhtml methods:</b> The IeDhtml class provides a set of methods for 
+                most frequently used searching operations. All those methods have names 
+                starting with the prefix <tt>find, </tt>e.g. <tt>findLink</tt>(), <tt>findButton(), </tt>
+                etc.<tt>. </tt>Most of these methods accept an optional index argument which 
+                can be used to specify the index of the object in case there are more than one 
+                object satisfying the search criterion. For instance <tt>findButton("login", 2)</tt>
+                finds the 3rd button object whose label contains the sub string "login". 
+                Notice: &nbsp;all indices used in IeUnit framework are zero based, thus the 3rd 
+                element has the index 2.<br>
+                <br>
+            <li>
+                <b>Find an object by its name or id:</b> &nbsp;If an element has a name or id 
+                attribute, it is very straightforward to find the object through the method <tt>findByObjId()</tt>. 
+                For instance if &nbsp;a HTML page has the following item:<br>
+                <br>
+                &nbsp; &nbsp; <tt>&lt;input type="text" id="password"&gt;&lt;/input&gt;</tt>
+                <br>
+                <br>
+                We can get the corresponding DHTML object by <tt>this.findObjById("password")</tt>. 
+                This method is the most stable way to find an object as we always get the same 
+                object regardless what changes has been made to the rest of the page. However, 
+                this method has the disadvantage that the element of interest must have&nbsp; 
+                an unique id. Notice that <tt>findObyById() </tt>also finds the element with 
+                given name if the element has unique name attribute.
+                <br>
+                <br>
+            <li>
+                <b>Find an object by tag name and attribute value</b>: &nbsp;The <tt>findByTagAndAttr()
+                </tt>method provides an easy way find an element with specific tag name and 
+                specific attribute. For instance to find the element<br>
+                &nbsp;&nbsp; <tt>&lt;input type="text" id="password"&gt;&lt;/input&gt;</tt>
+                <br>
+                we can call <tt>findByTagAndAttr("input", "type~text"). </tt>If there are more 
+                than one items with the same tag name and attribute in the page we can specify 
+                a third index argument to the <tt>findByTagAndAttr </tt>call to get the one 
+                with particular index. For instance <tt>findByTagAndAttr("input", "type~text", 3) </tt>
+                will return the 4-th input-item with the type 'text'.&nbsp;<br>
+                <br>
+            <li>
+                <b>Search by text: &nbsp;</b>DHTML provides the textual view of a web page 
+                through the text range concept. All visible text of a page is included in the 
+                text range object. With help of the text range object we can easily find 
+                objects whose visual representation contain specific text. The <tt>IeDhtml </tt>
+                class supports this kind of search with the method <tt>findByText()</tt> and <tt>findParent(). 
+                    findByText() </tt>finds the smallest object that contains particular text. <tt>findParent()</tt>
+                finds the closest parent element with given tag name. For instance, for the 
+                following table:<br>
+                <blockquote><tt>&lt;table&gt;
+                        <br>
+                        &nbsp; &nbsp; &lt;tr&gt;&lt;td&gt;User Name&lt;/td&gt;&lt;td&gt;&lt;input 
+                        type='text' name='username'&gt;&lt;/input&gt;&lt;td&gt;&lt;tr&gt;<br>
+                        &nbsp; &nbsp; &lt;tr&gt;&lt;td&gt;Password&lt;/td&gt;&lt;td&gt;&lt;input 
+                        type='text' name='pwd'&gt;&lt;/input&gt;&lt;td&gt;&lt;tr&gt;<br>
+                        &lt;/table&gt;</tt><br>
+                </blockquote>we can get the object for the <tt>td</tt> element containing text 
+                "User Name" with <tt>findByText("User")</tt>. &nbsp;We can &nbsp;get the table 
+                object with the call <tt>findParent(findByText("User"), "TABLE")</tt>. 
+                &nbsp;Notice that <tt>findByText()</tt> also accepts an optional index argument 
+                that can be used to specify the index of the object in case there are more than 
+                one object containing the specified text.<b><br>
+                    <br>
+                </b>
+            <li>
+                <b>Search by restricting the search range</b>: Most find-methods of IeDhtml 
+                search within the find scope object which is by default the whole document 
+                object. The find scope can be changed by the method <tt>setFindScope()</tt>. By 
+                restricting the find scope we can do more stable and precise search operations. 
+                For instance, many web pages contain multiple tables for different sections of 
+                the page (e.g. one for navigation, one for advertisement, etc.). If a test 
+                script is only interested in a particular section the script can set the find 
+                scope to the corresponding table object,&nbsp; so that all find-operations will 
+                be done within that table. In this way all changes in the rest of the page 
+                won't affect the test script.</li>
+        </ol>
+        <h3>Dealing with Frames</h3>
+        <p>If page is built with frames each frame contains a DHTML document object. Those 
+            document objects are, more or less, independent from each other. Most APIs of 
+            the IeDhtml class work on a single document object at a time. When the tested 
+            page is a document with frames, the test script must call <tt>setFrame(idx_or_id)</tt>
+            to select one default frame (therefor the default document) before perform any 
+            particular testing task. The selection of the default frame is persistent in 
+            the sense that after each submission task the <tt>this.doc</tt> object will 
+            automatically set to the document object of the selected frame by the <tt>checkSubmit()</tt>
+            method (more information on <tt>checkSubmit()</tt> latter).<br>
+        </p>
+        <p>Normally, a page has a top-level document that specifies the hierarchical 
+            frameset+frame structure. Each frame itself refers to non-frame HTML document. 
+            In this case we just need to call <tt>setFrame()</tt> with the index or the id 
+            of the frame regardless of how the frame is nested in the structure. Sometimes 
+            there are framed pages whose frame elements refers to another framed document. 
+            In this case we can't use a single index or id to locate a frame, since the 
+            index and id are only valid within the document containing it. &nbsp;We have to 
+            use a second index or id to address the frame nested in the second document. 
+            The syntax to use multiple indices or ids is <tt>this.setFrame("idx_or_id_1/idx_or_id_2")</tt>
+            where <tt>idx_or_id_1 </tt>is the index or id of the frame that contains the 
+            second document; <tt>idx_or_id_2 </tt>is the index or id of the target frame 
+            within the second document.
+            <br>
+        </p>
+        <p>
+            It should be pointed out that, for security reasons, Internet Explorer only 
+            allows cross-frame scripting if the frames are from the same domain (i.e.<tt> ieunit.sourceforge.net</tt>). 
+            This restriction leads the restriction for IeUnit that all frames of a page and 
+            the parent window must come from one domain.&nbsp; Let's hope that the future 
+            version of Internet Explorer will provide certain mechanism to allow trusted 
+            scripts to access the document model located in foreign frames (the Internet 
+            Explorer itself obviously can already directly access all frames).<br>
+        </p>
+        <h3>Submit Operation and Timeout Control</h3>
+        <p>
+            An IeUnit test script triggers submit operations either by methods like <tt>clickLink()</tt>
+            and <tt>clickButton()</tt>, or directly by calling DHTML APIs like <tt>form.submit()</tt>. 
+            Since a JavaScript script runs asynchronously to the browser own process a 
+            script normally has to wait till the response page has been received and 
+            processed by the browser. To simplify the coding IeUnit provides the method <tt>checkSubmit()</tt>to 
+            do all those synchronization works.<tt> </tt>Methods like <tt>clickLink()</tt> and
+            <tt>clickButton()</tt> implicitly call the <tt>checkSubmit()</tt> so that we 
+            don't need call <tt>checkSubmit()</tt>. If we call DHTML APIs directly to 
+            submit a page, e.g. call <tt>form.submit()</tt>,&nbsp; we need to call <tt>checkSubmit()</tt>
+            method afterwards.<br>
+        </p>
+        <p>
+            When a script calls <tt>checkSubmit() </tt>this method basically does the 
+            following:
+        </p>
+        <ol>
+            <li>
+            Wait for a short time till the submission has been sent out to the web server.
+            <li>
+            Periodically check the state of the page till the page's state becomes ready, 
+            or a pre-set timeout value has expired in this case an exception will be 
+            thrown.
+            <li>
+                Update some internal session objects and states (like <tt>doc</tt>, <tt>win</tt>
+                and <tt>findScope()</tt>
+            ) with the response page.
+            <li>
+                Wait for another short of time to allow possible embedded JavaScript code to 
+                complete.</li>
+        </ol>
+        <p>
+            The short time interval for the step 1 is controlled by the <tt>IeUnit</tt> property
+            <tt>submitPause</tt>. The timeout value for step 2 is controlled by the 
+            property<tt> findTimeout</tt>. The two properties<tt> submitPause</tt> and <tt>findTimeout
+            </tt>can be changed with the method <tt>setTime()</tt>. &nbsp;The wait time for 
+            step 2 is set to 0.2*<tt>submitPause</tt>. Notice that <tt>findTimeout</tt> is 
+            also used by other methods like <tt>waitForSuccess</tt>() and <tt>seekWindow()</tt>.<br>
+        </p>
+        <p>
+            In general we can roughly say that <tt>submitPause</tt> determines the minimal 
+            pause for each submit operation whereas <tt>findTimeout</tt> determines the 
+            maximal waiting time.
+            <br>
+        </p>
+        <p>The default values for <tt>submitPause </tt>and <tt>findTimeout</tt> are 1 and 
+            20 seconds respectively which can be changed through the configuration file <tt>Config.wjs</tt>.<br>
+        </p>
+        <p>
+            The <tt>waitForSuccess()</tt> method provides a convenient way to repeatedly 
+            try certain function till that function has succeeded (i.e. no exception gets 
+            raised). For instance, some web page periodically refreshes its content, say 
+            every 5 seconds. A test script can use <tt>waitForSuccess </tt>to wait till 
+            certain content appears in the page.<br>
+        </p>
+        <p>
+            The IeUnit framework also provides the <tt>sleep() </tt>method for more direct 
+            synchronization control. Scripts using a lot of sleep based synchronization are 
+            in general difficult to maintain and are instable against changes.&nbsp;</p>
+        <h3>Class, Object and Assimilation</h3>
+        <p>Inheritance&nbsp;has been an essential concept in most object oriented 
+            languages, and it has been proven to be a very useful concept. JavaScript does 
+            not support inheritance, but it provides some dynamic features with which we 
+            can achieve similar effect. IeUnit introduced the concept assimilation as a 
+            replacement for the inheritance concept. Both assimilation and inheritance aim 
+            to reuse code. They, however, have some subtle differences:</p>
+        <ul>
+            <li>
+                Inheritance applies to classes whereas assimilation applies to objects. We can 
+                say that a class A inherits the properties of class B, but we have to say that 
+                an object <i>a</i> assimilates another object <i>b</i>.&nbsp;
+            <li>
+                Inheritance occurs at compilation time whereas assimilation can occur at any 
+                run time. Assimilation relationship can be controlled dynamically based on run 
+                time conditions.<br>
+            </li>
+        </ul>
+        <p>In IeUnit we let an object <i>a</i> assimilate another object <i>b</i> by 
+            calling the function <tt>assimilate(a, b)</tt>. All properties and methods of <i>b </i>
+            will be added to the object <i>a.&nbsp;</i> Thereafter object <i>&nbsp;b </i>should 
+            be considered <i>assimilated </i>&nbsp;and should not be used standalone.<br>
+        </p>
+        <p>The function <tt>assimilate()</tt> is implemented in <tt>IeUnit.js </tt>as a top 
+            level JavaScript function. The complete interface of <tt>assimilate()</tt> is 
+            as follows:</p>
+        <blockquote>
+            <p><tt>function assimilate<i>(</i><i>dstObj, srcObj, suffix, policy</i>)</tt><tt><br>
+                </tt>
+            </p>
+        </blockquote>
+        <p>Where <tt><i>dstObj</i></tt> is the assimilating object, <tt>srcObj</tt><i> </i>is 
+            the object to be assimilated. <i><tt>suffix</tt> </i>&nbsp;is an optional 
+            argument, it specifies a string suffix to be appended to member names when 
+            adding members from <i><tt>srcObj</tt> </i>to <i><tt>dstObj</tt>.</i> <i><tt>policy</tt>
+            </i>is an optional argument to resolve member name conflicts. If a member's 
+            name of <i><tt>srcObj</tt> </i>after appending possible suffix already exists 
+            in the object <tt><i>dstObj </i></tt>&nbsp;we say there is name conflict. The 
+            value of <i><tt>policy</tt> </i>controls how to resolve the conflict as 
+            follows: <tt>0</tt><i>: </i>a name conflict will cause an exception to be 
+            thrown. <tt>1</tt>: the conflicting member in <i><tt>dstObj</tt> </i>will 
+            silently overwritten by the conflicting member of <i><tt>srcObj</tt>. </i><tt>2</tt>: 
+            the conflicting member of <i><tt>srcObj</tt> </i>will be silently ignored. If <i><tt>policy</tt>
+            </i>is not specified the default value <tt>0</tt> will be used.<br>
+        </p>
+        <p><tt>assimilate()</tt> returns the newly extended <i><tt>dstObj</tt> &nbsp;</i>object 
+            to the caller.<br>
+        </p>
+        <p>To illustrate assimilation concept let us consider the following example:<br>
+        </p>
+        <blockquote>
+            <p><tt>function BigCompany(companyName, &nbsp;headerQuarter) {<br>
+                    &nbsp;&nbsp;&nbsp; this.companyName = companyName;<br>
+                    &nbsp;&nbsp;&nbsp; this.</tt><tt>headerQuarter</tt><tt> &nbsp;=&nbsp;</tt><tt>headerQuarter</tt><tt>;<br>
+                    }<br>
+                </tt>
+            </p>
+            <p><tt>function SmallCompany(companyName, softwareProduct) {<br>
+                    &nbsp;&nbsp;&nbsp; this.companyName = companyName;<br>
+                    &nbsp;&nbsp;&nbsp; this.softwareProduct = softwareProduct;<br>
+                    }<br>
+                </tt>
+            </p>
+        </blockquote><blockquote>
+            <p><tt>bigCompany = new BigCompany("MegaSystems", &nbsp;"CityA");<br>
+                    smallCompany = new SmallCompany("Super QA", &nbsp;"Super Web Tester");<br>
+                </tt>
+            </p>
+        </blockquote>
+        <p>If we simply call <tt>assimilate(bigCompany, smallCompany)</tt> an exception 
+            will be raised because of &nbsp;the name conflict on the member <tt>companyName</tt>.
+            <br>
+        </p>
+        <p>If we call <tt>newCompany = assimilate(bigCompany, smallCompany, "Sub")</tt> the 
+            object <tt>newCompany </tt>will have the following properties:<br>
+        </p>
+        <blockquote><tt>newCompany.companyName = "MegaSystems"<br>
+                newCompany.</tt><tt>headerQuarter = "CityA";<br>
+                newCompany.companyNameSub ="Super QA";<br>
+                newCompany.softwareProductSub = "Super Web Test";<br>
+            </tt></blockquote>
+        <p>If we call <tt>newCompany=assimilate(bigCompany, smallCompany, "", 1)</tt> the 
+            object <tt>newCompany </tt>will have the following properties:<br>
+        </p>
+        <blockquote><tt>newCompany.companyName = "Super QA"<br>
+                newCompany.</tt><tt>headerQuarter = "CityA";<br>
+                newCompany.softwareProduct = "Super Web Test";<br>
+            </tt>
+            <br>
+        </blockquote>If we call <tt>newCompany=assimilate(bigCompany, smallCompany, "", 2)</tt>
+        the object <tt>newCompany </tt>will have the following properties:<br>
+        <blockquote><tt>newCompany.companyName = "MegaSystems"</tt><br>
+            <tt>newCompany.</tt><tt>headerQuarter = "CityA";</tt><br>
+            <tt>newCompany.softwareProduct = "Super Web Test";</tt><br>
+            <tt></tt></blockquote><tt></tt>
+        <p>It should be pointed out that assimilation is only possible in dynamic language 
+            like JavaScript that allow run-time modification of object structure. 
+            Conventional &nbsp;objected oriented languages like C++ or Java don't allow 
+            this, at least not in such a simple way. On the other hand, the use of this 
+            kind of dynamic features makes some work like debugging more difficult.
+        </p>
+        <h3>The Test Runner<br>
+        </h3>
+        <p>
+            According to the xUnit framework a test runner is a program that helps the user 
+            to run a set of unit tests. IeUnit provides a text based test runner <tt>IeTextRunner.wsf</tt>
+            that is invoked through the script engine<tt> cscrtip.exe </tt>as follows:<br>
+            &nbsp;&nbsp; <tt>cscript.exe IeTextRunner.wsf &lt;options&gt;</tt><br>
+            <br>
+            The <tt>IeTextRunner.wsf </tt>program has the following options:<br>
+        </p>
+        <p>
+            &nbsp; <tt>-help</tt><br>
+        </p>
+        <blockquote>Prints out some brief help information.</blockquote>
+        <p>
+            &nbsp;<tt>-run [&lt;caseA&gt;[:&lt;test1&gt;:&lt;test2&gt;:...] 
+                caseB[:&lt;tst1&gt;:&lt;tst2&gt;... ] </tt>
+        </p>
+        <blockquote>
+            <p>Runs selected test cases or tests. The argument is list of test case names, each 
+                may optionally be followed by a list of test names separated by columns. For 
+                instance, the following command&nbsp; executes the case <tt>AssimilationTest</tt>
+                and the test <tt>testCheckValue</tt> of the case <tt>CaseFixtureTest</tt>:</p>
+            <p>
+            </p>
+            <p>
+                &nbsp;&nbsp;&nbsp; <tt>IeTextRunner.wsf -run AssimilationTest 
+                    CaseFixtureTest:testCheckValue</tt></p>
+            <p>
+            </p>
+            <p>If no argument is provided all test cases in the current directory will be 
+                executed.<br>
+            </p>
+            <p>
+            </p>
+        </blockquote>
+        <p><tt>&nbsp;-runfiles [&lt;a.jst&gt; &lt;b.jst&gt; ...]</tt></p>
+        <blockquote>Runs the test cases defined in a list of <tt>&nbsp;.jst </tt>files. 
+            IeTextRunner will scan the <tt>.jst </tt>files and take the first function name 
+            as test case name for a <tt>.jst </tt>file. The function declaration must be a 
+            single line that starts with the keyword <tt>function</tt>.
+            <br>
+        </blockquote>
+        <p><tt>&nbsp;-orgsrc &lt;jst-file-path&gt;</tt></p>
+        <blockquote>specifies the path of original source <tt>.jst</tt> file. This option 
+            is used for debugging purpose, it is only valid when a single <tt>.jst</tt> file 
+            has been specified through the <tt>-runfiles</tt> option.<br>
+        </blockquote>
+        <p>&nbsp; <tt>-I &lt;LibPath&gt;</tt></p>
+        <p>
+        </p>
+        <blockquote>
+            <p>Specifies&nbsp;a "<tt>;</tt>" separated list of directories for the location of 
+                test scripts. The runner will load all&nbsp; <tt>.js </tt>scripts from the 
+                following directories: (1) The directory %IEUNIT_LIB%\lib.&nbsp; (2) The 
+                directories specified by the environment variable <tt>IEUNIT_LIB </tt>if it is 
+                defined. <tt>IEUNIT_LIB </tt>must point to a "<tt>;</tt>" separated list of 
+                directories. (3) The directories specified by the <tt>-I </tt>option. (4) The 
+                directory<tt> </tt>where the test case source is located. After loaded the <tt>.js </tt>
+                files, IeTextRunner will load those <tt>.jst </tt>files from above directories 
+                which implement the test cases selected by the option <tt>-run </tt>or <tt>-runfiles.
+                </tt>The default value of &nbsp;this option is <tt>%IEUNIT_HOME%/local </tt>as 
+                specified in <tt>Config.wjs</tt> file.</p>
+        </blockquote>
+        <p>
+            &nbsp;<tt> -l</tt></p>
+        <p>
+        </p>
+        <blockquote>
+            <p>Lists all test cases in the complete library path. &nbsp;See the option <tt>-I </tt>
+                for more information about how the runner finds test cases.<br>
+            </p>
+        </blockquote>
+        <p>
+            &nbsp;<tt> -n &lt;n&gt;</tt></p>
+        <p>
+        </p>
+        <blockquote>
+            <p>Repeat the test <tt>&lt;n&gt; </tt>times.<br>
+            </p>
+        </blockquote>
+        <p>
+            &nbsp; <tt>-xml &lt;result-xml-file-path&gt;</tt></p>
+        <p></p>
+        <blockquote>
+            <p>This will still print out the standard test results to the console, but in 
+                addition will create an Xml file at the specified location, that conforms to 
+                the same schema used by <a href="http://www.nunit.org" target="_blank">NUnit</a>. 
+                This enables automated testing with <a href="http://nant.sourceforge.net/" target="_blank">
+                    Nant</a> using the <a href="http://nunit2report.sourceforge.net/" target="_blank">
+                    Nunit2Report</a> task</p>
+        </blockquote>
+        <p>
+            &nbsp; <tt>-v false</tt></p>
+        <p>
+        </p>
+        <p>
+        </p>
+        <blockquote>
+            <p>
+                This enables running the tests without displaying the IE window. The only valid 
+                option is false. true is the default value.<br>
+            </p>
+        </blockquote><blockquote>
+            <p></p>
+        </blockquote>
+        <br>
+        <p>For the sake of convenience IeUnit also provides some batch scripts as shortcuts 
+            for above commands:<br>
+        </p>
+        <p><tt>StartTest.bat &lt;test-casse-name|jst-file&gt;</tt><br>
+        </p>
+        <blockquote>Execute a test case or the test case implemented in a <tt>jst </tt>file.<br>
+        </blockquote><tt>DebugTest.bat &lt;jst-file|smart-bookmark-file&gt;</tt><br>
+        <blockquote>Start the a test case script or smart-bookmark script under the 
+            debugger. If we need to stop at certain line in the test script we have to 
+            insert the statement "debugger" at that line.<br>
+        </blockquote><b>
+            <br>
+            The configuration file Config.wjs</b><br>
+        <br>
+        The configuration file <tt>Config.wjs</tt> enables the user to set default 
+        values for most of command-line options. <tt>Config.wjs </tt>provides also 
+        control over other default settings like default timeout values. <tt>Config.wjs </tt>
+        is installed as permanent file so that it won't be removed when you uninstall 
+        IeUnit package nor overwritten by new installation. &nbsp;<tt>Config.wjs </tt>is 
+        just another script that get loaded before all other script files.&nbsp;
+        <p>
+        </p>
+        <h3>The Smart Bookmark</h3>
+        Smart bookmark is a special feature provided by IeUnit as an extension to web 
+        site bookmarks. &nbsp;Normal bookmarks provided by Internet Explorer are 
+        static: they don't allow us, for instance, to bookmark web pages that require 
+        the user to pass login page. &nbsp;With the smart bookmark a user can create a 
+        simple bookmark script (with the extension <tt>.sbk) </tt>that automates the 
+        login procedure and then navigate to the page he/she wanted to visit. 
+        &nbsp;When the user clicks on the script through Windows Explorer or Windows 
+        Desktop the browser will automatically login to the desired web site and then 
+        navigate to the wanted page.
+        <br>
+        <br>
+        The format of smart bookmark script is just a list of JavaScript statements 
+        which are valid within the context of a test case. Smart bookmark script is 
+        executed by the program <tt>SmartBookmark.wsf</tt> &nbsp;that first wraps the 
+        statements into a temporary test case, then execute it like an IeUnit test 
+        case. &nbsp;During the start <tt>SmartBookmark.wsf </tt>also tries to find the 
+        file <tt>SmarktBookmark.init </tt>in the working directory. If such a file is 
+        found the file will be loaded and executed by JavaScript engine before the 
+        smart bookmark script.<br>
+        <br>
+        <p>The example <tt>LoginBookmark.sbk</tt> is located in the directory <tt>samples\LoginDemo</tt>, 
+            it reads as follows:</p>
+        <p>
+        </p>
+        <p>
+        </p>
+        <pre><tt>    this.openWindow("http://ieunit.sourceforge.net/samples/LoginDemo/Login.html");<br>    this.setField(0, "IeUnit");<br>    this.setField(1, "DemoPwd");<br>    this.clickButton("Login");<br></tt></pre>
+        <p>This script demonstrates how to automatically login into a web site that 
+            requires user name and password.</p>
+        <h3>IeUnit Specific File Types</h3>
+        <P>The installation procedure of IeUnit creates two Windows file extensions<tt> .jst </tt>
+            and <tt>.sbk. &nbsp;jst </tt>files will be associated with type <tt>IeUnit.JavaScriptTest</tt>. 
+            Opening a file of this type will automatically execute the test case. &nbsp;<tt>sbk </tt>
+            files will be associated with the type <tt>IeUnit.SmartBookmark. </tt>Opening a 
+            file of this type will automatically execute the smart bookmark script.<br>
+        </P>
+        <H3>Running Tests from Windows Explorer</H3>
+        <P>Windows Explorer provides a convient environment to run and test IeUnit scripts. 
+            In order&nbsp;to run a jst or sbk script from Windows Explorer we just need to 
+            double click the script file in Explorer.</P>
+        <P>In order to debug a IeUnit script we first right mouse click&nbsp;the 
+            script&nbsp;file to be debugged, then choose the "Debug Script" entry from the 
+            context menu.</P>
+        <P>We can also execute a set of jst files by selecting them in the Explorer window, 
+            then send them to the IeUnit target by choosing the "IeUnit" entry in the 
+            context menu.</P>
+        <p>
+        </p>
+        <p>
+        </p>
+        <ul>
+        </ul>
+        <table class="libnavb" width="95%">
+            <tbody>
+                <tr>
+                    <td width="33%"><a href="GettingStarted.html">Getting started</a></td>
+                    <td width="33%" align="center"><a href="UserGuide.html">User guide</a></td>
+                    <td width="33%" align="right"><a href="ExtendingIeUnit.html">Extending IeUnit</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </body>
+</html>

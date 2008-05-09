@@ -1,0 +1,15 @@
+/**
+ * Description: this test case demonstrates how to use
+ * the CheckPage class to check all hyperlinks of a page.
+ */
+function CheckLinks() {
+    assimilate(this, new IeUnit());
+    assimilate(this, new CheckPage());
+
+    this.testCheckLinks = function() {
+        this.setTime(500, 40000);
+	this.checkLinks("http://www.reuters.com");
+        //this.checkLinks("http://ieunit.sourceforge.net");
+        //this.checkLinks("http://www.visumap.net");
+    };
+}

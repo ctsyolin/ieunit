@@ -1,0 +1,323 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+    <head>
+        <title>Nested text and tables</title>
+ <style>
+DIV { 
+border-style: solid;
+border-width: 1;
+margin:5;
+spacing: 15;
+}
+</style>
+    </head>
+    <body>
+        <SPAN id="id1">id1_text <SPAN id="id2">id2_text <SPAN id="id3">id3_text 
+<span id="id4" style="COLOR: red">id4_text</span></SPAN> 
+</SPAN></SPAN><br>
+        <SPAN id="Span1">id1_text <SPAN>sub1_text <SPAN>sub2_text <SPAN>sub3_text <SPAN>sub4_text</SPAN></SPAN></SPAN> </SPAN></SPAN>
+        <P></P>
+        <P><SPAN><SPAN><B>Deep Nested Zeor-Border Tables</B><BR>
+                    <TABLE id="Table18">
+                        <TR>
+                            <TD>
+                                <TABLE id="Table19" border="0">
+                                    <TR>
+                                        <TD>
+                                            <TABLE id="Table20" border="0">
+                                                <TR>
+                                                    <TD>
+                                                        <TABLE id="Table21" border="0">
+                                                            <TR>
+                                                                <TD>
+                                                                    <TABLE id="Table22" border="0">
+                                                                        <TR>
+                                                                            <TD>
+                                                                                <TABLE id="Table23" border="0">
+                                                                                    <TR>
+                                                                                        <TD>
+                                                                                            <TABLE id="Table24" border="0">
+                                                                                                <TR>
+                                                                                                    <TD>
+                                                                                                        <TABLE id="Table25" border="0">
+                                                                                                            <TR>
+                                                                                                                <TD id="TheContent">The Content
+                                                                                                                </TD>
+                                                                                                            </TR>
+                                                                                                        </TABLE>
+                                                                                                    </TD>
+                                                                                                </TR>
+                                                                                            </TABLE>
+                                                                                        </TD>
+                                                                                    </TR>
+                                                                                </TABLE>
+                                                                            </TD>
+                                                                        </TR>
+                                                                    </TABLE>
+                                                                </TD>
+                                                            </TR>
+                                                        </TABLE>
+                                                    </TD>
+                                                </TR>
+                                            </TABLE>
+                                        </TD>
+                                    </TR>
+                                </TABLE>
+                            </TD>
+                        </TR>
+                    </TABLE></P>
+        <P></P>
+        </SPAN></SPAN>
+        <P><SPAN><SPAN>&nbsp;</P>
+        <P><br>
+            <br>
+            <b>Deep Nested Tables</b><br>
+        </P>
+        <P>
+            <table>
+                <tr>
+                    <td>
+                        <table id="Table8" border="1">
+                            <tr>
+                                <td>
+                                    <table id="Table9" border="1">
+                                        <tr>
+                                            <td>
+                                                <table id="Table10" border="1">
+                                                    <tr>
+                                                        <td>
+                                                            <table id="Table11" border="1">
+                                                                <tr>
+                                                                    <td>
+                                                                        <table id="Table12" border="1">
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <table id="Table13" border="1">
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <table id="Table14" border="1">
+                                                                                                    <tr>
+                                                                                                        <td>The Content
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </P>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>Nested DIV block</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <b>Large TD Style</b><br>
+        <TABLE id="Table1" cellSpacing="0" cellPadding="0" width="300" border="1">
+            <TR style="PADDING-RIGHT: 15px; PADDING-LEFT: 15px; PADDING-BOTTOM: 15px; PADDING-TOP: 15px">
+                <TD>Larg TR paddig</TD>
+                <TD>eee</TD>
+                <TD><EM>fff</EM></TD>
+            </TR>
+            <TR>
+                <TD>Large TD Margin</TD>
+                <TD>eee</TD>
+                <TD><EM>fff</EM></TD>
+            </TR>
+            <TR>
+                <TD>Large TD Padding</TD>
+                <TD>eee</TD>
+                <TD><EM>fff</EM></TD>
+            </TR>
+            <TR>
+                <TD>Large TD border</TD>
+                <TD><FONT color="#009900">hhh</FONT></TD>
+                <TD><STRONG>iii</STRONG></TD>
+            </TR>
+        </TABLE>
+        <br>
+        <br>
+        <b>Collapsed Table Border</b><br>
+        <TABLE id="Table15" style="BORDER-COLLAPSE: collapse" cellSpacing="0" cellPadding="0" width="300"
+            border="1">
+            <TR>
+                <TD>11</TD>
+                <TD>22</TD>
+                <TD>
+                    <TABLE id="Table16" style="BORDER-COLLAPSE: collapse" cellSpacing="0" cellPadding="0" width="300"
+                        border="1">
+                        <TR>
+                            <TD height="22">XX</TD>
+                            <TD height="22">YY</TD>
+                        </TR>
+                        <TR>
+                            <TD>xx</TD>
+                            <TD>yy</TD>
+                        </TR>
+                    </TABLE>
+                </TD>
+            </TR>
+            <TR>
+                <TD>aa</TD>
+                <TD>bb</TD>
+                <TD>
+                    <TABLE id="Table17" style="BORDER-COLLAPSE: collapse" cellSpacing="0" cellPadding="0" width="300"
+                        border="1">
+                        <TR>
+                            <TD>777</TD>
+                            <TD>888</TD>
+                            <TD>999</TD>
+                        </TR>
+                    </TABLE>
+                </TD>
+            </TR>
+            <TR>
+                <TD>AA</TD>
+                <TD>BB</TD>
+                <TD>CC</TD>
+            </TR>
+        </TABLE>
+        <br>
+        <br>
+        <b>Large Border</b><br>
+        <TABLE cellSpacing="1" cellPadding="1" width="300" border="23">
+            <TR>
+                <TD>11</TD>
+                <TD>22</TD>
+                <TD>
+                    <TABLE cellSpacing="1" cellPadding="1" width="300" border="21">
+                        <TR>
+                            <TD height="22">XX</TD>
+                            <TD height="22">YY</TD>
+                        </TR>
+                        <TR>
+                            <TD>xx</TD>
+                            <TD>yy</TD>
+                        </TR>
+                    </TABLE>
+                </TD>
+            </TR>
+            <TR>
+                <TD>aa</TD>
+                <TD>bb</TD>
+                <TD>
+                    <TABLE cellSpacing="1" cellPadding="1" width="300" border="1">
+                        <TR>
+                            <TD>777</TD>
+                            <TD>888</TD>
+                            <TD>999</TD>
+                        </TR>
+                    </TABLE>
+                </TD>
+            </TR>
+            <TR>
+                <TD>AA</TD>
+                <TD>BB</TD>
+                <TD>CC</TD>
+            </TR>
+        </TABLE>
+        <br>
+        <br>
+        <b>Large Spacing</b><br>
+        <TABLE id="Table2" cellSpacing="17" cellPadding="1" width="300" border="1">
+            <TR>
+                <TD>11</TD>
+                <TD>22</TD>
+                <TD>
+                    <TABLE id="Table3" cellSpacing="18" cellPadding="1" width="300" border="1">
+                        <TR>
+                            <TD height="22">XX</TD>
+                            <TD height="22">YY</TD>
+                        </TR>
+                        <TR>
+                            <TD>xx</TD>
+                            <TD>yy</TD>
+                        </TR>
+                    </TABLE>
+                </TD>
+            </TR>
+            <TR>
+                <TD>aa</TD>
+                <TD>bb</TD>
+                <TD>
+                    <TABLE id="Table4" cellSpacing="19" cellPadding="1" width="300" border="1">
+                        <TR>
+                            <TD>777</TD>
+                            <TD>888</TD>
+                            <TD>999</TD>
+                        </TR>
+                    </TABLE>
+                </TD>
+            </TR>
+            <TR>
+                <TD>AA</TD>
+                <TD>BB</TD>
+                <TD>CC</TD>
+            </TR>
+        </TABLE>
+        <br>
+        <br>
+        <b>Large Padding</b><br>
+        <TABLE cellSpacing="1" cellPadding="17" width="300" border="1" ID="Table5">
+            <TR>
+                <TD>11</TD>
+                <TD>22</TD>
+                <TD>
+                    <TABLE cellSpacing="1" cellPadding="18" width="300" border="1" ID="Table6">
+                        <TR>
+                            <TD height="22">XX</TD>
+                            <TD height="22">YY</TD>
+                        </TR>
+                        <TR>
+                            <TD>xx</TD>
+                            <TD>yy</TD>
+                        </TR>
+                    </TABLE>
+                </TD>
+            </TR>
+            <TR>
+                <TD>aa</TD>
+                <TD>bb</TD>
+                <TD>
+                    <TABLE cellSpacing="1" cellPadding="19" width="300" border="1" ID="Table7">
+                        <TR>
+                            <TD>777</TD>
+                            <TD>888</TD>
+                            <TD>999</TD>
+                        </TR>
+                    </TABLE>
+                </TD>
+            </TR>
+            <TR>
+                <TD>AA</TD>
+                <TD>BB</TD>
+                <TD>CC</TD>
+            </TR>
+        </TABLE>
+        </SPAN></SPAN>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+//
+// This test case demonstrates how to use Win32Dom to
+// attach to a IE modal dialog window and access its DHTML model.
+//
+function ModalDialogTest() {
+    assimilate(this, new IeUnit());
+    
+    this.testModalDialog = function() {
+        this.openWindow(_.getCaseDir() + "/ModalDialog.html");
+
+        // start the modal dialog driver before we open the 
+        // modal dialog.
+        var cmdShell = new ActiveXObject("WScript.Shell");
+        cmdShell.Run("ModalEnterName.sbk", 0, false);
+
+        this.clickButton("Open Modal Dialog");
+        this.assertPageHasText("Hi, Alex");
+        this.closeWindow();
+    };
+}

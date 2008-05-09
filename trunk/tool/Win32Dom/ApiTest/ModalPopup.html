@@ -1,0 +1,15 @@
+<html>
+<title>Modal Popup Window</title>
+<script>
+function submitName() {
+    window.returnValue = document.all.yourName.value;
+    window.close();
+}
+</script>
+<body>
+<form>
+Your Name Please: <input type="text" name="yourName" value="">
+<input type="button" name="submitBtn" value="submit" onclick="submitName()">
+</form>
+</body>
+</html>

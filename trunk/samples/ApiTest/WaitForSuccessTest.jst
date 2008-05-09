@@ -1,0 +1,29 @@
+// Testing the WaitForSuccess method.
+//
+function WaitForSuccessTest() {
+    assimilate(this, new IeUnit());
+
+    this.setUp = function() {
+        openLocalFile("DelayedUpdated.html");
+    };
+
+    this.tearDown = function() {
+        this.closeWindow();
+    };
+
+    this.testWaitForException = function() {
+        this.assertEquals(this.doc.all("greeting").innerText, "Hi");
+        this.waitForSuccess( function() { this.assertPageHasText("See you!"); } );
+    };
+
+    this.testWaitForTrue = function() {
+        this.assertEquals(this.doc.all("greeting").innerText, "Hi");
+        this.waitForSuccess( function() { return (this.findByText("See you!")!=null); } );
+    };
+
+    this.testWaitForObj = function() {
+        this.assertEquals(this.doc.all("greeting").innerText, "Hi");
+        this.waitForSuccess( function() { return this.findByText("See you!"); } );
+    };
+}
+

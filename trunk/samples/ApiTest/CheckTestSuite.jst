@@ -1,0 +1,32 @@
+//
+// check the total number of test case and tests
+// This test case has to be modified when ever new test
+// or test case has been added to this suite.
+//
+function CheckTestSuite() {
+    assimilate(this, new IeUnit());
+    
+    function startTextRunner(options) {
+        var cmdShell = new ActiveXObject("WScript.Shell");
+        var cmdStr = "cscript /NoLogo \"" + getRunnerDir() + "\\IeTextRunner.wsf\" " + options;        
+        var oExec = cmdShell.Exec(cmdStr);
+        var outStr = "";
+        while ( ! oExec.stdOut.AtEndOfStream ) {
+            outStr += oExec.stdOut.ReadLine() +"\n";
+        }        
+        return outStr;
+    };
+
+    this.setUp = function() {
+        this.listStr = startTextRunner("-l");
+    };
+    
+
+    this.testCheckNumber = function() {
+        var idx = this.listStr.indexOf("RptList:");
+        this.listStr = this.listStr.substring(idx);
+        idx = this.listStr.indexOf("tests");
+        this.listStr = this.listStr.substring(0, idx+5);
+        this.assertEquals("RptList: 30 cases, 115 tests", this.listStr);
+    };
+}

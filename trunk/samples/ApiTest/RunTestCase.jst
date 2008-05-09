@@ -1,0 +1,22 @@
+//Test APIs:  assimilate(), assertEquals(), runTest().
+//
+
+function RunTestCase() {
+    // inherite definitions from the 'base class'
+    assimilate(this, new IeTestCase());
+
+    // add some tests
+    this.testOnePlusOne = function() {
+        this.assertEquals(1+1, 2);
+    };
+
+    this.testHelloWorld = function() {
+        this.assertEquals("Hello " + "World", "Hello World");
+    };
+
+    this.testRunOnePlusOne = function() {
+        var result = this.runTest("testOnePlusOne");
+        this.assertEquals(null, result.exception);
+        this.assertEquals("testOnePlusOne", result.testName);
+    }
+}

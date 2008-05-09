@@ -1,0 +1,66 @@
+//Tested APIs:  selectHas, findSelect, setSelect, triggerSelect
+//
+
+function SelectTest() {
+    assimilate(this, new IeUnit());
+
+    this.setUp = function() {
+        openLocalFile("SelectPage.html");
+    };
+
+    this.tearDown = function() {
+        this.closeWindow();
+    };
+
+    this.testSelectHas = function() {
+        this.assertSelectHasOption(0, "OptionA");
+        this.assertSelectHasOption(0, "OptionB");
+        this.assertSelectHasOption(0, "OptionC");
+        
+        this.assertSelectHasOption(1, "OptionX");
+        this.assertSelectHasOption(1, "OptionY");
+        this.assertSelectHasOption(1, "OptionZ");
+    };
+
+    this.testFindSelect = function() {
+        var s0 = this.findSelect(0);
+        var s1 = this.findSelect(1);
+
+        this.assertEquals("OptionB", s0.options[1].innerText);
+        this.assertEquals("OptionY", s1.options[1].innerText);
+    };
+
+    this.testFindSelectWithId = function() {
+        var s0 = this.findSelect("selectA");
+        var s1 = this.findSelect("selectB");
+
+        this.assertNull( this.findSelect("selectXX") ); // existing id
+        this.assertNull( this.findSelect("OptionX") );  // id with wrong tag name.
+
+        this.assertEquals("OptionB", s0.options[1].innerText);
+        this.assertEquals("OptionY", s1.options[1].innerText);
+    };
+
+    this.testSetSelectOption = function() {
+        // Verify that 1-th option is selected
+        var s1 = this.findSelect(1);
+        this.assertTrue(s1.options[1].selected);
+        
+        // unselect the first and select the second option.
+        this.setSelectOption(1, "Z");
+
+        this.assertTrue(! s1.options[1].selected);
+        this.assertTrue(s1.options[2].selected);
+
+        this.assertEquals("false", this.doc.all("OptionX").innerText, "AAA");
+        this.assertEquals("false", this.doc.all("OptionY").innerText, "BBB");
+        this.assertEquals("true",  this.doc.all("OptionZ").innerText, "CCC");
+    };
+
+    this.testSetSelectWithIdx = function() {
+        this.setSelectOption(1, 2); // select the 2-th option of the 1-th SELECT element.
+        this.assertEquals("false", this.doc.all("OptionX").innerText);
+        this.assertEquals("false", this.doc.all("OptionY").innerText);
+        this.assertEquals("true",  this.doc.all("OptionZ").innerText);
+    };
+}

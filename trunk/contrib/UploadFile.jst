@@ -1,0 +1,21 @@
+// File: UploadFile.jst
+//
+// This test case demonstrates how to use Win32Dom object to test 
+// file upload feature of web site.
+//
+function UploadFile() {
+    assimilate(this, new IeUnit());
+
+    this.testCaseOne = function(){
+        _.openWindow("http://ieunit.sourceforge.net/samples/upload/upload.html");
+
+        var fname = "\"%IEUNIT_HOME%bin\\uninstall.bat\""; // a sample local file
+        var cmdShell = new ActiveXObject("WScript.Shell"); 
+        cmdShell.Run("EnterFileName.sbk " + fname, 0, false);
+        _.clickObjById("fileName");
+        _.clickButton("Upload File");
+        _.assertPageHasText("File Uploaded");
+
+        _.closeWindow();
+    };
+}

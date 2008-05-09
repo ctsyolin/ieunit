@@ -1,0 +1,10 @@
+//
+// This sample demonstrate how to automatically print
+// out a web page through the default printer.
+//
+this.openWindow("http://ieunit.sourceforge.net");
+
+this.win.print(); 
+this.sleep(1000);  // wait till the print window has finished 
+var prnWin = this.waitForWindow("Print");
+this.findWinButton(prnWin, "&Print").click();

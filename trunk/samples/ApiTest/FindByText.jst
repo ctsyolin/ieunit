@@ -1,0 +1,30 @@
+//Test APIs: findByText()
+
+function FindByText() {
+    // inherite definitions from the 'base class'
+    assimilate(this, new IeUnit());
+
+    this.setUp = function() {
+        openLocalFile("TestPage.html");
+    }
+    this.tearDown = function() {
+        this.closeWindow();
+    }
+    
+    this.testFindWithoutIndex = function() {
+        //findByText always return the first element it foud.
+        this.assertEquals("H1", this.findByText("font").tagName);
+        this.assertEquals("H1", this.findByText("largest").tagName);
+        this.assertEquals("H2", this.findByText("larger").tagName);
+        this.assertEquals("H3", this.findByText("normal").tagName);
+        this.assertEquals(null, this.findByText("Undefined Text"));
+    };
+
+    this.testFindWithIndex = function() {
+        this.assertEquals("H1", this.findByText("font").tagName);
+        this.assertEquals("H1", this.findByText("font", 0).tagName);
+        this.assertEquals("H2", this.findByText("font", 1).tagName);
+        this.assertEquals("H3", this.findByText("font", 2).tagName);
+        this.assertEquals(null, this.findByText("font", 4));
+    }
+}

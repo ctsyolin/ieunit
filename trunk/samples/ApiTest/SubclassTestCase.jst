@@ -1,0 +1,42 @@
+// Test APIs: assimilate().
+//
+// This case test the feature to override methods ( asserEquals )
+// of the base case IeTestCase().
+//
+function SubclassTestCase(name) {
+    // inherite definitions from the base class
+    assimilate(this, new IeTestCase());
+
+    // override asserEquals to relax the equality check on
+    // nummeric values. 
+    this.assertEquals = function (v1, v2 ) {
+        if ( (typeof(v1) == "number") &&  (typeof(v2)=="number") ) { 
+            if ( Math.abs(v1 - v2) > 0.0000001 ) {
+                throw new Error(1007, "assert error");
+            }
+        } else {
+            if ( v1 != v2 ) {
+                throw new Error(1008, "assert error");
+            }
+        }
+    };
+
+    this.assertNotEquals = function(v1, v2) {
+        var isEqual = false;
+        try {
+            this.assertEquals(v1, v2);
+            isEqual = true; 
+        } catch (e) {}
+        if ( isEqual ) {
+            throw new Error(1009, "assert error");
+        }
+    };
+
+
+    // add one test case
+    this.testSubClass = function() {
+        this.assertEquals(3.1415926, 3.1415927);
+        this.assertNotEquals(3.14, 3.15);
+        this.assertEquals("Hello " + "World!", "Hello World!");
+    };
+}

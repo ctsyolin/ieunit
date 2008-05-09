@@ -1,0 +1,36 @@
+//
+// Description: this script verifies that login page correctly
+// accept authorized users and reject unauthorized users.
+//
+function LoginDemoTest() {
+    assimilate(this, new IeUnit());
+    var obj = this;
+
+    this.setUp = function() {
+        this.openWindow("http://ieunit.sourceforge.net/samples/LoginDemo/Login.html");
+    };
+
+    this.tearDown =function() {
+        this.closeWindow();
+    };
+    
+    this.login = function(userName, userPwd) {
+        this.setField(0, userName);
+        this.setField(1, userPwd);
+        this.clickButton("Login");
+
+        this.assertNotNull(this.findByText("Hi! " + userName));
+        this.clickLink("Logout");
+        this.assertNotNull(this.findByText("Login Page"));
+    };
+    
+    this.testValidLogin = function() {
+        this.login("IeUnit", "DemoPwd");
+        this.login("James",  "AdminPwd");
+    };
+
+    this.testRejectLogin = function() {
+        this.assertMustFail( function() { obj.login("IeUnit", "DemoAAA"); } );
+        this.assertMustFail( function() { obj.login("IeUnitAAA", "DemoPwd"); } );
+    };
+}

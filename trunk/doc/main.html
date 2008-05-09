@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>IeUnit - logical behaviour testing</title>
+                                                                        
+            		 		                                                       
+      
+  <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+  <body>
+                      		                     
+<div align="left"> 			                     
+<h1>IeUnit</h1>
+   <small>       version 2.3</small><br>
+          <br>
+                      			                     
+<hr width="100%"> 			                     
+<p class="decorativeText ">First Release: Oct/29/2002 <br>
+                   Last Updated: Dec/15/2006   		</p>
+                      			  </div>
+                      		                     
+<p>IeUnit is a simple framework to test logical behaviors of web pages. It 
+          helps software engineers to create, organize and execute functional 
+    unit  tests.  <br>
+             </p>
+                         
+<p>The architecture of IeUnit is based on the <a
+ href="http://www.xprogramming.com/software.htm" target="_top"> 				xUnit</a> 
+    framework    that has been adapted to various languages and  			platforms. 
+    IeUnit is   implemented in JavaScript language and tailored to Windows 
+ platform.   By leveraging services provided by Internet Explorer browser, 
+ its DHTML model   			and related COM technologies IeUnit offers a simple 
+and efficient test   			framework.<br>
+             </p>
+                         
+<p>Main features of IeUnit are:<br>
+             </p>
+                         
+<ul>
+               <li>IeUnit scripts test directly against real browser with 
+real   JavaScript    engine, and thus provide higher confidence than other 
+frameworks   which test   against simulated (and complex) browsers and JavaScript 
+engines.</li>
+               <li>IeUnit test scripts are in JavaScript which is widely
+used   and   well   documented. There is no need to learn proprietary scripting 
+ languages.</li>
+               <li>IeUnit offers a very simple installation procedure. There
+  is  no  need  to install other depended libraries except the major Windows
+  system    components. If you know JavaScript and DHTML you  can install
+IeUnit  and   start coding test cases within minutes.</li>
+               <li>IeUnit allows extension in an object oriented way. &nbsp;You 
+   can   integrate  you own test classes or test suites by dropping in you 
+ code  into   pre configured  directories.</li>
+        <li>IeUnit provides a script helper, QuickFocus (<a
+ href="http://sourceforge.net/project/screenshots.php?group_id=63823">screenshots</a>),
+   that enables users to inspect web pages and generate script code with
+mouse    clicks.<br>
+        </li>
+                         
+</ul>
+             The following is a simple test case with IeUnit framework:<br>
+             <br>
+             <tt>function HelloWorldTest() {<br>
+             &nbsp;&nbsp;&nbsp; assimilate(this, new IeUnit());<br>
+             <br>
+             &nbsp;&nbsp;&nbsp; this.setUp = function() {<br>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.openWindow("http://localhost/HelloWorld.html");<br>
+             &nbsp;&nbsp;&nbsp; };<br>
+             <br>
+             &nbsp;&nbsp;&nbsp; this.tearDown = function() {<br>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.closeWindow();<br>
+             &nbsp;&nbsp;&nbsp; };<br>
+             <br>
+             &nbsp;&nbsp;&nbsp; // Verify that the page contains only the 
+text   "Hello    World!"<br>
+             &nbsp;&nbsp;&nbsp; this.testCheckText = function() {<br>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.assertPageHasText("Hello 
+     World!");<br>
+             &nbsp;&nbsp;&nbsp; };<br>
+             <br>
+             &nbsp;&nbsp;&nbsp; // Verify that the style of the text is the 
+ HTML   element   H1<br>
+             &nbsp;&nbsp;&nbsp; this.testCheckStyle = function() {<br>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.assertEquals("H1", 
+   this.findByText("Hello").tagName);<br>
+             &nbsp;&nbsp;&nbsp; };<br>
+             }<br>
+             </tt><br>
+             The following shows the execution of above test case:<br>
+                          		                     
+<ul>
+                      		                     
+</ul>
+                      		                     
+<h2><tt>C:\Program Files\IeUnit\samples\HelloWorld&gt;StartTest HelloWorldTest.jst<br>
+       <br>
+       Running case HelloWorldTest ...<br>
+       RptTest: testCheckText:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+   OK<br>
+       RptTest: testCheckStyle:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+   OK<br>
+       RptCase: HelloWorldTest:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+   successes: 2, failures: 0<br>
+       RptSuite: Total Duration: 4.375sec,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+   Successes: 2, Failures: 0<br>
+       </tt></h2>
+    <br>
+<h2>Online Demo</h2>
+<br>
+    The integrated GUI script helper <b>QuickFocus </b>significantly reduces
+the learning curve and simplifies the script development process. &nbsp;The
+following flash demos show  how QuickFocus works:       
+<ul>
+      <li><a target="_top" href="FlashDemo/SmartBookmark.htm">Creating a
+smart  bookmark for searching keywords on google.</a></li>
+    <li><a target="_top" href="FlashDemo/TestCase.htm">Creating a unit test
+with QuickFocus</a>.<br>
+    </li>
+       
+</ul>
+    <br>
+                         
+<h2>License</h2>
+                      		                     
+<p>IeUnit is released under the <a
+ href="http://www.opensource.org/licenses/mit-license.php" target="_top">MIT
+    License</a></p>
+                      		                     
+<h2>Developer Information</h2>
+            <br>
+            <b>Project Administrator:<br>
+            </b>            
+<ul>
+              <li><a href="mailto:jamesxli@users.sourceforge.net">James X.
+ Li</a></li>
+                       
+</ul>
+            <br>
+            <b>Contributors:</b><br>
+            <br>
+                      		                     
+<ul>
+                      			<li> 				<a
+ href="mailto:jamesxli@users.sourceforge.net">James    X.  Li</a>  (VisuMap
+    Technologies Inc., Calgary,  				Canada)</li>
+                       
+</ul>
+                       
+<ul>
+                      		              		              			<li> 				<a
+ href="mailto:mfocas@users.sourceforge.net">Mark Focas</a>    (Sydney,  				Australia)
+       			</li>
+                      		                     
+</ul>
+                      		                     
+<h2><br>
+               </h2>
+               <br>
+              <br>
+             <br>
+            <br>
+           <br>
+          <br>
+         <br>
+        <br>
+       <br>
+      <br>
+     <br>
+    <br>
+   <br>
+   <br>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-389245-2";
+urchinTracker();
+</script>
+</body>
+</html>

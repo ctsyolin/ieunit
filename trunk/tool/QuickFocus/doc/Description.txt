@@ -1,0 +1,15 @@
+
+What is QuickFocus?
+
+A GUI tool to inspect HTML pages and create IeUnit test scripts.
+
+
+Detailed Description:
+
+QuickFocus is software application running on Windows platform
+with .NET 1.1 Runtime system. It help users to inspect HTML pages 
+and create IeUnit test scripts. With QuickFocus a user can
+insepect any element's DOM structure in a web page
+by directly clicking on the rendered page. QuickFocus also
+provides extensive support to help user to generate and test
+IeUnit framework based automation scripts.

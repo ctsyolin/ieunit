@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>IeUnit Getting started</title>
+                                         		 		                          
+   
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+           		                              
+  <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+  <body>
+           		          
+<table class="libnavb" width="95%" id="Table1">
+            <tbody>
+              <tr>
+                <td width="33%"><a href="UserGuide.html">User guide</a></td>
+                <td width="33%" align="center">&nbsp;</td>
+                <td width="33%" align="right"><a
+ href="TestFramework.html">The   Test   Framework</a></td>
+              </tr>
+                                       
+  </tbody>          
+</table>
+           		 		          
+<h1 align="center">IeUnit</h1>
+           		          
+<div align="center"> 		</div>
+                     
+<h2>Getting Started</h2>
+         <br>
+         <br>
+           		          
+<p> 			<b>Requirements and Installation</b></p>
+           		          
+<p>Before you install IeUnit you need the followings components on your computer: 
+ 		</p>
+           		          
+<ul>
+           			         <li> 				<a
+ href="http://www.microsoft.com/windows/ie/default.asp" target="_top">IE
+  6.0&nbsp;</a>  or higher  			</li>
+            <li> 				<a
+ href="http://msdn.microsoft.com/downloads/default.asp?url=/downloads/sample.asp?url=/MSDN-FILES/027/001/733/msdncompositedoc.xml&amp;amp;frame=true"
+ target="_top">     					Windows Script v5.6</a> or higher</li>
+     <li><a
+ href="http://www.microsoft.com/downloads/details.aspx?familyid=0856EACB-4362-4B0D-8EDD-AAB15C5E04F5&amp;displaylang=en"
+ target="_top">Microsoft .NET Framework 2.0</a> runtime system<br>
+     </li>
+            		          
+</ul>
+           		          
+<p> 			After you have downloaded IeUnit setup file <tt>IeUnit_2_0_<i>nnn</i>.msi</tt>, 
+ you    just double-click the file from the windows explorer to install it 
+ into  any  directory you choose. By default IeUnit is installed into the 
+directory  &nbsp;<tt>c:\Program  Files\IeUnit</tt>. During the installation 
+a folder <tt>IeUnit </tt>will be created in Windows's Programs menu. &nbsp;To 
+test  IeUnit installation you can run the  IeUnit demo by selecting the menu 
+<tt>Start&gt;Programs&gt;IeUnit&gt;Run  IeUnit Demo.</tt>  		</p>
+           		          
+<p><b>The Hello World Test Case</b></p>
+           		          
+<p> 			To demonstrate the use of IeUnit let us assume that we have a simple
+     HTML document <tt>c:\temp\HelloWorld.html</tt> with the following source:</p>
+           		          
+<blockquote> 			                              
+  <pre>&lt;html&gt;<br>&lt;body&gt;<br>&nbsp;&nbsp;&nbsp; &lt;h2&gt;Hello World!&lt;/h2&gt;<br>&lt;/body&gt;<br>&lt;html&gt;</pre>
+           		</blockquote>
+           		          
+<p>Assume we want to create a script to test the following two features: 
+   			<br>
+           		</p>
+           		          
+<ul>
+           			<li> 			The page contains the text "Hello World!". 			</li>
+            <li> 				The element type of the text is H1</li>
+           		          
+</ul>
+           		          
+<p>Notice that the complete source code for the Hello World test case is
+located in  			the directory <tt>%IEUNIT_HOME%\samples\HelloWorld</tt>. <br>
+           		</p>
+           		          
+<p>We first open a prompt window by selecting    the Windows menu <tt>Start&gt;Programs&gt;IeUnit&gt;Create 
+ Test</tt>. This prompt window is just a normal command-line prompt window 
+ except it has adjusted some environment variables (like <tt>PATH </tt>and 
+ <tt>IEUNIT_HOME</tt>) to make IeUnit specific commands available. The working 
+ directory for this window  is <tt>%IEUNIT_HOME%\workspace</tt>. From this 
+ working window we can now create a<b> test case </b>script <tt>HelloWorldTest.jst</tt> 
+ with notepad (or any editor we prefer) as follows:</p>
+           		          
+<blockquote> 			                              
+  <pre>1: function HelloWorldTest() {<br>2:&nbsp;&nbsp;&nbsp; assimilate(this, new IeUnit());<br>3:<br>4:&nbsp;&nbsp;&nbsp; this.setUp = function() {<br>5:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.openWindow("c:/temp/HelloWorld.html");<br>6:&nbsp;&nbsp;&nbsp; };</pre>
+           			                              
+  <pre>7: &nbsp;&nbsp; this.tearDown = function() {<br>8:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.closeWindow();<br>9:&nbsp;&nbsp; };</pre>
+           			                              
+  <pre>10:&nbsp;&nbsp; this.testCheckText = function() {<br>11:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.assertPageHasText("Hello World!");<br>12:&nbsp;&nbsp; };</pre>
+           			                              
+  <pre>13:&nbsp;&nbsp; this.testCheckStyle = function() {<br>14:    &nbsp;&nbsp; this.assertEquals("H1", this.findByText("Hello").tagName);<br>15:&nbsp;&nbsp; };<br>16: }</pre>
+           		</blockquote>
+           		          
+<p>The above code is pure JavaScript code except that it uses some special 
+    functions/classes made available by IeUnit framework. IeUnit uses the 
+&nbsp;name of the first function in a <tt>.jst </tt>file as the test case 
+name, e.g. HelloWorld in above example. The test case name doesn't have to 
+match the file name.&nbsp; The above test script can be executed as follows:</p>
+           		          
+<blockquote> 			                              
+  <pre>C:\Program Files\IeUnit\workspace&gt;StartTest.bat HelloWorldTest<br><br>Running case HelloWorldTest ...<br>RptTest: testCheckText: OK<br>RptTest: testCheckStyle: Failed: assertEquals failed. Expected: H1, got: H2<br>RptCase: HelloWorldTest: successes: 1, failures: 1<br>RptSuite: Successes: 1    Failures: 1    Time: 3.766sec<br> 		</pre>
+           			     			     			     			   </blockquote>
+           		          
+<p>The above test output says that we have run a test case named <tt>HelloWorldTest
+      			</tt>with two tests named <tt>testCheckText </tt>and <tt>testCheckStyle.
+   </tt>The second test has failed because of the mismatch of element type. 
+ The  whole test  suite has  			completed in 3.766 seconds.</p>
+           		          
+<p><b>More about the Test Script</b></p>
+           		          
+<p> 			Now let us take a closer look at the <tt>HellowWorldTest.jst</tt> script.
+&nbsp;The first  			line, as mentioned above, &nbsp;declares a JavaScript 
+    function whose name is used as the test case name. According JavaScript 
+  specification  a function also defines a class which can be instanciated 
+ with the <tt>new </tt>operator. For instance, the statement <tt>new HellowWorldTest() 
+  </tt>will construct an object of the class <tt>HellowWorldTest.</tt> Line 
+  2 to 15 in fact describe how to construct an object of &nbsp;this class.<br>
+         </p>
+                 
+<p>At line 2 the new <tt>HellowWorldTest</tt> object assimilates another objects
+of &nbsp;class  			<tt>IeUnit</tt>.  This statement makes many IeUnit specific
+functions and properties (e.g.  <tt>openWindow(), assertEquals()</tt>) available
+for the new object. The concept assimilation is similar  			to the inheritance
+concept of the conventional  object oriented programming. But  			assimilation
+works on the object level instead  of class level. We will discuss about
+this in details latter.<br>
+           		</p>
+           		          
+<p>Lines 4 to 6 defines the <b>setup fixture</b> for each test in this test 
+    case. Following  			the convention of xUnit framework the <tt>setUp </tt>method 
+    is called before running  			each test in this test case. &nbsp;In our
+  <tt>setUp</tt>  method we just start the  			Internet Explorer browser
+and   open the <tt>HelloWorld.html</tt>  page.</p>
+           		          
+<p>Lines 7 to 9 define the tear-down<b> fixture </b>that cleans each test 
+ in this test case.   In  our case the <tt>tearDown</tt> method  just closes 
+ the browser.<br>
+           		</p>
+           		          
+<p>Lines 10 to 15 define two tests for this test case class. By the convention
+     of  			IeUnit all methods whose names start with the prefix <tt>test
+</tt>are    considered  			<b>tests</b> of the test case. The first test
+checks the  text  of the page whereas the  			second checks that the text
+"Hello"   is located within a H1 HTML  			element.<br>
+           		</p>
+           		          
+<p><b>Test Suites, Test Cases and Tests</b></p>
+           		          
+<p>Test suite, test case, and test are three main concepts of the xUnit test
+      			framework. IeUnit framework made some simplification to these concepts. 
+     			The reason for the simplification is mainly for the sake of simplicity 
+     			itself.&nbsp;</p>
+           		                   		          
+<p> 			These three concepts are realized in IeUnit as follows: a test case
+     is realized by a JavaScript file with the file extension <tt>.jst </tt>and
+  the  file name is used as the test case name. A <b>test suite</b>  			is
+ realized  by a directory that contains one or more test case scripts. A
+ 			test is  realized by a method of a test case class whose name starts
+with the  			prefix  <tt>test</tt>. 			<br>
+           		<br>
+ &nbsp;</p>
+           		          
+<table class="libnavb" width="95%">
+            <tbody>
+              <tr>
+                <td width="33%"><a href="UserGuide.html">User guide</a></td>
+                <td width="33%" align="center">&nbsp;</td>
+                <td width="33%" align="right"><a
+ href="TestFramework.html">The   Test   Framework</a></td>
+              </tr>
+                                       
+  </tbody>          
+</table>
+           		 <br>
+           <br>
+        <br>
+       <br>
+      <br>
+     <br>
+    <br>
+   <br>
+  <br>
+ <br>
+</body>
+</html>

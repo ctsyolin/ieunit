@@ -1,0 +1,26 @@
+function TextAreaTest() {
+    assimilate(this, new IeUnit());
+    this.setUp = function() {
+        openLocalFile("TextAreaTest.html");
+    };
+
+    this.tearDown = function() {
+        _.closeWindow();
+    };
+
+    this.testCheckValues = function(){
+        _.assertEquals("First TextArea", _.findTextArea(0).value);
+        _.assertEquals("Second TextArea", _.findTextArea(1).value);
+        _.assertEquals("Third TextArea",  _.findTextArea("textArea3").value);
+    };
+
+    this.testSetValues = function(){
+        _.setTextArea(0, "One");
+        _.setTextArea(1, "Two");
+        _.setTextArea("textArea3", "Three");
+
+        _.assertEquals("One", _.findTextArea(0).value);
+        _.assertEquals("Two", _.findTextArea(1).value);
+        _.assertEquals("Three",  _.findTextArea("textArea3").value);
+    };
+}

@@ -1,0 +1,65 @@
+// Description: this script runs an endless loop to
+//              clean up various kinds of popup windows.
+//
+var testName = "myname";     // user name to pass basic HTTP authentication window.
+var testPwd  = "mypassword"; // password for HTTP authentication.
+var testHost = "192.168.0.111";
+var popupWin = null;
+
+function WaitForPopup(winTitle) {
+    popupWin = _.waitForWindow(winTitle, 200);
+    if (popupWin != null) {
+        _.sleep(200);
+        return true;
+    } else {
+        return false;
+    }
+}
+
+while (true) {
+  try {
+    if (WaitForPopup("Connect to " + testHost)) {
+        _.findTextBox(popupWin, 1).text = testName;
+        _.findTextBox(popupWin, 2).text = testPwd;
+        _.findWinButton(popupWin, "OK").Click();
+        _.log("authenticated");
+    }
+
+    if (WaitForPopup("Security Alert")) {
+        _.findWinButton(popupWin, "Yes").Click();
+        _.log("entered in to a secure site");
+    }
+
+    if (WaitForPopup("File Download")) {
+        _.findWinButton(popupWin, "Cancel").Click();
+        _.log("Canceled a File Download window");
+    }
+
+    if (WaitForPopup("Print")) {
+        _.findWinButton(popupWin, "Cancel").Click();
+        _.log("Canceled a print window");
+    }
+
+    if (WaitForPopup("Security Information")) {
+        _.findWinButton(popupWin, "Yes").Click();
+        _.log("Cleaned a Security Information window");
+    }
+
+    if (WaitForPopup("Microsoft Internet Explorer")) {
+        var b = _.findWinButton(popupWin, "OK");
+        if ( b != null ) {
+            b.Click();
+            _.log("Closed an IE popuu window");
+        }
+    }
+    if (WaitForPopup("Updates")) {
+        var b = _.findWinButton(popupWin, "Cancel");
+        if ( b != null ) {
+            b.Click();
+            _.log("Closed a updates popuu window");
+        }
+    }
+  } catch(ex) {
+    _.log("Exception: " + ex.description);
+  }
+}

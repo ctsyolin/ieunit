@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>IeUnit - Extending IeUnit</title>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<table class="libnavb" id="Table1" width="95%">
+  <tbody>
+    <tr>
+      <td width="33%"><a href="ExtendingIeUnit.html">Extending IeUnit</a></td>
+      <td align="center" width="33%"><a href="UserGuide.html">User guide</a></td>
+      <td align="right" width="33%"><a href="ApiDoc/files.html">The
+Framework API</a></td>
+    </tr>
+  </tbody>
+</table>
+<h1 align="center">IeUnit</h1>
+<h2>Frequently&nbsp;Asked Questions</h2>
+<b><br>
+Q1: How do I debug an IeUnit script?</b><br>
+<br>
+The best way to debug a test script is using the <a
+ href="http://msdn.microsoft.com/downloads/default.asp?url=/downloads/sample.asp?url=/msdn-files/027/001/731/msdncompositedoc.xml"
+ target="_top">Microsoft Windows Script Debugger</a>. After installed
+the debugger you can start a test script under the debugger with the
+following command:<br>
+<br>
+<tt>&nbsp; &nbsp;cscript /X /D %IEUNIT_HOME%/IeTextRunner.wsf -d -run
+yourTestScript.jst<br>
+<br>
+</tt>You can also launch the debugger by opening an IeUnit workspace
+prompt (through the Windows menu <tt>Start&gt;Programs&gt;IeUnit&gt;Create
+Tests</tt>) then issue the command <tt>DebugTest yourTestScript.jst.</tt><br>
+<br>
+The simplest way to launch the debugger is through the Windows Explorer
+by right-mous clicking on the script file then select the <tt>Debug
+Script</tt> menu item.<br>
+<br>
+After launched the script debugger will first stop at the first
+statement
+of <tt>IeTextRunner.wsf</tt>. Then, if you click the "Continue" button
+of the debugger, it will stop at a block of code as
+follows:<br>
+<br>
+<tt>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if ( _isDebugging )
+debugger;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+this.setUp();&nbsp;&nbsp;&nbsp;&nbsp; // setup the test.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this[testName](); // invoke
+the test.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.tearDown();&nbsp; //
+tear down the test.<br>
+<br>
+</tt>At this place you can step into the <tt>setUp</tt> function of
+test function, the test
+function itself or its <tt>tearDown()</tt> function. You can then step
+through your code and investigate values of
+objects and properties. If you want to quickly jump into your test
+script you can set a break-point by adding a "<tt>debugger</tt>"
+statement in to your script, for example, as follows:<br>
+&nbsp; &nbsp; <br>
+<tt>&nbsp; &nbsp; this.testHelloWorld = function() {<br>
+&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;debugger;<br>
+&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; this.assertPageHasText("Hello");<br>
+&nbsp;&nbsp; &nbsp;}<br>
+</tt><br>
+Notice that the above method doesn't help you to locate syntax error in
+scripts. To locate syntax errors you can use techniques like comment-in
+and comment-out parts of your &nbsp;test scripts.<br>
+<br>
+In cases that your code has many deeply nested function calls you
+can put a try-and-catch block around your code to catch and print out
+stack information like in the following example:<br>
+<br>
+<tt>&nbsp;&nbsp;&nbsp; this.testTestCode = function() &nbsp;{<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; try {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;test
+code...&gt;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; } catch (ex) {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+printStackTrace();<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; }<br>
+</tt><br>
+<br>
+<p><b>Q2: How do I handle various popup windows?<br>
+</b></p>
+<p>When using a web application the browser often uses popup windows to
+display warning messages or prompt for extra user &nbsp;inputs. Those
+popup windows are in most cases native OS windows, so that we cannot
+drive those windows with DHTML APIs. &nbsp;IeUnit provides various
+support to handle those popup windows. The following is a list of cases
+and methods to handle those cases.<br>
+</p>
+<ul>
+  <li><b>Alert and confirmation popup window: </b>When you click on
+buttons on some web pages the browser sometimes displays a message to
+ask for confirmation. Such popup window uses the <tt>confirm()</tt>
+&nbsp;or <i>&nbsp;</i><tt>alert()</tt> method to display the message.
+Without special code those popup windows will block normal execution of
+an IeUnit test. In order to pass through these popup windows you can
+just suppress the popup message as described &nbsp;in following test
+case:<br>
+  </li>
+</ul>
+<blockquote>
+  <p><tt>&nbsp;&nbsp; this.testClickButtonWithOK = function() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+this.doc.parentWindow.confirm = function() { return true; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+this.clickButton("submit");&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // Validate the response
+for "OK" confirmation. &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; this.assertEquals("OK",
+this.doc.all("response".innerText);<br>
+&nbsp; &nbsp;};<br>
+  </tt></p>
+</blockquote>
+<blockquote>
+  <p>The first statement in above example overrides the <tt>confirm() </tt>method,
+so that the popup window doesn't come up at all. The test case&nbsp;<tt>SupressPopupWindow.jst</tt>
+of the test suite of IeUnit demonstrates this technique.</p>
+</blockquote>
+<ul>
+  <li><b>HTTP authentication</b>: When we navigate to a site that
+requires HTTP authentication the browser will open a window to prompt
+for user name and password. To login into those site programmatically
+we can use the
+COM object <tt>Win32Dom</tt> that provides access to normal windows on
+the desktop. &nbsp;The <tt>Win32Dom </tt>object is automatically
+loaded during
+the start of an IeUnit test. In the test script we just need to call
+the
+method <tt>this.openWindowAsUser() </tt>to login automatically. The
+supplied test case <tt>WebLoginTest.jst</tt> shows an example for this
+method.<br>
+    <br>
+  </li>
+  <li><b>Security alert messages</b>: When, for instance, a site is
+using secured HTTP protocol but the site's certificate has not been
+accepted
+by the browser, the browser will popup a message to warn the user the
+situation. Again to pass this kind of popup window we can use the <tt>Win32Dom
+    </tt>object to access the non-HTML window. The test case <tt>SkipSecurityAlert.jst
+    </tt>shows an example to deal with this kind of task.</li>
+</ul>
+<ul>
+  <li><b>Printing</b>:&nbsp; <tt>Win32Dom </tt>can also be used
+&nbsp;to drive the OS printer panel. &nbsp;The smart bookmark script <tt>contrib/PrintPage.sbk
+    </tt>demonstrates how to automate such a task. &nbsp;Notice that
+this script is not included in the installation package, you have to
+download it from IeUnit CVS page.<br>
+    <br>
+  </li>
+  <li><b>File Uploading</b>: The test case <tt>contrib/UploadFile.jst </tt>demonstrates
+how to use <tt>Win32Dom </tt>to automate uploading
+a local file to a web server.<br>
+  </li>
+</ul>
+<ul>
+  <li><b>Modal dialog windows:</b> Some web sites use modal dialogs
+to allow complex client side data editing. The modal dialog is
+implemented in HTML. &nbsp;The test case<tt> ModalDialogTest.jst </tt>demonstrates
+a
+simple case with modal dialogs. Basically, this test case launches sbk
+script
+before opening the modal dialog. The sbk script waits for the modal
+dialog
+window, then attach to it and enters test data into the modal dialog
+window,
+then click on the submit submit button.&nbsp;</li>
+</ul>
+<p><b>Q3: How do I do a google search with a single click?<br>
+</b></p>
+<p>You can use the smart bookmark feature of IeUnit to automate this
+kind of work. Put the following code into a sbk script file, say <tt>googleIeUnit.sbk</tt>:
+<br>
+</p>
+<p><tt>&nbsp;&nbsp;&nbsp; this.openWindow("http://www.google.com");<br>
+&nbsp;&nbsp;&nbsp; this.setField(0, "web testing tool IeUnit");<br>
+&nbsp;&nbsp;&nbsp; this.clickButton("Google Search");<br>
+</tt><br>
+Then create a desktop shortcut to this file, then click on the shortcut
+icon. <br>
+</p>
+<p><b>Q4: How do I run all test cases within a directory?<br>
+</b></p>
+<p>Open the IeUnit prompt window through the Windows start menu <tt>Start&gt;Programs&gt;IeUnit&gt;Create
+Tests. </tt>Then change directory to your test case directory and
+issue the command "<tt>StartTest.bat" </tt>without any option. <br>
+</p>
+<p>Alternately you can create a batch file, say <tt>RunAllTests.bat</tt>,
+in your test case directory with the following content:<br>
+</p>
+<p>&nbsp;&nbsp;&nbsp; <tt>@cscript/nologo
+"%IEUNIT_HOME%lib\IeTextRunner.wsf" -run<br>
+&nbsp; @pause<br>
+<br>
+</tt></p>
+<p>Then open the windows explorer and click the batch file.<br>
+</p>
+<ol>
+</ol>
+<table class="libnavb" width="95%">
+  <tbody>
+    <tr>
+      <td width="33%"><a href="ExtendingIeUnit.html">Extending IeUnit</a></td>
+      <td align="center" width="33%"><a href="UserGuide.html">User guide</a></td>
+      <td align="right" width="33%"><a href="ApiDoc/files.html">The
+Framework API</a></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>

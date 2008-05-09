@@ -1,0 +1,11 @@
+button,input,form,body,td,span,font,b,STRONG  {
+    border-style:solid;
+    border-color:gray;
+    border-width:1;
+    margin:1;
+}
+
+button 
+{
+    border-width: 1;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>IeUnit - Extending IeUnit</title>
+                         		 		                  
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+       		                  
+  <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+  <body>
+       		      
+<table class="libnavb" width="95%" id="Table1">
+        <tbody>
+          <tr>
+            <td width="33%"><a href="TestFramework.html">The Test Framework</a></td>
+            <td width="33%" align="center"><a href="UserGuide.html">User
+guide</a></td>
+            <td width="33%" align="right"><a href="FAQ.html">Frequently Asked
+ Questions</a></td>
+          </tr>
+                       
+  </tbody>      
+</table>
+       		 		      
+<h1 align="center">IeUnit</h1>
+      		    		      
+<h2>Extending IeUnit</h2>
+ <br>
+ JavaScript has some very powerful features like dynamic binding, polymorphism, 
+etc. On the other side, since JavaScript is originally designed for in-browser 
+use it suffers some limitations. One of the major problem is the lack of support
+to link multiple JavaScript sources to a single application. The Microsoft
+JavaScript engine provides some means to load extra &nbsp;JavaScript files
+declared statically with special XML syntax. That support is however not
+flexible enough &nbsp;to offer a simple way to extend IeUnit framework.<br>
+ <br>
+ To overcome the mentioned problem IeUnit uses extensively the function <tt>eval()
+</tt>to implement a kind of dynamic loading and linking infrastructure. That
+is, when started IeUnit searches predefined directory list for libraries
+and test scripts, and then load them with the <tt>eval() </tt>function.<tt></tt> 
+&nbsp;Another major feature of IeUnit to simplify extension is the assimilation 
+mechanism which allows object oriented extension as described in "The Test 
+Framework" chapter.<br>
+ <br>
+ In view of above characteristics IeUnit provides basically two different 
+ways to implement extensions. Firstly, we can implement extension as stand-alone, 
+general purpose functions and store them in a separate directory. Then add 
+this directory to the <tt>-I</tt> option &nbsp;or the &nbsp;_<tt>libPath</tt> 
+variable in <tt>Config.wjs. </tt>Those functions can be then called in any 
+of our test scripts. &nbsp;Notice that the default installation of IeUnit
+includes <tt>%IEUNIT_HOME%\local </tt>into the library path<tt>. </tt>Thus,
+in simple cases, we can just copy our extension JavaScript files into this
+directory. <br>
+ &nbsp; &nbsp;<br>
+       		     The second way to extend IeUnit is implementing extensions
+as class functions. We store those JavaScript files in a directory of the
+library path just like we did for the general purpose functions described
+in previous section. The methods implemented by those class functions, however,
+are not automatically available to test scripts. Any test case wanting to
+use methods of those classes need to call the function <tt>assimilate() </tt>in
+its constructor explicitly. &nbsp;Notice that a major part of IeUnit framework
+is exposed through the three class functions <tt>IeDebug</tt>, <tt>IeDhtml</tt>
+and <tt>IeUnit. </tt><br>
+<br>
+ The second extension method requires somewhat more codes, but it generally
+results in cleaner code for large projects.<br>
+ 
+<ol>
+       		      
+</ol>
+       		       		      
+<table class="libnavb" width="95%">
+        <tbody>
+          <tr>
+            <td width="33%"><a href="TestFramework.html">The Test Framework</a></td>
+            <td width="33%" align="center"><a href="UserGuide.html">User
+guide</a></td>
+            <td width="33%" align="right"><a href="FAQ.html">Frequently Asked
+ Questions</a></td>
+          </tr>
+                       
+  </tbody>      
+</table>
+       		 <br>
+        <br>
+   <br>
+  <br>
+ <br>
+</body>
+</html>

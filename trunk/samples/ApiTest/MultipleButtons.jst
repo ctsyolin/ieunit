@@ -1,0 +1,34 @@
+function MultipleButtons() {
+    assimilate(this, new IeUnit());
+
+    this.setUp = function() {
+        openLocalFile("MultipleButtons.html");
+    };
+
+    this.tearDown = function() {
+        this.closeWindow();
+   };
+
+   this.testClickButtonItems = function() {
+        this.clickButton("Button");
+        this.assertEquals("buttonA", this.doc.all("response").innerText);
+        this.clickButton("Button", 0);
+        this.assertEquals("buttonA", this.doc.all("response").innerText);
+
+        this.clickButton("Button", 1);
+        this.assertEquals("buttonB", this.doc.all("response").innerText);
+
+        this.clickButton("Button", 2);
+        this.assertEquals("buttonC", this.doc.all("response").innerText);
+
+        this.clickButton("Button", 3);
+        this.assertEquals("buttonD", this.doc.all("response").innerText);
+
+        this.clickButton("Button", 4);
+        this.assertEquals("buttonE", this.doc.all("response").innerText);
+
+        this.clickButton("Button", 5);
+        this.assertEquals("buttonF", this.doc.all("response").innerText);
+   };
+}
+

@@ -1,0 +1,2 @@
+this.openWindow("InputPage.html");
+this.clickLink("Goto TestPage");

@@ -1,0 +1,21 @@
+function WebLoginTest() {
+    assimilate(this, new IeUnit());
+
+
+    this.testLogin = function() {
+        var url = "http://ieunit.sourceforge.net/samples/LoginDemo/Helloworld.html";
+        this.openWindowAsUser(url, "ieunit", "DemoPwd");
+        this.assertPageHasText("Hello World!");
+        this.closeWindow();
+    };
+
+    this.testLoginWithPort = function() {
+        this.sleep(500); // to let the previous test finished
+        var url = "http://ieunit.sourceforge.net:80/samples/LoginDemo/Helloworld.html";
+        this.openWindowAsUser(url, "ieunit", "DemoPwd");
+        this.assertPageHasText("Hello World!");
+        this.closeWindow();
+    };
+
+}
+

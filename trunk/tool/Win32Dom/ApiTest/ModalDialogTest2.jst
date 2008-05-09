@@ -1,0 +1,19 @@
+//
+// The same as the ModalDialogTest() except we use the spanSbkProcess()
+// to launch the sbk process.
+//
+function ModalDialogTest2() {
+    assimilate(this, new IeUnit());
+
+    this.testModalDialog = function() {
+        _.spanSbkProcess('\
+            _.waitForModalDialog("Modal Popup Window");\
+            _.setField("yourName", "Alex");\
+            _.clickButton("submit");');
+
+        this.openWindow(_.getCaseDir() + "/ModalDialog.html");
+        this.clickButton("Open Modal Dialog");
+        this.assertPageHasText("Hi, Alex");
+        this.closeWindow();
+    };
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Multiple Names and Ids</title>
+</head>
+<body>
+Normally element id and names are unique, but DHTML model doesn't
+enforce this and some pages actually have multiple element with the
+same id or names.  In case of non-unqueue id or name QuickFocus
+only make index based suggestions.
+
+<form>
+<b id="UniqueId">Unique Id</b><br/>
+<input name="UniqueName" type="text" value="Unique Name"/><br/><br/>
+<b id="IdA">IdA1</b><br/>
+<b id="IdA">IdA2</b><br/>
+<input name="NameA" type="text" value="NameA1"/><br/>
+<input name="NameA" type="text" value="NameA2"/><br/>
+
+</form>
+
+</body>
+</html>

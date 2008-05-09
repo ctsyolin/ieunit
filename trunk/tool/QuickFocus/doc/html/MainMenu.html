@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="QuickFocus.css" type="text/css">
+    </head>
+    <body>
+        <h1 class="Topic">QuickFocus Main Menu</h1>
+        The main menu provides menu driven user interface to most features of the 
+        application. Whereas most features can be accessed more quickly through another 
+        means like shortcut keys, the menu provides an easy way to explorer the main 
+        features of QuickFocus. The menu items are explained as follows:<br>
+        <p><b>File &gt; Open File...</b></p>
+        <p>
+            Load a HTML file from the local file system. You can also load a web link file 
+            (*.url) through this item.<br>
+        </p>
+        <p><b>File &gt; Load Script... </b>
+        </p>
+        <p>Load an IeUnit script from the local file system into the code snippet window.<br>
+        </p>
+        <p><b>File &gt; Save Script</b>...
+        </p>
+        <p>Save the code in the snippet window into the script file where the script code 
+            is originally loaded.<br>
+        </p>
+        <p><b>File &gt; Save Script As... </b>
+        </p>
+        <p>Save the code in the snippet window into a new script file.
+        </p>
+        <ul>
+        </ul>
+        <p><b>File &gt; Exit </b>
+        </p>
+        <p>Close the current QuickFocus session. Most configuration settings like operation 
+            mode, last opened web page, etc. will be saved into the application 
+            configuration file <tt>QuickFocus.xml </tt>located in the same directory where <tt>QuickFocus.exe</tt>
+            is located.<br>
+        </p>
+        <p><b>Favorites</b></p>
+        <p>Provide quick access to the favorites sites configured for Internet Explorer.<br>
+        </p>
+        <p><b>Tools &gt; Logger Window... </b>
+        </p>
+        <p>Open the application logger window which logs various inspection and code 
+            snippets depending on current application settings. You can open and close the 
+            logger window at any time.
+        </p>
+        <p><b>Tools &gt; Toggle Mode</b></p>
+        <p>Toggle the operation mode of the application between attached and detached mode. 
+            In attached mode, you can inspect the loaded web page. In detached mode, you 
+            can use the QuickFocus like a web browser to navigate to any interested web 
+            pages.<br>
+        </p>
+        <p><b> Tools &gt; Debug Snippet...</b></p>
+        <p>Launch a JavaScript debugger to debug the code in the snippet window. In order 
+            to use this feature a script debugger must be installed. The <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=2f465be0-94fd-4569-b3c4-dffdf19ccd99&amp;DisplayLang=en">
+                Microsoft Script Debugger</a> can, for instance, &nbsp;be downloaded for 
+            free. If you want the debugger to stop at a particular line in the code snippet 
+            window you can insert the statement "debugger;" at that line, then let the 
+            debugger run. This menu item offers a convenient way to debug any IeUnit test 
+            case or smart bookmark.<br>
+        </p>
+        <p><b>Tools &gt; Options...</b></p>
+        <p>This menu item provides interface to change the following application options:<br>
+        </p>
+        <table cellpadding="0" cellspacing="0" border="0" width="90%">
+            <tbody>
+                <tr>
+                    <td valign="top">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+                    </td>
+                    <td valign="top"><b>Max History Length:</b> <blockquote>The maximum history length in 
+                            the URL poll-down list.
+                            <br>
+                        </blockquote>
+                        <p><b>Focus Frame Width:</b></p>
+                        <blockquote>The line width of the focus and select frame in the page window.<br>
+                        </blockquote><b>Max Key Text Length</b>:<br>
+                        <blockquote>The maximum length of key text. When generating assert-statements 
+                            QuickFocus normally only extract characteristics word up to length specified by 
+                            this option.<br>
+                        </blockquote>
+                        <p><b>Clear snippet window automatically:<br>
+                            </b>
+                        </p>
+                        <blockquote>If this flag is checked QuickFocus will automatically clear the code 
+                            snippet window before generating new code. If this flag is not checked, 
+                            QuickFocus will insert new code at the position of the current cursor in the 
+                            snippet window.<br>
+                        </blockquote><b>Comment out alternative statements:<br>
+                        </b><blockquote>
+                            <p>QuickFocus often generates multiple suggestions to validate or control the 
+                                selected element. If this flag is checked, all alternative code lines will have 
+                                comment prefix "//". &nbsp;You can choose the alternative suggestion by 
+                                removing the comment prefix.<br>
+                            </p>
+                        </blockquote>
+                        <p><b>Run QuickFocus in simulation mode:</b><br>
+                        </p>
+                        <blockquote>If this flag is checked QuickFocus automatically executes the script in 
+                            the code snippet window when you select an element in the page window. The 
+                            simulation mode should only be used with "Clear snippet window automatically" 
+                            flag unchecked.<br>
+                        </blockquote>
+                        <p></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p><br>
+            <b>Help &gt; Online Help...<br>
+            </b>
+        </p>
+        <p>Open this document.<br>
+        </p>
+        <p><b>Help &gt; IeUnit API Help</b>...<br>
+        </p>
+        <p>Open the IeUnit API document.<br>
+        </p>
+        <p><b>Help &gt; About QuickFocus...<br>
+            </b>
+        </p>
+        <p>Show the version information and the license of the running QuickFocus program.<br>
+        </p>
+        <br>
+        <br>
+        <br>
+    </body>
+</html>

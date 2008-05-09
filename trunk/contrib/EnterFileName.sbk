@@ -1,0 +1,8 @@
+//
+// This script is called by UploadFile.jst asynchroneously
+// to enter a file name to the upload-file window.
+//
+var fpath = " " + WScript.Arguments(1);
+var popupWin = _.waitForWindow("Choose file", 30000);
+_.findWindow(popupWin, "Edit").sendText(fpath);
+_.findWinButton(popupWin, "&Open").click();

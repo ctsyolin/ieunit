@@ -1,0 +1,19 @@
+// Testing the clickLinkRange method
+//
+function clickLinkRangeTest() {
+    assimilate(this, new IeUnit());
+
+    this.setUpCase = function() {
+        openLocalFile("navPage1.html");
+    };
+
+    this.tearDownCase = function() {
+        this.closeWindow();
+    };
+
+    this.testClickLinkRange = function() {
+        this.clickLinkRange("Page 2", "Page 3", "Page 4");
+        this.assertNotNull(this.findByText("No more links"));
+    };
+}
+

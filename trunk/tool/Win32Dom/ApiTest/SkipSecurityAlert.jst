@@ -1,0 +1,14 @@
+function SkipSecurityAlert() {
+    assimilate(this, new IeUnit());
+
+    //
+    // This test shows how to pass the security alert window
+    // when opening a https URL without accepted credentials.
+    //
+    this.testGoogleHttps = function() {
+        this.skipAlert("https://64.233.167.99");
+        this.assertPageHasText("Advertising Programs");        
+        this.closeWindow();
+    };
+}
+

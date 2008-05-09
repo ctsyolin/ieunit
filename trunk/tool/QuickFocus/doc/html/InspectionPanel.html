@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="QuickFocus.css" type="text/css">
+    </head>
+    <body>
+        <h1 class="Topic">The inspection panel</h1>
+        The inspection panel provides user interface to generate, edit and execute 
+        IeUnit scripts. The inspection panel has the following components:<br>
+        <p><b>The code snippet window</b></p>
+        <p>QuickFocus issues code snippet into this window. You can execute the code in 
+            this window by clicking on the "Run Snippet" button in the inspection panel. 
+            You can execute part of the code by marking part of the code snippet then 
+            clicking on the "Run Snippet" button. When you manually changed the content in 
+            this window you can undo the changes by pressing the Ctrl-Z key. This code 
+            snippet window has a&nbsp;context menu that allows quick editing and execution 
+            of selected code snippet.
+        </p>
+        <p><b>Assertion checkbox<br>
+            </b>
+        </p>
+        <p>If this checkbox is checked QuickFocus will generate assertion based validating 
+            code snippet when ever an element in the page window gets selected.<br>
+        </p>
+        <p><b>Action checkbox<br>
+            </b>
+        </p>
+        <p>If this checkbox is checked QuickFocus will generate action code snippet (e.g. <tt>this.clickButton()</tt>) 
+            for the selected element when ever an element in the page window gets selected.<br>
+        </p>
+        <p><b>Alternative checkbox<br>
+            </b>
+        </p>
+        <p>When this checkbox is checked QuickFocus will generate alternative suggestions 
+            to validate or control the selected element.<br>
+        </p>
+        <p><b>SBK Submit button</b><br>
+        </p>
+        <p>Generate smart bookmark code snippet using the currently selected element&nbsp; 
+            (which is normally a button element)&nbsp;as submit button. QuickFocus will 
+            generate a statement for each input element on the page. You usually have to 
+            adjust input values for the input elements directly in the snippet window. 
+            If&nbsp; no element has been selected currently this task will only generate 
+            no-submitting statements (e.g. no clickButton statements). You can then click 
+            on a submit button to let QuickFocus to&nbsp;complete the SBK submit script.
+        </p>
+        <p><b>Submit button<br>
+            </b>
+        </p>
+        <p>Generate submit code snippet. This button works similar as the SBK submit button 
+            except that this button doesn't issue the first <tt>this.openWindow()</tt>statement. 
+            When executing the code snippet via the "Run Snippet" button QuickFocus won't 
+            open a new Internet Explorer window, but execute the code directly against the 
+            page currently loaded in the page window.<br>
+        </p>
+        <p><b>Test case button<br>
+            </b>
+        </p>
+        <p>Generate an IeUnit test case template for the currently loaded URL. You usually 
+            need to insert more statements into the code snippet to perform real testing 
+            tasks. You can use the "Submit" button to insert testing code into the 
+            template.<br>
+        </p>
+        <p><b>Run Snippet button<br>
+            </b>
+        </p>
+        <p>Execute the code snippet in the snippet window. If you have marked some code 
+            segment in the snippet window QuickFoucs will only execute the marked code. 
+            Most code snippets start with a <tt>this.openWindow() </tt>statement, so that 
+            an new Internet Explorer window will be opened when executing those code 
+            snippet. If the code or the marked code doesn't contain a <tt>this.openWindow() </tt>
+            statement QuickFocus will insert a <tt>this.seekAndSetWindow() </tt>statement<tt>, </tt>
+            so that the code will be executed against the page currently loaded into the 
+            page window.
+            <br>
+        </p>
+        <p>The test result will be&nbsp;reported&nbsp;through status line or 
+            separate&nbsp;message window.</p>
+        <p><b>Clear Snippet button<br>
+            </b>
+        </p>
+        <p>Clear the code in the snippet window.<br>
+        </p>
+        <p><b>Snippet dragging handle</b><br>
+        </p>
+        <p>You can generate a copy of the code snippet currently display in the snippet 
+            window by dragging this handle to the desktop. If the code snippet contains a 
+            JavaScript function definition line (as required by IeUnit test case format) a 
+            file with the extension <tt>".jst"</tt> will be generated. Otherwise, 
+            QuickFocus will generate smart bookmark file with the extension <tt>".sbk".<br>
+            </tt>
+        </p>
+        <p><br>
+        </p>
+        <br>
+        <br>
+    </body>
+</html>

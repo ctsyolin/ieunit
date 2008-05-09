@@ -1,0 +1,14 @@
+//Tested APIs: openWindow(), closeWindow().
+//
+function OpenCloseWindow() {
+    assimilate(this, new IeUnit());
+
+    // the test cases
+    this.testOpenClose = function() {
+        openLocalFile("TestPage.html");
+        this.assertTrue(this.win != null);
+
+        this.closeWindow()
+        this.assertTrue(this.win == null);
+    };
+}

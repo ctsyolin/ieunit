@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Introduction">
+		<param name="Local" value="html/Introduction.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Getting Started">
+		<param name="Local" value="html/GettingStarted.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="References">
+		</OBJECT>	
+	<UL>
+	    <LI><OBJECT type="text/sitemap">
+				<param name="Name" value="The main menu">
+				<param name="Local" value="html/MainMenu.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+	    <LI><OBJECT type="text/sitemap">
+				<param name="Name" value="The page display window">
+				<param name="Local" value="html/PageWindow.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+	    <LI><OBJECT type="text/sitemap">
+				<param name="Name" value="The inspection panel">
+				<param name="Local" value="html/InspectionPanel.html">
+				<param name="ImageNumber" value="11">
+				</OBJECT>
+	</UL>
+	
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Quick Tips">
+		<param name="Local" value="html/QuickTips.html">
+		</OBJECT>
+</UL>
+</BODY></HTML>
