@@ -1,0 +1,9 @@
+#How to Build IeUnit?
+
+System Requirements to build IeUnit:
+ * Visual Studio C#.NET (2003).
+ * Microsoft HTML Help Workshop.
+ * Doxygen version 1.3.9.1 or higher
+ 
+
+Do the following to build IeUnit:
