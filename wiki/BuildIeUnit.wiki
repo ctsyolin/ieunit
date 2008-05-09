@@ -11,6 +11,5 @@ Do the following to build IeUnit:
 {{{
     svn checkout https://ieunit.googlecode.com/svn/trunk/ ieunit --username {your-user-name}
 }}}
-   or 
 * Start Visual Studio C#.NEt and load the soluation IeUnit.sln.
 * In Visual Studio, select the menu build>build solution to the solution. After a short while the install program will be built and stored under the path ieunit/build/IeUnit.msi.
