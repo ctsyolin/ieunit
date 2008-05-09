@@ -1,5 +1,4 @@
-#summary One-sentence summary of this page.
-
+#summary Welcome to !IeUnit Wiki
 = Introduction =
 
 Welcome to the new home of !IeUnit web testing framework.
