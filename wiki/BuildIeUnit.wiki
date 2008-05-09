@@ -1,4 +1,4 @@
-#How to Build IeUnit?
+#Build IeUnit
 
 System Requirements to build IeUnit:
  * Visual Studio C#.NET (2003).
