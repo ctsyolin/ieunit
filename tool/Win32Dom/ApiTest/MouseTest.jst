@@ -1,0 +1,27 @@
+function MouseTest() {
+    assimilate(this, new IeUnit());
+    var notepadCap = "Untitled - Notepad";
+    
+    this.startNotepad = function() {
+        var cmdShell = new ActiveXObject("WScript.Shell");
+        cmdShell.Run("C:\\WINDOWS\\notepad.exe", 1, false);
+        return this.waitForWindow(notepadCap);
+    }
+
+    // using raw Win32 API to drive notepad.
+    this.testMoveUpDown = function() {
+        var win = this.startNotepad();
+        this.assertNotNull(win);
+        this.assertTrue(win.MouseMoveTo(5, -25));
+        this.assertTrue(win.MouseDown("left"));
+        this.assertTrue(win.MouseMoveTo(50, 100));
+        this.assertTrue(win.MouseUp("left"));
+    };
+
+    this.testDoubleClicking = function() {
+        var win = this.startNotepad();
+        // double click the application icon to close notepad.
+        this.assertTrue(win.MouseClick("left", 5, -25));
+        this.assertTrue(win.MouseClick("left", 5, -25));
+    };
+}

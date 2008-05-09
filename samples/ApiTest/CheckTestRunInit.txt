@@ -1,0 +1,16 @@
+// This is a empty test case. The purpose of this is
+// testing the special _TestRunInit() stub that is called
+// before executing all test cases. 
+// This file has the extension .txt to avoid be loaded automatically.
+// The test case TextRunnerTest will change this file's extension to jst
+// during the test.
+//
+function CheckTestRunInit() {
+    // code for the test case ...
+}
+
+// This function will override the one in Config.wjs. This funciton
+// can also be stored in a .js file.
+function _TestRunInit() {
+    log("<<testTestRunInit>>");
+}

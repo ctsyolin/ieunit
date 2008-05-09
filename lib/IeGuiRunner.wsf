@@ -1,0 +1,262 @@
+<package>
+<job id="IeGuiRunner">
+<script language="JavaScript" src="Config.wjs"></script>
+<script language="JavaScript" src="IeRunner.wjs"></script>
+<script language="JavaScript">
+var _dhtml;         // the IeDhtm object to support the GUI test interface.
+var _testTable;     // the DHTML object for the table of tests.
+var _testWin;       // 
+
+/// Log a a message.
+function log(msg) {
+   WScript.Echo(msg);
+}
+
+/// Selected all existing tests.
+function selectAll() {
+    setSelectAll(true);
+}
+/// Unselect all tests.
+function unSelectAll() {
+    setSelectAll(false);
+}
+
+/// Internal function shared by SelectAll() and UnSelectAll().
+function setSelectAll(value) {
+    for(var i=1; i<_testTable.rows.length; i++) {
+        var r = _testTable.rows[i];
+        r.style.display = "block";
+        if ( r.rowType == "test" ) {
+            r.cells[0].firstChild.checked = value;
+        }
+    }
+}
+
+/// Selected just the tests which have failed in previous test.
+function selectFailed() {
+    var testNum = new Array();
+    for(var i=1; i<_testTable.rows.length; i++) {
+        var r = _testTable.rows[i];
+        if ( r.rowType == "testCase" ) {
+            testNum[r.caseName] = 0;
+        } else if ( r.rowType == "test" ) {
+            if ( r.runStatus == 1 ) {
+                r.cells[0].firstChild.checked = true;
+                testNum[r.caseName]++;
+            } else {
+                r.cells[0].firstChild.checked = false;
+                r.style.display = "none";
+            }
+        }
+    }
+    // hidden all test cases which no selected tests.
+    for(var i=0; i<_testTable.rows.length; i++) {
+        var r = _testTable.rows[i];
+        if ( (r.rowType == "testCase") && ( testNum[r.caseName]==0 )) {
+            r.style.display = "none";
+        }
+    }
+}
+
+/// Clear the test result information in the test list table.
+function clearResultInfo() {
+    for(var i=1; i<_testTable.rows.length; i++) {
+        var r = _testTable.rows[i];
+        if ( r.cells.length > 1 ) {
+            r.cells[2].innerHTML = " - ";
+            r.cells[3].innerHTML = " - ";
+            r.runStatus = 2;  // 0: success, 1: failure, 2: not run.
+            r.cells[0].firstChild.style.backgroundColor = r.style.backgroundColor;
+            r.cells[0].style.backgroundColor = r.style.backgroundColor;
+        }
+    }
+}
+
+/// Show the result of a test in a given row of the table
+function showTestResult(row, result) {
+    row.cells[2].innerText = (result.duration - result.duration%100)/1000;
+    if ( result.exception == null ) {
+        row.cells[0].firstChild.style.backgroundColor = "lightgreen";
+        row.cells[0].style.backgroundColor = "lightgreen";
+        row.runStatus = 0;
+    } else {
+        row.cells[3].innerHTML = result.exception.description;
+        row.cells[0].firstChild.style.backgroundColor = "red";
+        row.cells[0].style.backgroundColor = "red";
+        row.runStatus = 1;
+    }
+}
+
+/// Run all selected tests.
+function runSelected() {
+    var caseName;
+    var testName;
+    var r;
+    var result;
+    var passedNum = 0;
+    var failedNum  = 0;
+    var totalTime = 0;
+    var caseList = new Array();
+
+    clearResultInfo();
+
+    // extract the test list
+    for(var i=1; i<_testTable.rows.length; i++) {
+        r = _testTable.rows[i];
+        if ( r.rowType == "testCase" ) {
+            // This row is the begin of a new test case. We just record
+            // the test case name;
+            caseName = r.cells[0].innerText.split(/\s+/)[1];
+            caseList[caseName] = new Array();
+        } else if ( (r.rowType == "test") && r.cells[0].firstChild.checked ) {
+            caseList[caseName].push(r);
+        } 
+    }
+
+    for(caseName in caseList) {
+        // the case is empty
+        var c = caseList[caseName];
+        if ( c.length == 0 ) continue;
+
+        try {
+            _ = _currentCase = instanciateCase(caseName);
+            _.setUpCase();
+            for (var j=0; j<c.length; j++) {
+                result    = _.runTest(c[j].testName);
+                if ( result.exception == null ) {
+                    passedNum++;
+                } else {
+                    failedNum++;
+                }
+                totalTime += result.duration; 
+                showTestResult(c[j], result);
+            }
+            _.tearDownCase();
+        } catch(ex) {
+            result.exception = ex;
+            for (var j=0; j<caseList[i].length; j++) {
+                showTestResult(caseList[i][j], result);
+            }
+        }
+    }
+
+    // Report the test statistics.
+    totalTime -= totalTime%100;
+    _dhtml.doc.all("TestResults").innerText = "Passed tests: " + passedNum
+            + ",   Failed tests: " + failedNum
+            + ",   Total time: " + totalTime/1000 + " seconds";
+}
+
+/// Initialize the TestList table.
+function initializeTestList() {
+    var cell, row;
+    
+    // hide the _testWin DIV object to speed-up the rendering.
+    _testWin.style.display = "none";
+
+    for(var cName in _testSelection )  {
+        _ = _currentCase = instanciateCase(cName);
+        row  = _testTable.insertRow();
+        row.caseName = cName;
+        row.rowType = "testCase";
+
+        cell = row.insertCell();
+        cell.colSpan = 4;
+        cell.innerText = "Case: " + cName;
+
+        testList =  _.getAllTests();
+
+        for(var j=0; j<testList.length; j++) {
+            row = _testTable.insertRow();
+            row.rowType = "test";
+            row.caseName = cName;
+            row.testName = testList[j];
+            cell = row.insertCell()
+            cell.align="center";
+            cell.innerHTML="<input type='checkbox' checked/>";
+
+            cell = row.insertCell()
+            cell.innerText=testList[j];
+
+            cell = row.insertCell()
+            cell.align="center"
+            cell.innerText = "-";
+
+            cell = row.insertCell()
+            cell.align="left"
+            cell.innerText = "-";
+        }
+    }
+    _testWin.style.display = "block";
+}
+
+/// Quit the test session.
+function quitSession() {
+    _dhtml.comWin.quit();
+}
+
+//=============================================================
+// Execution starts here.
+//=============================================================
+
+
+// parse the command-line options.
+var args = WScript.Arguments;
+for (var i=0; i<args.length; i++) {
+    switch( args(i) ) {
+    case "-I": 
+        if( (i+1)<args.length ) {
+            _libPath += ";" + args(i+1);
+            i++;
+        }
+        break;
+    }
+}
+_libPath += ";.";
+
+_testSelection = parseDirectories(FindLibDirs());
+
+// Load all JavaScript files in _jsToLoad. 
+// Notice: see comments in corresponding place in IeTextRunner.wsf
+for(var i=0; i<_jsToLoad.length; i++) {
+    fileName = _jsToLoad[i];
+    if (fileName == null) {
+        log("ERROR: Can't find script " + _jsToLoad[i]);
+        continue;
+    }
+
+    var fs = _fso.OpenTextFile(fileName, 1, false, -2);
+    var js = fs.ReadAll();
+    fs.Close();
+    try {
+        eval(js);
+    } catch (e) {
+        log("Failed to load script: " + fileName);
+        throw e;
+    }
+}
+
+
+// Open the runner window and setup the event handle
+_dhtml = new IeDhtml();
+_dhtml.openWindow(getRunnerDir() + "\\IeGuiRunner.html");
+_testTable = _dhtml.doc.all("TestTable");
+_testWin    = _dhtml.doc.all("TestWin");
+initializeTestList();
+
+// Attached the event handlers to the DHTML document.
+_dhtml.doc.all("SelectAll").onclick = selectAll;
+_dhtml.doc.all("UnSelectAll").onclick = unSelectAll;
+_dhtml.doc.all("SelectFailed").onclick = selectFailed;
+_dhtml.doc.all("RunSelected").onclick = runSelected;
+_dhtml.doc.all("QuitSession").onclick = quitSession;
+
+// wait till the runner window is closed
+while ( true ) {
+    if ( _dhtml.doc == null ) break;
+    if ( typeof(_dhtml.doc.readyState) == "unknown" ) break;
+    WScript.Sleep(500);
+}
+</script>
+</job>
+</package>

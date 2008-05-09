@@ -1,0 +1,17 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+    <head>
+        <title>Map and Area Test Page</title>
+    </head>
+    <body>
+        <center>
+            <map name="TestMap">
+                <area id="areaA" SHAPE="RECT" COORDS="22,38,110,126" onclick="document.all.Caption.innerText='Rectangle'">
+                <area id="areaB" SHAPE="Circle" COORDS="205,167,45" onclick="document.all.Caption.innerText='Circle'">
+            </map>
+            <br/><br/>
+            <H2 id="Caption">Map & Area Test</H2>
+            <img id="mapImage" style="border:15px solid darkblue;margin:20px;" src="MapArea.png" usemap="#TestMap">
+        </center>
+    </body>
+</html>

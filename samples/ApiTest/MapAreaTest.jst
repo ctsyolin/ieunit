@@ -1,0 +1,29 @@
+function MapAreaTest() {
+    assimilate(this, new IeUnit());
+    this.setUp = function() {
+        openLocalFile("MapArea.html");
+    };
+    this.tearDown = function() {
+        this.closeWindow();
+    };
+
+    this.testAssertArea = function(){
+        this.assertNotNull(this.findObjById("areaA"));
+        this.assertNotNull(this.findByTag("AREA", 0));
+        this.assertNotNull(this.findObjById("areaB"));
+        this.assertNotNull(this.findByTag("AREA", 1));
+    };
+
+    this.testClickArea = function() {
+        this.clickObjById("areaA");
+        this.assertPageHasText("Rectangle");
+        this.clickObjById("areaB");
+        this.assertPageHasText("Circle");
+
+        this.clickObj(this.findByTag("AREA", 0));
+        this.assertPageHasText("Rectangle");
+        this.clickObj(this.findByTag("AREA", 1));
+        this.assertPageHasText("Circle");
+    }
+
+}

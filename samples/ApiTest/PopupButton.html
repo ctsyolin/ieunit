@@ -1,0 +1,17 @@
+<html>
+<head>
+<script>
+function OnClick() {
+    if ( window.confirm("OK?") ) {
+        document.all("response").innerText = "OK";
+    } else {
+        document.all("response").innerText = "Cancel";
+    }
+}
+</script>
+</head>
+<body>
+    <button onclick="OnClick()" value="Submit">submit</button>
+    <span id="response">???</span>
+</body>
+</html>

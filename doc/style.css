@@ -1,0 +1,237 @@
+BODY
+{
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 0px;
+    BACKGROUND: #fff;
+    PADDING-BOTTOM: 0px;
+    MARGIN: 10px 55px 20px 10px;
+    COLOR: #000;
+    PADDING-TOP: 0px;
+    FONT-FAMILY: palatino, georgia, serif
+}
+DIV
+{
+    FONT-FAMILY: palatino, georgia, serif
+}
+P
+{
+    FONT-FAMILY: palatino, georgia, serif
+}
+TH
+{
+    FONT-FAMILY: palatino, georgia, serif
+}
+TD
+{
+    FONT-FAMILY: palatino, georgia, serif
+}
+LI
+{
+    FONT-FAMILY: palatino, georgia, serif
+}
+DD
+{
+    FONT-FAMILY: palatino, georgia, serif
+}
+DL
+{
+    FONT-FAMILY: palatino, georgia, serif
+}
+DT
+{
+    FONT-FAMILY: palatino, georgia, serif
+}
+DT
+{
+    FONT-WEIGHT: bold
+}
+OL
+{
+    LINE-HEIGHT: 1.5em
+}
+LI
+{
+    LINE-HEIGHT: 1.5em
+}
+DL
+{
+    LINE-HEIGHT: 1.5em
+}
+DT
+{
+    LINE-HEIGHT: 1.5em
+}
+DD
+{
+    LINE-HEIGHT: 1.5em
+}
+.content
+{
+    BORDER-RIGHT: #333 1px dotted;
+    PADDING-RIGHT: 20px;
+    BORDER-TOP: #333 1px dotted;
+    PADDING-LEFT: 20px;
+    PADDING-BOTTOM: 10px;
+    MARGIN: 5% 15%;
+    BORDER-LEFT: #333 1px dotted;
+    PADDING-TOP: 10px;
+    BORDER-BOTTOM: #333 1px dotted
+}
+P
+{
+    MARGIN-TOP: 0px;
+    MARGIN-BOTTOM: 1em;
+    LINE-HEIGHT: 1.5em;
+    PADDING-TOP: 0px
+}
+H1
+{
+    FONT-SIZE: 1.75em
+}
+H2
+{
+    FONT-SIZE: 1.5em
+}
+H3
+{
+    FONT-SIZE: 1.25em
+}
+H4
+{
+    FONT-SIZE: 1em
+}
+H5
+{
+    FONT-SIZE: 1em
+}
+H6
+{
+    FONT-SIZE: 0.8em
+}
+H1
+{
+    MARGIN: 1.25em 0px 0px;
+    FONT-FAMILY: arial, helvetica, sans-serif
+}
+H2
+{
+    MARGIN: 1.25em 0px 0px;
+    FONT-FAMILY: arial, helvetica, sans-serif
+}
+H3
+{
+    MARGIN: 1.25em 0px 0px;
+    FONT-FAMILY: arial, helvetica, sans-serif
+}
+H4
+{
+    MARGIN: 1.25em 0px 0px;
+    FONT-FAMILY: arial, helvetica, sans-serif
+}
+H5
+{
+    MARGIN: 1.25em 0px 0px;
+    FONT-FAMILY: arial, helvetica, sans-serif
+}
+H6
+{
+    MARGIN: 1.25em 0px 0px;
+    FONT-FAMILY: arial, helvetica, sans-serif
+}
+IMG
+{
+    BORDER-RIGHT: 0px;
+    BORDER-TOP: 0px;
+    BORDER-LEFT: 0px;
+    BORDER-BOTTOM: 0px
+}
+.vs0
+{
+    MARGIN-TOP: 0px;
+    PADDING-TOP: 0px
+}
+.first
+{
+    MARGIN-TOP: 0px;
+    PADDING-TOP: 0px
+}
+A
+{
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+A:link
+{
+    COLOR: #f30;
+    BACKGROUND-COLOR: transparent
+}
+A:visited
+{
+    COLOR: #c30;
+    BACKGROUND-COLOR: transparent
+}
+A:active
+{
+    COLOR: #cc0;
+    BACKGROUND-COLOR: transparent
+}
+A:hover
+{
+    COLOR: #f60;
+    BACKGROUND-COLOR: transparent;
+    TEXT-DECORATION: underline
+}
+.navRight
+{
+	TEXT-ALIGN: right;
+	MARGIN-right: 50px;
+}
+.ahem
+{
+    DISPLAY: none
+}
+.small
+{
+    FONT-SIZE: 12px
+}
+CODE
+{
+    BACKGROUND: none transparent scroll repeat 0% 0%;
+    FONT: 12px "andale mono", monaco, courier, "courier new", monospace;
+    COLOR: #06c
+}
+TT
+{
+    BACKGROUND: none transparent scroll repeat 0% 0%;
+    FONT: 12px "andale mono", monaco, courier, "courier new", monospace;
+    COLOR: #06c
+}
+PRE
+{
+    BACKGROUND: none transparent scroll repeat 0% 0%;
+    FONT: 12px "andale mono", monaco, courier, "courier new", monospace;
+    COLOR: #06c
+}
+#footer
+{
+    BORDER-TOP: #333333 1px dotted;
+    MARGIN-TOP: 10px;
+    FONT: 10px geneva, verdana, arial, helvetica, sans-serif;
+    PADDING-TOP: 10px
+}
+.marginalia
+{
+    BORDER-TOP: #333333 1px dotted;
+    MARGIN-TOP: 10px;
+    FONT: 10px geneva, verdana, arial, helvetica, sans-serif;
+    PADDING-TOP: 10px
+}
+.libnavt
+{
+    BORDER-BOTTOM: #fff 1px solid
+}
+.libnavb
+{
+    BORDER-TOP: #ccc 1px solid;
+    BORDER-BOTTOM: #ccc 1px solid
+}

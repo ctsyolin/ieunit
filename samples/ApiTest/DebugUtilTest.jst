@@ -1,0 +1,54 @@
+//Test APIs: printVariable(), printStackTrace().
+
+function DebugUtilTest() {
+    assimilate(this, new IeTestCase());
+
+    this.testPrintStack = function() {
+
+        var stackString;
+        function    B(aB)  { stackString = printStackTrace(true); }
+        function C(aC, bC) { B(3); }
+        C(1, 2);
+
+        this.assertTrue(stackString.indexOf("0: B(3)") == 0);
+        this.assertTrue(stackString.indexOf("1: C(1,2)") > 0);
+    }
+
+    this.testPrintVariable = function() {
+        var intValue   = 123;
+        var strValue   = "abc";
+        var arrayValue = new Array("A", "B", "C");
+        var fctValue   = function(){};
+        var argsValue  = null;
+
+        function tempFct(a, b, c) {
+            argsValue = tempFct.arguments;
+        }
+        tempFct(1, 2, 3);
+
+        this.assertEquals(printVariable(intValue, true),    "number:123");
+        this.assertEquals(printVariable(strValue, true),    "string:abc");
+        this.assertEquals(printVariable(arrayValue, true),  "0: A\n1: B\n2: C\n");
+        this.assertEquals(printVariable(fctValue, true),    "function:function(){}");
+        this.assertEquals(printVariable(argsValue, true),   "(1,2,3)");
+    }
+
+    this.testIeError = function testIeError () {
+        function tempSubFct() {
+            throw new IeError(100, "Exception from tempSubFct()");
+        }
+        function tempFct() {
+            tempSubFct();
+        }
+
+        try {
+            tempFct();
+        } catch(ex) {
+            var trace = ex.stackTrace;
+            this.assertTrue(trace.match(/1: tempSubFct\(\)/));
+            this.assertTrue(trace.match(/2: tempFct\(\)/));
+            this.assertTrue(trace.match(/3: testIeError\(\)/));
+            this.assertTrue(trace.match(/4: runTest\('testIeError'\)/));
+        }
+    }
+}

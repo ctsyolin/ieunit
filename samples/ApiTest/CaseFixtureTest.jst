@@ -1,0 +1,64 @@
+//
+//Tested APIs: setUp(), tearDown(), getAllTests()
+//
+function CaseFixtureTest() {
+    assimilate(this, new IeTestCase());
+    var setUpLog;
+    var tearDownLog;
+    var setUpLogRef = "setUp Called";
+    var tearDownLogRef = "tearDown Called";
+    var theTestName = "";
+    var caseCounter = 0;
+    
+    this.setUp = function() {
+        if ( this.currentTestName == "testCurrentTestName") {
+            theTestName = this.currentTestName;
+        }
+        setUpLog = setUpLogRef;
+    };
+
+    this.tearDown = function() {
+        tearDownLog = tearDownLogRef;
+    };
+
+    this.setUpCase = function() {
+        this.assertEquals(caseCounter, 0);
+        caseCounter++;
+    };
+
+    this.tearDownCase = function() {
+        this.assertEquals(caseCounter, 1);
+    };
+
+    this.testSetUp = function() {
+        // the setUp() method must alread by called at this mement.
+        this.assertEquals(setUpLogRef, setUpLog);
+    };
+
+    this.testTearDown = function() {
+        tearDownLog = 0;
+        
+        // run this test once so that the tearDownLog get set.
+        this.runTest("testTearDown");
+
+        // Verify that the tearDownLog is set correctly by tearDown() method.
+        this.assertEquals(setUpLogRef, setUpLog);
+        this.assertEquals(caseCounter, 1);
+    };
+
+    this.testFixture = function() {
+        var testNames = this.getAllTests();
+        this.assertEquals(4, testNames.length);
+        this.assertEquals("testSetUp", testNames[0]);
+        this.assertEquals("testTearDown", testNames[1]);
+        this.assertEquals("testFixture", testNames[2]);
+        this.assertEquals(caseCounter, 1);
+    };
+
+    this.testCurrentTestName = function() {
+        // the setUp() call must have set the variable theTestName to the
+        // current test name which is the name of this method.
+        this.assertEquals("testCurrentTestName", theTestName);
+        this.assertEquals(caseCounter, 1);
+    };
+}

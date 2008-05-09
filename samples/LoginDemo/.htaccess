@@ -1,0 +1,6 @@
+<Files Helloworld.html>
+AuthName "basic authentication"
+AuthType Basic
+AuthUserFile /home/groups/i/ie/ieunit/htdocs/samples/LoginDemo/basic_users
+require valid-user
+</Files>

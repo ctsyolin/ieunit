@@ -1,0 +1,118 @@
+// This case tests the command line options of IeTextRunner.wsf
+//
+function TextRunnerTest() {
+    assimilate(this, new IeTestCase());
+
+    var cmdShell = new ActiveXObject("WScript.Shell");
+
+    function contains(str, subStr) { 
+        return str.indexOf(subStr) >=0; 
+    };
+
+    function startTextRunner(options) {
+        var cmdStr = "cscript /NoLogo \"" + getRunnerDir() + "\\IeTextRunner.wsf\" " + options;        
+        var oExec = cmdShell.Exec(cmdStr);
+        var outStr = "";
+        while ( ! oExec.stdOut.AtEndOfStream ) {
+            outStr += oExec.stdOut.ReadLine() +"\n";
+        }        
+        return outStr;
+    }
+
+    this.testHelpOption = function() {
+        var outStr = startTextRunner("-help");
+        this.assertTrue(contains(outStr, "command options:"));
+        this.assertTrue(contains(outStr, "-help"));
+    };
+
+    this.testListOption = function() {
+        // verify that the UniTest directory contains at least
+        // 7 test cases and 15 tests.
+        var outStr = startTextRunner("-l");
+        outStr = outStr.substr( outStr.indexOf("RptList:"));
+        var list = outStr.split(" ");        
+        this.assertTrue(list[1] >= 7);
+        this.assertTrue(list[3] >= 15);
+    };
+
+    this.validateResult = function(resultStr, caseNr) {
+        var list = resultStr.split(/(,| )+/);
+        this.assertEquals(caseNr, list[5]);
+        this.assertEquals(0, list[7]);
+    };
+
+    this.testRunOption = function() {
+        // run a case and a test
+        var outStr = startTextRunner("-l -run " 
+            + "RunTestCase DebugUtilTest:testPrintVariable");
+        outStr = outStr.substr( outStr.indexOf("RptSuite:"));
+        this.validateResult(outStr, 4);
+    };
+
+    this.testRunIncludeDir = function() {
+        var opts = "-I \"" + this.getCaseDir() + "\"\\SubDir;\"" + this.getCaseDir() 
+            + "\"\\SubDir\\LibDir "
+            + "-run IncludeOption"; 
+        var outStr = startTextRunner(opts);
+        outStr = outStr.substr( outStr.indexOf("RptSuite:"));
+        this.validateResult(outStr, 1);
+    };
+
+    this.testRepeatOption = function() {
+        var opts = "-n 2 -run AssimilationTest";        
+        var outStr = startTextRunner(opts);
+        this.assertContains(outStr, "successful tests: 8");
+    };
+    
+    this.testRunFiles1 = function() {
+        var opts = "-runfiles \"" + this.getCaseDir() + "\"\\AssimilationTest.jst";
+        var outStr = startTextRunner(opts);
+        this.assertContains(outStr, "AssimilationTest");
+        this.assertContains(outStr, "successes: 4, failures: 0");
+    };
+
+    // run two jst files with absolute and relative path.
+    this.testRunFiles2 = function() {
+        var opts = "-runfiles \"" + this.getCaseDir() + "\"\\AssimilationTest.jst";
+        opts += " RunnerTest.jst";
+        var outStr = startTextRunner(opts);
+        this.assertContains(outStr, "AssimilationTest");
+        this.assertContains(outStr, "RunnerTest");        
+        this.assertContains(outStr, "Successes: 6");
+        this.assertContains(outStr, "Failures: 0");
+    };
+    
+    // Check error message for no-exsiting file
+    this.testRunFiles3 = function() {
+        var opts = "-runfiles \"" + this.getCaseDir() + "\"\\NoExistingFile.jst";
+        var outStr = startTextRunner(opts);
+        this.assertContains(outStr, "Exception: 1209: Cannot find file");
+
+        opts = "-runfiles NoExistingFile.jst";
+        outStr = startTextRunner(opts);
+        this.assertContains(outStr, "Exception: 1209: Cannot find file");
+    };
+
+    // Check that TextRunner handles duplicate library directory gracefull.
+    this.testDupIncDir = function() {
+        var outStr = startTextRunner("-I \"" + this.getCaseDir() + "\" -run AssimilationTest:testNoSuffix"); 
+        this.assertContains(outStr, "Successes: 1");
+    };
+    
+    this.testUnknowCaseName = function() {
+        var outStr = startTextRunner("-run UnknowCaseName");
+        this.assertContains(outStr, "Exception: 1215"); 
+        this.assertContains(outStr, "Cannot find test case UnknowCaseName"); 
+    };
+
+    this.testRunTestInit = function() {
+        var fso = new ActiveXObject("Scripting.FileSystemObject");        
+        fso.CopyFile("CheckTestRunInit.txt", "CheckTestRunInit.jst");
+
+        var outStr = startTextRunner("-run CheckTestRunInit"); 
+        this.assertContains(outStr, "<<testTestRunInit>>");
+
+        fso.DeleteFile("CheckTestRunInit.jst");
+        fso=null;
+    };
+}

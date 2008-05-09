@@ -1,0 +1,17 @@
+//Tested APIs: parseScript(), parseDirectories(), instanciateCase(), getRunnerDir()
+//             getCaseName(), getCaseDir().
+
+function RunnerTest() {
+    assimilate(this, new IeTestCase());
+   
+    this.testGetRunnerDir = function() {
+        var dir = WScript.ScriptFullName;
+        var dir = dir.substring(0, dir.lastIndexOf("\\"));
+        this.assertEquals(dir, getRunnerDir());
+    }
+
+    this.testInstanciateCase = function () {
+        var obj = instanciateCase("RunnerTest");
+        this.assertEquals("RunnerTest", obj.getCaseName());
+    }
+}

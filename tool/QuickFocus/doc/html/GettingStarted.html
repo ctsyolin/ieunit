@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <title></title>
+                                                            
+  <link href="QuickFocus.css" type="text/css" rel="stylesheet">
+</head>
+  <body>
+                     
+<h1 class="Topic">Getting Started With QuickFocus</h1>
+                     
+<h3><a name="Installation"></a><a name="UserInterfase"></a>QuickFocus User
+                Interface</h3>
+                     
+<p>The major building-blocks of&nbsp;QuickFocus's user interface are    
+         shown&nbsp;in&nbsp;the following picture:         </p>
+               <img alt="QuickFocus Main Window"
+ src="../images/QuickFocus.jpg">
+               <br>
+                     
+<table cellpadding="2" cellspacing="2" border="0" width="80%">
+                   <tbody>
+                       <tr>
+                           <td valign="top" align="right" width="150"><b>main 
+  menu</b><br>
+                           </td>
+                           <td valign="top">&nbsp;<br>
+                           </td>
+                           <td valign="top">&nbsp;provides menu based access
+  to most features of  QuickFocus..<br>
+                               <br>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td valign="top" align="right" width="150"><b>application
+  icon</b><br>
+                           </td>
+                           <td valign="top"><br>
+                           </td>
+                           <td valign="top">provides a dragging handle to 
+create   shortcuts of the currently displayed page.<br>
+                               <br>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td valign="top" align="right" width="150"><b>mode 
+  indicator</b><br>
+                           </td>
+                           <td valign="top">&nbsp;<br>
+                           </td>
+                           <td valign="top">indicates the operation mode
+of  QuickFocus.  Red color indicates                          attached mode 
+in  which the user can inspect the displayed HTML page. Gray color       
+                  indicates  detached mode in which QuickFocus behaviors like
+a web browser.<br>
+                               <br>
+                           </td>
+                       </tr>
+                       <tr align="right">
+                           <td valign="top" width="150"><b>navigation bar<br>
+                                   <br>
+                               </b>                     </td>
+                           <td valign="top"><br>
+                           </td>
+                           <td valign="top">                            
+                                      
+      <div align="left">provides control buttons to navigate the web page
+   displayed in                              the page window.<br>
+                               </div>
+                               <b>                             <br>
+                               </b>                     </td>
+                       </tr>
+                       <tr>
+                           <td valign="top" align="right" width="150"><b>page 
+  window</b><br>
+                           </td>
+                           <td valign="top"><br>
+                           </td>
+                           <td valign="top">displays the web page under inspection.
+   When QuickFocus is in                          detached mode this window
+  behaviors like a normal browser. When QuickFocus is                   
+      in attached mode all mouse movements and mouse clicks over this window
+  will be                          intercepted by QuickFocus.<br>
+                               <br>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td valign="top" align="right" width="150"><b>inspection 
+  panel</b><br>
+                           </td>
+                           <td valign="top"><br>
+                           </td>
+                           <td valign="top">contains control interface to 
+configure   inspection characteristics; as well as                       
+  generate  and execute code snippets.<br>
+                               <br>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td valign="top" align="right" width="150"><b>snippet 
+  dragging handle<br>
+                               </b>                     </td>
+                           <td valign="top"><br>
+                           </td>
+                           <td valign="top">enables users to quickly make 
+a copy   of the content of code snippet                          window &nbsp;onto
+   the desktop by dragging this icon to the                          windows 
+  desktop.<br>
+                               <br>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td valign="top" align="right" width="150"><b>status 
+  line<br>
+                               </b>                     </td>
+                           <td valign="top"><br>
+                           </td>
+                           <td valign="top">displays the current status of
+ QuickFocus.   In attached mode the                          status line
+displays  the HTML   source of the currently focused element in the page
+window. The  leading number of the status line is the current focus     
+                     scope level. With larger focus scope level the mouse
+ will select higher level                          elements. The focus scope
+ level can be changed through the context menu of the page window. More about
+focus scope will be discussed in latter chapters.<br>
+                               <br>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td valign="top" align="right" width="150"><b>code 
+  snippet window<br>
+                               </b>                     </td>
+                           <td valign="top"><br>
+                           </td>
+                           <td valign="top">displays the generated code snippet
+   in IeUnit format. You can&nbsp; generate code snippet by clicking on an
+ element with the left mouse button on the HTML page. The generated code
+snippet   suggests how                          to validate or control the
+selected element.  The size of this window can be                       
+  adjusted by dragging  the border shared between this window and the page
+window.<br>
+                               <br>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td valign="top" align="right" width="150"><b>select 
+  frame</b><br>
+                           </td>
+                           <td valign="top"><br>
+                           </td>
+                           <td valign="top">shows the bounding box of the 
+currently selected  element.  You normally select an                     
+    element by clicking  on the  element with the left mouse button.<br>
+                               <br>
+                           </td>
+                       </tr>
+                       <tr>
+                           <td valign="top" align="right" width="150"><b>focus 
+  frame</b><br>
+                           </td>
+                           <td valign="top"><br>
+                           </td>
+                           <td valign="top">shows the bounding box of the 
+current focused  element. In attached mode the focused element will be   
+                      automatically updated when you move the mouse point 
+over the web page.        <br>
+                               <br>
+                           </td>
+                       </tr>
+                                     
+  </tbody>               
+</table>
+                                   
+<h3><a name="SmartBook"></a> Automating web login procedure</h3>
+               Nowadays many web sites restrict their services/information
+ to  registered  users.          To access those web sites users usually
+have  to login first with user name and password. Since we usually don't
+have highly confidential  information on those          sites the login procedure 
+is often a annoying  step. With help of IeUnit and          QuickFocus we 
+can easily create a  smart bookmark to login to those web sites automatically.
+ The          following  scenario demonstrates how to perform such a task:<br>
+                     
+<ol>
+                   <li>             Start QuickFocus by clicking on the application
+   icon or from the Windows start              menu.             </li>
+        <li>             In the URL field type in the url <i>http://ieunit.sourceforge.net/samples/LoginDemo/Login.html</i>,
+   then press the enter key.              QuickFocus should display a demo 
+login page   hosted at IeUnit home site.             </li>
+        <li>             In the login page enter "IeUnit" and "DemoPwd" into
+  the  field "User Name" and              "Password" respectively. Don't
+click on the "Login" button yet.             </li>
+        <li>             Click on the the mode indicator to switch to attached
+   mode. The mode indicate              should change its color to red after
+  the page has been attached. You can also switch              the mode through
+  the main menu Tools:Toggle Mode or by pressing the Ctrl+X key.&nbsp;  
+             </li>
+        <li>                 Click on the "Login" button to select the button 
+  element. The code snippet window will show two statements which suggest 
+how  to validate and control the "Login" button. We can ignore them for now.</li>
+        <li>Click on the                  "SBK Submit" button in the inspection
+   panel. This will generate a&nbsp; code  snippet in the snippet window
+as   show in the following :<br>
+       <img alt="QuickFocus Main Window" src="../images/LoginDemo.jpg">
+                   </li>
+        <li>             Dragging the snippet dragging handle to the  windows
+  desktop to create              a smart bookmark icon for the login  page.
+  Then close QuickFocus by closing the              window.             </li>
+        <li>                 Login to the demo page by clicking on the shortcut
+   icon created in the previous                  step.                 <br>
+                   </li>
+                     
+</ol>
+               Notices:<br>
+                     
+<ul>
+                   <li>             The smart bookmark works both for encrypted
+   and unencrypted web sites.             </li>
+        <li>             The smart bookmark script created in step 7 is saved 
+  in clear text format. Since password or user names are in readable format 
+we should not create this kind of              bookmark for highly confidential 
+ information on un-secured computers.             </li>
+        <li>             The smart bookmark only works when Internet Explorer
+   is set as the default              web browser.             </li>
+        <li>                 After step 6 in above scenario we can directly 
+ test  the generated code                  snippet&nbsp;by clicking on the 
+ "Run Snippet"  button in the inspection panel.<br>
+                   </li>
+                     
+</ul>
+                     
+<h3><a name="TestCase"></a>Creating an IeUnit test case</h3>
+      Let us now create an IeUnit test case to verify that the main page
+of  our  demo site contains the text "Hi! IeUnit". &nbsp;The procedure goes
+as follows:<br>
+           
+<ol>
+        <li>Repeat the steps 1 to 5 of the previous section.&nbsp;</li>
+        <li>Click on the "Test Case" button of the inspection panel. This 
+will   create the following test case template into the code snippet window:<br>
+          <tt>&nbsp; function SampleCase() {<br>
+      &nbsp;&nbsp;&nbsp; assimilate(this, new IeUnit());<br>
+      &nbsp;&nbsp;&nbsp; this.setUp = function() {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.openWindow("http://ieunit.sourceforge.net/samples/LoginDemo/Login.html");<br>
+      &nbsp;&nbsp;&nbsp; };<br>
+      &nbsp;&nbsp;&nbsp; this.tearDown = function() {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.closeWindow();<br>
+      &nbsp;&nbsp;&nbsp; };<br>
+      &nbsp;&nbsp;&nbsp; this.testCaseOne = function(){<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.assertTrue(true);<br>
+      &nbsp;&nbsp;&nbsp; };<br>
+      &nbsp; }</tt></li>
+        <li>Mark the line <tt>this.assertTrue(true)</tt> in the code snippet
+  window  with the mouse, then press the Delete key to delete this line.
+Let   the blinking  cursor stay there.</li>
+        <li>Click on the "Submit" button in the inspection panel to insert
+ three   statements for a submit login request.<br>
+        </li>
+        <li>Right mouse&nbsp;click on the "Login" button to bring up the
+context   menu,  then select the "Click Focused Element" menu to submit the
+page. After  a short while the main page of the demo site will be displayed
+in the page window.</li>
+        <li>Click on the title line "Hi! IeUnit" in the page window. This 
+ will insert the line <tt>this.assertPageHasText("Hi! IeUnit")</tt> into the
+snippet  window where the cursor stands.</li>
+        <li>             Drag and drop the snippet dragging handle to the 
+windows  desktop  to create              a test case shortcut icon there. 
+Then close  QuickFocus  by closing the              window.             </li>
+        <li>                 Click on the icon created in previous step to
+ run   the newly created test case. The test result will be reported in a 
+separate command prompt  window  as shown as follows:<br>
+          <tt><br>
+      &nbsp; Running case SampleCase ...<br>
+      &nbsp; RptTest: testCaseOne:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   OK<br>
+      &nbsp; RptCase: SampleCase:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   successes: 1, failures: 0<br>
+      &nbsp; RptSuite: Successes: 1&nbsp;&nbsp;&nbsp; Failures: 0&nbsp;&nbsp;&nbsp;
+   Time: 3.125sec<br>
+      &nbsp; Press any key to continue . . .</tt><br>
+        </li>
+           
+</ol>
+               <br>
+               <br>
+               <br>
+               <br>
+               <br>
+           <br>
+      <br>
+     <br>
+    <br>
+   <br>
+  <br>
+ <br>
+</body>
+</html>

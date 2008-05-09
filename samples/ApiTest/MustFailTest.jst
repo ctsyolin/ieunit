@@ -1,0 +1,69 @@
+// Tested APIs: assertMustFail(), assertTrue().
+//
+function MustFailTest() {
+    assimilate(this, new IeTestCase());
+    
+    // test throwing exception without error number.
+    this.testNoErrNumber = function() {
+
+        this.assertMustFail( function(){ throw new Error(); } );
+
+        // assertMustFail must throw an exception if the function doesn't 
+        // throw exception. 
+
+        var failed = false;
+        try {
+            assertMustFail( function(){} );
+        } catch (ex) { failed = true; }
+        this.assertTrue(failed);
+    };
+
+    // test throwing exception with error number.
+    this.testWithErrNumber = function() {
+
+        var failFct = function() {
+            throw new Error(123);
+        };
+
+        // failFct() call must fail with error number 123
+        this.assertMustFail(failFct, 123 );
+
+        // Check for expected error number.
+        var failed = false;
+        try {
+            this.assertMustFail( failFct, 111 );
+        } catch (ex) { failed = true;} 
+        this.assertTrue(failed);
+    };
+
+    this.testRuntimeException = function() {
+
+        // using undefined variable must rais an exception.
+        this.assertMustFail( function() { var x = undefinedVariable; } );
+
+        //When trying to assign value to an undefined member of an
+        //undefined object JavaScript will throw an exception.
+        this.assertMustFail( function() { obj.undefinedMember = 123; } );
+
+        //When trying to assign value to an undefined member of an
+        //existing object JavaScript JavaScript automatically creates
+        //a member by assignment. This test also shows that
+        //the test function has the access to the namespace of 
+        //testRuntimeException(), namely accessing the variable tstObj.
+        //
+        // Notice: we could pack the code into a string then let assertMustFail
+        // call eval() to excute the code. In this way the excuted code
+        // will have no access to the local variable of this function. This will
+        // significantly restrict the usefullness of assertMustFail.
+        //
+        function Obj() {}
+        var tstObj = new Obj;
+
+        var failed = false;
+        try {
+            this.assertMustFail( function() { tstObj.undefinedMember = 123; } );
+        } catch (ex) { failed = true;} 
+        this.assertTrue(failed);
+    };
+}
+

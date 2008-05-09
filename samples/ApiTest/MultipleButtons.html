@@ -1,0 +1,21 @@
+<html>
+<script>
+function setResponse(txt) {
+    document.all("Response").innerText = txt;
+}
+</script>
+<body>
+    <form onsubmit="return false">
+        <input type="submit" onclick="setResponse('buttonA')" value="Button">
+        <input type="submit" onclick="setResponse('buttonB')" value="Button">
+        <input type="submit" onclick="setResponse('buttonC')" value="Button">
+    </form>
+
+    <button onclick="setResponse('buttonD')">Button</button><br/>
+    <button onclick="setResponse('buttonE')">Button</button><br/>
+    <button onclick="setResponse('buttonF')">Button</button><br/>
+
+    <span id="Response">???</span>
+
+</body>
+</html>

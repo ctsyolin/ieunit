@@ -1,0 +1,147 @@
+function InputTest() {
+    assimilate(this, new IeUnit());
+
+    this.setUp = function() {
+        openLocalFile("InputPage.html");
+    };
+
+    this.tearDown = function() {
+        this.closeWindow();
+    };
+
+    this.testFindLink = function() {
+        this.assertNotNull( this.findLink("Goto TestPage"), "Complete text");
+        this.assertNotNull( this.findLink("TestPage"), "Partial text");
+
+        this.assertNotNull( this.findLink("Goto", 0));
+        this.assertNotNull( this.findLink("Goto", 1));
+        this.assertNull( this.findLink("Goto", 2));
+
+        this.assertNotNull( this.findLink(/Goto.*/, 0));
+        this.assertNotNull( this.findLink(/Goto.*/, 1));
+        this.assertNull( this.findLink(/Goto.*/, 2));
+    };
+
+    this.testSetField = function() {
+        var fld = this.findField(2);
+        this.assertNotNull(fld);
+        this.assertEquals("FieldC", fld.value);
+
+        this.setField(2, "New Value");
+        this.assertEquals("New Value", fld.value);
+    };
+
+    this.testClickLink = function() {
+        this.clickLink("TestPage");
+        this.assertNotNull(this.findByText("Hello World!"));
+    };        
+
+    this.testClickLinkIdx = function() {
+        this.clickLink("Goto", 1);
+        this.assertPageHasText("Goto self");
+    };        
+
+    this.testClickLinkRegIdx = function() {
+        this.clickLink(/^goto\b/i, 1);
+        this.assertPageHasText("Goto self");
+    };        
+
+    this.testClickLinkReg = function() {
+        this.clickLink(/goto/i);
+        this.assertNotNull(this.findByText("Hello World!"));
+    };        
+
+    this.testCheckBox = function() {
+        this.assertTrue( ! this.findCheckBox(0).checked );
+        this.assertTrue( this.findCheckBox(1).checked );
+        this.assertTrue( ! this.findCheckBox(2).checked );
+
+        this.setCheckBox(0, true);
+
+        this.assertTrue( this.findCheckBox(0).checked );
+        this.assertTrue( this.findCheckBox(1).checked );
+        this.assertFalse( this.findCheckBox(2).checked );
+    };
+
+    this.testCheckBoxWithId = function() {
+        this.setCheckBox("cbIdA", true);
+
+        this.assertTrue( this.findCheckBox(0).checked );
+        this.assertTrue( this.findCheckBox(1).checked );
+        this.assertFalse( this.findCheckBox(2).checked );
+    };
+
+    this.testRadioButtonWithId = function() {
+        this.checkRadioButton("radioB");
+
+        this.assertFalse( this.findRadioButton(0).checked , "0");
+        this.assertTrue(  this.findRadioButton(1).checked , "1");
+        this.assertFalse( this.findRadioButton(2).checked , "2");
+    };
+
+
+    this.testFindParent = function() {
+        var td = this.findByText("Child Element");
+        this.assertNotNull( this.findParent(td, "TR") );
+        this.assertNotNull( this.findParent(td, "TABLE") );
+        this.assertNotNull( this.findParent(td, "DIV") );
+        this.assertNotNull( this.findParent(td, "FORM") );
+        this.assertNotNull( this.findParent(td, "BODY") );
+    };
+
+    this.testClickObj = function() {
+        var obj = this.findByTagAndAttr("a", "href~TestPage");
+        this.assertNotNull(obj);
+        this.clickObj(obj);
+        this.assertNotNull( this.findByText("Hello World!"));
+    };
+
+    this.testClickLinkObjById = function() {
+        this.assertNotNull(this.findObjById("SecondLink"));
+        this.clickObjById("SecondLink");
+        this.assertPageHasText("Goto self");
+
+        this.assertNotNull(this.findObjById("FirstLink"));
+        this.clickObjById("FirstLink");
+        this.assertPageHasText("Hello World!");
+    };
+
+    this.testClickButtonObyById = function() {
+        this.clickObjById("button_id");
+        this.assertPageHasText("Hello World!");
+    };
+
+    this.testClickButtonObyByName = function() {
+        this.clickObjById("button_name");
+        this.assertPageHasText("Hello World!");
+    };
+
+    this.testSetFieldWithId = function() {
+        this.setField("nameA", "aaaa");
+        this.setField("idB", "bbbb");
+        this.setField("idC", "cccc");
+        this.assertEquals(this.findObjById("nameA").value, "aaaa");
+        this.assertEquals(this.findObjById("idB").value, "bbbb");
+        this.assertEquals(this.findObjById("idC").value, "cccc");
+    }
+
+    this.testFindImage = function() {
+        this.assertNotNull(this.findImage("CheckButton.gif", 0));
+        this.assertNotNull(this.findImage("Button.gif"));
+        this.assertNotNull(this.findImage("Button"));
+        this.assertNull(this.findImage("XXXButton"));
+        this.assertNull(this.findImage("Button", 2));
+        this.assertEquals(this.findImage("CheckButton.gif"), this.findObjById("imgLink"));
+    };
+
+    this.testClickImage = function() {
+        this.clickImage( "CheckButton.gif" );
+        this.assertPageHasText("Hello World!");
+    }
+
+    this.testClickImage2 = function() {
+        this.clickImage( "CheckButton.gif", 1);
+        this.assertPageHasText("Hello!");
+    }
+}
+

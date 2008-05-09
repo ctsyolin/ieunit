@@ -1,0 +1,12 @@
+// This is a sample book that demostrates how to login to a 
+// web application. You can run this script in one of the following
+// three ways:
+//
+//  * Issue the command: cscript.exe ..\..\lib\IeRun.wsf SampleBookmark.sbk
+//  * Issue the command : SampleBookmark.sbk
+//  * On the windows explorer: double-click on the file SampleBook.sbk
+//
+this.openWindow("http://ieunit.sourceforge.net/samples/LoginDemo/Login.html");
+this.setField(0, "IeUnit");
+this.setField(1, "DemoPwd");
+this.clickButton("Login");

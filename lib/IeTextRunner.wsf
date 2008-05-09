@@ -1,0 +1,325 @@
+<package>
+<job id="IeTextRunner">
+<script language="JavaScript" src="Config.wjs"></script>
+<script language="JavaScript" src="IeRunner.wjs"></script>
+<script language="JavaScript" src="TestSuiteReport.wjs" />
+<script language="JavaScript">
+var _runFlag    = false;
+var _listFlag   = false;
+
+var _totalSuccesses = 0;
+var _totalFailures = 0;
+
+function log(msg) { 
+    WScript.Echo(msg); 
+}
+
+function padString(str, len) {
+    var padding = len - str.length;
+    if (padding > 0) {
+        str += "                                          ".substr(0,padding);
+    }
+    return str;
+}
+
+// Run selected tests. If a test case is selected without selecting particulare 
+// tests all tests within that test cases will be executed. If no test case is 
+// selected all test cases will be executed.
+function runTestCases() {
+    var caseObjs = new Array();
+    var selectedCases;
+
+    // construct test case objects.
+    for(var cName in _testSelection) {
+        try {
+            caseObjs.push(instanciateCase(cName)); 
+        } catch( e ) {
+            log("Exception: " + e.description);
+            log("Info: can't instanciate class " + cName);
+        }
+    }            
+
+    // Run the test cases.
+	var r=new report();
+    for(var i=0; i<caseObjs.length; i++) {
+		if (caseObjs[i]==null) {
+			log("ERROR: Can't run a test, the test is null")
+			continue;
+		}
+        _ = _currentCase = caseObjs[i];
+        var cName = _.getCaseName();
+        
+        var tSuite=r.AddTestSuite(cName);
+        var testList = _testSelection[cName];
+        
+        log("\nRunning case " + cName + " ...");
+        if ( (testList == null) || (testList.length == 0) ) {
+            testList = _.getAllTests();
+        }
+        var tCase=null;
+        var result=null;
+    
+        try {
+			// set visibility status for windowOpen method. default 
+			// is true unless overriden by command line -v option
+			_.ieWindowVisible=_ieWindowVisible;
+            _.setUpCase();
+            for(var j=0; j<testList.length; j++) {
+                var testName = testList[j];                
+				tCase=tSuite.AddTestCase(testName);
+				
+                result   = _.runTest(testName);
+                var line = "RptTest: " + testName + ": ";
+                line = padString(line, 40);
+                var ex = result.exception;
+                if ( ex == null ) {
+					line += "OK";
+                    tCase.succeed(result.duration/1000);
+                } else {
+					line += "Failed: " + ex.description;
+                    tCase.fail(ex.description, result.duration/1000);
+                }
+                log(line);
+            }
+            _.tearDownCase();
+        } catch (ex) {
+		    log("Failed: " + ex.description);
+        }
+        log(padString("RptCase: "+cName+":", 40) 
+            + "successes: "+tSuite.successes
+            +", failures: "+tSuite.failures);
+    }
+
+    var totalSec = Math.round(r.totalTime()*1000)/1000.0;
+    
+    log("RptSuite: "
+            + "Total Duration: "+ totalSec + "sec,  "
+            + "        Successes: " + (r.total- r.failures) + ", "
+            +"Failures: " + r.failures 
+    );
+
+    if (null != _xmlPath) { 
+        r.Save(_xmlPath);
+    }
+    _totalSuccesses += r.total-r.failures;
+    _totalFailures += r.failures;
+}
+
+// List all test cases with their tests in the directories specified by the -I option.
+function listAllTestCases() {
+    var caseObjs = new Array();
+    for(var caseName in _testSelection) {
+        caseObjs.push(instanciateCase(caseName));
+    }
+    var caseNum = 0;
+    var testNum = 0;
+    for(var i=0; i<caseObjs.length; i++) {
+        caseNum ++;
+        var cName = caseObjs[i].getCaseName();
+        log("RptCase: " + cName);
+
+        var testList = _testSelection[cName];
+        if ( (testList == null) || (testList.length==0) ) {        
+            testList =  caseObjs[i].getAllTests();
+        }
+
+        for(var j=0; j<testList.length; j++) {
+            testNum++;
+            log("   RptTest: " + testList[j]);
+        }
+        log("");
+    }
+
+    log( "RptList: " + caseNum + " cases, " + testNum + " tests");
+}
+
+// Print the help message.
+function printHelpMsg() {
+    log("Usage: IeTextRunner [options]");
+    log(" command options:");
+    log("  -help\t\tprint the help message");
+    log("  -run [<caseA>[:<test1>:<test2>:...] ...] run selected tests or all tests");
+    log("  -runfiles <a.jst> <b.jst> ... run selected test script files");
+    log("  -orgsrc <path> set the original source of a jst file.");
+    log("  -I <LibPath>\tdirectory list separated by ';' to look for scripts");
+    log("  -l\t\tlist all available test cases");
+    log("  -n <n>\tRepeat the test <n> times");
+    log("  -xml <filename> path to save results as an xml file");
+    log("  -v <false> Suppress display of IE windows, Only accepted value is false.");
+    log("  -d force the script debugger to stop at relevant statements.");
+}
+
+// Parse the command-line arguments.
+function parseCommandLine(args) {
+    _runnerDir = WScript.ScriptFullName;
+    _runnerDir = _runnerDir.substring(0, _runnerDir.lastIndexOf("\\"));
+
+    if (args.length == 0) {
+        printHelpMsg();
+    }
+
+    for(var i=0; i<args.length; i++) {
+        switch( args(i) ) {
+        case "-help":
+            printHelpMsg();
+            break;
+
+        case "-runfiles":  // e.g. -file a.jst b.jst c:\test\c.jst
+            _runFlag = true;
+            _selectedJst = new Array();
+            while ( (i+1)<args.length && (args(i+1).charAt(0) != '-') ) {
+                i++;
+                if ( args(i).match(/.jst$/i) ) { // ignore no .jst files.
+                    _selectedJst.push( args(i) );
+                }
+            }
+            break;
+            
+         case "-orgsrc": // used for debugger. Only one source file is supported.
+            if ( (i+1)<args.length ) {
+                _orgSrc = args(i+1);
+                i++;
+            }
+            break;
+
+        case "-run":  // e.g. -run 
+            _runFlag = true;
+            i++;
+            while ( (i<args.length) && (args(i).charAt(0) != '-') ) {
+                if ( args(i)=="" ) {
+                    break;
+                }
+                var list = args(i).split(":"); 
+                var caseName = list[0];
+                if ( _testSelection == null ) {
+                    _testSelection = new Array();
+                }
+                
+                if( _testSelection[caseName] == undefined ) {
+                    _testSelection[caseName] = new Array();
+                }
+                
+                for(var j=1; j<list.length; j++) {
+                    _testSelection[caseName].push(list[j]);
+                }
+                i++;
+            }
+
+            if ( i<args.length ) {
+                i--;
+            }
+
+            break;
+
+        case "-l": // list the test cases
+            _listFlag = true;
+            break;
+
+        case "-I": //
+            if ( (i+1)<args.length ) {
+                _libPath += ";" + args(i+1);
+                i++;
+            }
+            break;
+
+        case "-n": // repeat the test run n times.
+            if ( (i+1)<args.length ) {
+                _repeatNumber = args(i+1)-0;
+                i++;
+            }
+            break;
+                        
+        case "-v": // IE Window visibility for openWindow function
+            if ( (i+1)<args.length ) {
+                var opt = args(i+1).toLowerCase();
+                _ieWindowVisible = (opt=="false")?false:true;
+                i++;
+            }
+            break;
+            
+        case "-xml": //
+            if ( (i+1)<args.length ) {
+                _xmlPath = args(i+1);
+                i++;
+            }
+            break;
+
+        case "-d": //
+            _isDebugging = true;
+        }
+    }
+}
+
+//=============================================================
+// Execution starts here.
+//=============================================================
+
+if(WScript.FullName.toLowerCase().indexOf('cscript.exe') == -1) {
+    WScript.Echo("Script is NOT being run by Cscript. Script is aborting.");
+    WScript.Quit(2);
+}
+
+parseCommandLine(WScript.Arguments);
+try {
+    _testSelection = parseDirectories(FindLibDirs(), _selectedJst, _testSelection); 
+} catch(ex) {
+    log("Exception: " + ex.number + ": " + ex.description);
+    throw ex;
+}
+
+// Load all JavaScript files in _jsToLoad. 
+for(var i=0; i<_jsToLoad.length; i++) {
+    fileName = _jsToLoad[i];
+    if (fileName == null) {
+        log("ERROR: Can't find script " + _jsToLoad[i]);
+        continue;
+    }
+
+    var fs = _fso.OpenTextFile(fileName, 1, false, -2);
+    var js = fs.ReadAll();
+    fs.Close();
+    
+    try {
+        eval(js);
+    } catch (ex) {
+		// the script didn't compile. Run thw compiler and capture the output
+		var cmdShell = new ActiveXObject("WScript.Shell");
+        var cmdStr = "cscript /nologo " + fileName;
+		var oExec=cmdShell.Exec(cmdStr);		
+		// make sure the compliler is finished
+		while (oExec.Status == 0)
+		{
+			WScript.Sleep(100);
+		}
+        var input = oExec.StdErr.ReadAll();    
+        if ( ex.stackTrace != undefined ) {
+            log("Program stack trace: ");
+            log(ex.stackTrace);
+        }
+        // delegate the responsibility for displaying the error
+        ex.description = "\nFile: " + fileName + "\n"
+            + "Description: " + ex.description + "\n"
+            + "Compilation errors:" + input + "\n";
+        throw ex;        
+    }
+}
+
+if ( _listFlag ) {
+    listAllTestCases();
+} 
+
+if ( _runFlag ) { 
+    for (var rIdx=0; rIdx<_repeatNumber; rIdx++) {
+        if ( typeof(_TestRunInit) == "function" ) {
+            _TestRunInit(rIdx);
+        }
+        runTestCases();
+        if ( rIdx != 0 ) {
+            log("\nRpt: Repeat no. " + rIdx + ": successful tests: " + _totalSuccesses
+                + ", failured tests: " + _totalFailures);
+        }
+    }
+} 
+</script>
+</job>
+</package>

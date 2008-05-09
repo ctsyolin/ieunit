@@ -1,0 +1,20 @@
+// Check the values of global variables defined in IeRunner.wjs
+// Notice: This test case name intentionally doesn't match the file name.
+function GlobalVariableTest() {
+    assimilate(this, new IeUnit());
+    
+    this.testCheckValues = function() {
+        this.assertNotNull(_ieUnitVersion);
+        this.assertNotNull(_fso);
+        this.assertNotNull(_jsToLoad);
+        this.assertNotNull(_caseToPath);
+        this.assertNotNull(_runnerDir);
+        this.assertNotNull(_);
+        this.assertNotNull(_testSelection);
+        
+        this.assertTrue( _caseToPath["GlobalVariableTest"].match(/GlobalVariables.jst$/) );
+        this.assertTrue( _runnerDir.match(/\\lib$/) );
+        this.assertEquals( "GlobalVariableTest", _.getCaseName());
+        this.assertNotNull(_testSelection["GlobalVariableTest"]);        
+    };
+}

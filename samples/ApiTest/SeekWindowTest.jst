@@ -1,0 +1,35 @@
+//
+// This case tests the methods seekWindow, setWindow, seekAndSetWindow
+// Notice: To run this case successfully the IE browser must disable 
+// "Reuse windows for launching shortcuts"
+// in configuration menu tools->options->Advanced.
+//
+function SeekWindowTest() {
+    assimilate(this, new IeUnit());
+    var cmdShell = new ActiveXObject("WScript.Shell");
+
+    this.setUp = function() {
+        cmdShell.Run("\"" + this.getCaseDir() +"\\" + "TestPage.html\"", 1, false);
+        cmdShell.Run("\"" + this.getCaseDir() +"\\" + "InputPage.html\"", 1, false);
+    };
+
+    this.tearDown = function() {
+        this.seekAndSetWindow("Test Page");
+        this.closeWindow();
+        this.seekAndSetWindow("Test Page");
+        this.closeWindow();
+    };
+
+    this.testSeekFirst = function() {
+        this.seekAndSetWindow("Test Page", true);
+        this.assertPageHasText("Hello World!");
+    };
+
+    this.testSeekLast = function() {
+        this.seekAndSetWindow("Test Page", false);
+        this.assertPageHasText("Goto TestPage");
+
+        this.seekAndSetWindow("Test Page");
+        this.assertPageHasText("Goto TestPage");
+    };
+}

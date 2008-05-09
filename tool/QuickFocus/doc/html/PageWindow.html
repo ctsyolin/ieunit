@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="QuickFocus.css" type="text/css">
+    </head>
+    <body>
+        <h1 class="Topic">The page window</h1>
+        <p>The page window shows the web page under inspection. QuickFocus uses the 
+            Microsoft WebBrowser COM object to render HTML pages. The page window can 
+            either be in<b> detached mode</b> or<b> <tt>in</tt> attached mode. </b>You can 
+            switch the page window between the two modes by clicking on the mode indicator 
+            or by pressing the Ctrl-X key. In detached mode the page window behaviors like 
+            a normal web browser: you can navigate to any web site on Internet through 
+            hyperlinks, the navigation bar or the items from the <i>favorites</i> submenu.
+        </p>
+        <p>
+            In attached mode all mouse and keyboard events will be intercepted by 
+            QuickFocus as inspection directives. You can, for instance, inspect the HTML 
+            source of any element of the page by clicking on the spot of the element. The 
+            page window in attached mode normally shows two frames: the <b>focus frame </b>in 
+            green color that shows bounding box of the element the mouse point is currently 
+            in; and the <b>select frame</b> in red color that shows the bounding box of the 
+            element currently has been select for inspection.<br>
+        </p>
+        <p>When you move the mouse point over the page window, QuickFocus will 
+            automatically update the focus frame and display a short HTML source of the 
+            focused element in the status line. When you click on an element with the left 
+            mouse button, that element will become selected and QuickFocus will suggest 
+            corresponding code snippet to validate or control the selected element.<br>
+        </p>
+        <h5><small><b><big><big><big> The Focus Scope</big></big></big></b></small></h5>
+        <h4><small><b> </b></small>
+        </h4>
+        <p>The document object model (DOM) of a HTML page is a hierarchical tree structure. 
+            Normally, when you click on a spot in the rendered page QuickFocus will select 
+            the corresponding leaf element in the page's DOM tree. For instance, consider 
+            the B element the following code:<br>
+        </p>
+        <p>&nbsp;&nbsp;&nbsp; &lt;<tt>TABLE&gt;&lt;TR&gt;&lt;TD&gt;&lt;B&gt;OK&lt;/B&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;<br>
+            </tt>
+        </p>
+        <p>By default you will select the element with the B element when you click on the 
+            "OK" text. If you want to select the higher level elements like TD, TR, or 
+            TABLE element, you need to enlarge the <b>focus scope level</b> through the 
+            context menu of the page window. &nbsp;In particular, if the focus scope level 
+            is 1 you will select the direct parent of the element that has been clicked on, 
+            e.g. the TD element in above example. If the focus scope level is 2 the 
+            grandparent element will be select, e.g. the TR element in above example. And 
+            so on, you can select any ancestor element with appropriate focus scope level.<br>
+        </p>
+        <p>The context menu also provides menus to shrink and reset the focus scope level. 
+            The current focus scope level is displayed as prefix in the status line. The 
+            focus scope level is an application option that will be saved into the 
+            application configuration file and used when you restart QuickFocus.<b><big><br>
+                </big></b>
+        </p>
+        <h5><b><big><big> The Context Menu of the Page Window</big></big></b></h5>
+        <h5><b> </b>
+        </h5>
+        <p>The context menu associated with the page window in attached mode is opened by 
+            right-mouse clicking the page window at any spot. The menu items are explained 
+            as follows:<br>
+        </p>
+        <p><b>Enlarge Focus Scope<br>
+                Shrink Focus Scope<br>
+                Reset Focus Scope<br>
+            </b>
+        </p>
+        <p>Modifies the current focus scope level as described in previous section.
+            <br>
+        </p>
+        <p><b>Detach Page</b></p>
+        <p>Switch the page into detached mode.
+        </p>
+        <p><b>Click Focused Element<br>
+            </b>
+        </p>
+        <p>Send mouse click event to the focused element. If the element is, for instance, 
+            a hyperlink element the page window will open the page pointed by the 
+            hyperlink. The page window will stay in attached mode. This feature allows you 
+            to navigate to other pages without switching to detached mode.<br>
+        </p>
+        <p><b>Select Ancestor Element<br>
+            </b>
+        </p>
+        <p>As mentioned previously the HTML is internally structured as hierarchical tree. 
+            This menu item displays all ancestor elements of the selected element in its 
+            submenu in the right order. You can directly select any ancestor element by 
+            selecting the corresponding submenu item without changing the focus scope 
+            level.<br>
+        </p>
+        <p><b>Select Sibling Element<br>
+            </b>
+        </p>
+        <p>This submenu lists all sibling elements of the currently selected element. This 
+            submenu enables direct selection of any sibling element of &nbsp;the currently 
+            selected element.<br>
+        </p>
+        <p><b>Select Child Element</b></p>
+        <P>This submenu lists all direct child elements of the currently selected element. 
+            You can select any child element of the selected element through this submenu.</P>
+        <P><STRONG>Element Properties...</STRONG></P>
+        <P>Display the HTML source and main properties of the focused element.</P>
+        <P>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            &nbsp;</P>
+    </body>
+</html>

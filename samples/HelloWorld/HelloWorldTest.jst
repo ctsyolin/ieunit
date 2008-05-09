@@ -1,0 +1,22 @@
+function HelloWorldTest() {
+    assimilate(this, new IeUnit());
+
+    this.setUp = function() {
+        var url = this.getCaseDir() + "/" + "HelloWorld.html";
+        this.openWindow(url);
+    };
+
+    this.tearDown = function() {
+        this.closeWindow();
+    };
+
+    // Verify that the page contains only the text "Hello World!"
+    this.testCheckText = function() {
+        this.assertPageHasText("Hello World!");
+    };
+
+    // Verify that the style of the text is the HTML element H1
+    this.testCheckStyle = function() {
+        this.assertEquals("H1", this.findByText("Hello").tagName);
+    };
+}

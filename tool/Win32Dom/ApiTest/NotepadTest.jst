@@ -1,0 +1,124 @@
+function NotepadTest() {
+    assimilate(this, new IeTestCase());
+    assimilate(this, new Win32Dom());
+    var notepadCap = "Untitled - Notepad";
+    var notepad;
+    
+    this.startNotepad = function() {
+        // start notepad.exe
+        var cmdShell = new ActiveXObject("WScript.Shell");
+        cmdShell.Run("C:\\WINDOWS\\notepad.exe", 1, false);
+        this.sleep(500);
+        return this.waitForWindow(notepadCap);
+    }
+        
+    this.tearDown = function() {
+        // close notepad and close prompting window.
+        notepad.close();
+        var promptWin = this._desktop.findTopWindow("Notepad");
+        if ( promptWin != null ) {
+            //var noButton = this.findWinButton(promptWin, null, 1);
+            var noButton = this.findWinButton(promptWin, "No");            
+            noButton.click();
+            this.sleep(200);
+        }
+        notepad = null;
+        this.sleep(500);
+    };
+
+    this.testSendKey = function() {
+        notepad = this.startNotepad();
+        var editWin = this.findWindow(notepad, "Edit");
+
+        editWin.sendText("Hello");
+        
+        // Try to close notepad then cancel the close task.
+        notepad.pressKey(0x12); // The ALT key to trigger the menu
+        notepad.pressKey(0x46); // F key
+        notepad.pressKey(0x58); // X key       
+        this.sleep(500);
+
+        var promptWin = this._desktop.findTopWindow("Notepad");
+        if ( promptWin != null ) {
+            var cancelButton = this.findWinButton(promptWin, "Cancel"); 
+            cancelButton.click();
+            this.sleep(200);
+        }
+    };
+
+    this.testShowDomTree = function() {
+        notepad = this.startNotepad();
+        //this.log("Notepad DOM tree: " + notepad.GetDomTree());
+        this.assertContains(notepad.GetDomTree(), "Cap=\"Untitled - Notepad\"");
+    };
+    
+    this.testListWindows = function() {
+        notepad = this.startNotepad();
+
+        //this.log("Tree: " + notepad.GetDomTree());
+        
+        var wins = this.findWindowList(notepad);
+        this.assertEquals(2, wins.Count, "AA");
+        
+        this.assertEquals(notepadCap, notepad.text);
+        
+        wins = this.findWindowList(notepad, null);
+        this.assertEquals(2, wins.Count, "BB");
+
+        wins = this.findWindowList(notepad, null, null);
+        this.assertEquals(2, wins.Count, "CC");
+        
+        wins = this.findWindowList(notepad, "msctls_statusbar32");
+        this.assertEquals(1, wins.Count, "DD");
+           
+        wins = this.findWindowList(notepad, "Edit");
+        this.assertEquals(1, wins.Count, "EE");       
+        
+        var editWin = this.findWindow(notepad, "Edit");
+        wins = this.findWindowList(editWin);
+        this.assertEquals(0, wins.Count, "FF");
+    };
+    
+    this.testTypeHello = function() {
+        notepad = this.startNotepad();
+
+        var editWin = this.findWindow(notepad, "Edit");
+        editWin.text = "Hello World!";
+        this.sleep(500);
+        editWin.sendText("Hi\n");
+        this.sleep(500);
+    };
+    
+    this.testListAllTopWindow = function() {
+        notepad = this.startNotepad();
+
+        var notepad2 = this.startNotepad();
+        this.sleep("200"); // wait till the second notepad has started.
+        var winList = this._desktop.findAllTopWindows();
+        var notepadCount = 0;
+        for(var i=0; i<winList.Count; i++) {
+            if ( winList(i).text == "Untitled - Notepad") {
+                notepadCount ++;
+                if ( notepadCount == 1 ){
+                    winList(i).close();  // close the second notepad window.
+                }
+            }
+        }
+        this.sleep("500");
+        this.assertEquals(2, notepadCount);
+    };
+    
+    this.testTimeoutWait = function() {
+        var cmdShell = new ActiveXObject("WScript.Shell");
+        cmdShell.Run("C:\\WINDOWS\\notepad.exe", 1, false);
+        
+        var startTime =  (new Date()).getTime();
+        notepad = this.waitForWindow("UnknownWindowTitle", 200);
+        var duration = (new Date()).getTime() - startTime;
+        this.assertNull(notepad);
+        this.assertTrue( duration <= 300 );
+
+        notepad = this.waitForWindow(notepadCap, 1500);
+    };  
+}
+    

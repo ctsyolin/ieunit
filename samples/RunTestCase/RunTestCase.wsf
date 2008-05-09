@@ -1,0 +1,57 @@
+<package>
+<job id="HelloWold">
+<script language="JavaScript" src="../../lib/IeUnit.js"/>
+<script language="JavaScript">
+// 
+// This program demonstrates how to code a test case
+// without using the IeTextRunner. To run this test
+// just issue the following command:
+//
+//      ccscript RunTestCase.wsf
+//
+
+function RunTestCase() {
+    // inherite definitions from the 'base class'
+    assimilate(this, new IeTestCase());
+
+    // add some tests
+    this.testOnePlusOne = function() {
+        this.assertEquals(1+1, 2);
+    };
+
+    this.testHelloWorld = function() {
+        this.assertEquals("Hello " + "World", "Hello World");
+    };
+}
+
+var testCase = new RunTestCase();
+var _isDebugging = false;
+var successes = 0;
+var failures = 0;
+
+var testList = testCase.getAllTests();
+var tBegin = (new Date()).getTime();
+for(var j=0; j<testList.length; j++) {
+    var result = testCase.runTest(testList[j]);
+    var line = "RptTest: " + result.testName + ": ";
+    if ( result.exception == null ) {
+        successes ++;
+        line += "OK";
+    } else {
+        failures++;
+        line += "Failed: " + result.exception.description;
+    }
+    WScript.Echo(line);
+}
+
+var totalSec = ((new Date()).getTime() - tBegin)/1000.0;
+
+WScript.Echo("RptSuite: "
+            + "Total Duration: "+ totalSec + "sec,  "
+            + "        Successes: " + successes + ", "
+            +"Failures: " + failures); 
+
+</script>
+</job>
+</package>
+

@@ -1,0 +1,29 @@
+// Description: this script demonstrate how to use PwdHolder.html and PwdHolder.js
+// to implement a kind of secure password holder that simplifies login procedure
+// for groups of web site with the same password.
+//
+// The following are steps to install & configure this feature:
+//
+//  1. Copy PwdHolder.html and PwdHolder.js to %IEUNIT_HOME%/local
+// 
+//  2. Create password group in PwdHolder.html like similar as the two
+//     default groups 'bank' and 'demo'.
+//
+//  3. Adjust your SBK script to use GetPwd() method to fetch password from
+//     the password holder page.
+//
+//  4. Launch your SBK script. When the password holder page opens, enter
+//     the password into the corresponding group and then press the 
+//     "Activate Password" button.
+//
+//  Notice: the password will be hold valid for half-hour. During the half-time,
+//  any call of GetPwd() will automatically fetch the password from the pwd holder
+//  page. You can reset the timeout by pressing "Activate Password" button any time. 
+//     
+//  Notice: After you install PwdHolder.html and PwdHolder.js, you can just click
+//  this file (from Windows Explorer) to run this sample.
+
+this.openWindow("http://ieunit.sourceforge.net/samples/LoginDemo/Login.html");
+this.setField(0, "IeUnit");
+this.setField(1, GetPwd("demo"));
+this.clickButton("Login");

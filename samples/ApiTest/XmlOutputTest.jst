@@ -1,0 +1,88 @@
+// This module tests the command line options of IeTextRunner.wsf
+//
+function XmlOutputTest() {
+    assimilate(this, new IeTestCase());
+
+	var dom=null;
+	var de=null;
+	var testSuite=null;
+	var xmlFile=null;
+	
+	this.setUpCase=function() {
+		xmlFile="test.xml";
+		var cmdShell = new ActiveXObject("WScript.Shell");
+        var cmdStr = "cscript \"" + getRunnerDir() + "\\IeTextRunner.wsf\" -run FindByTag -xml " + xmlFile;
+        cmdShell.Run(cmdStr, 0, true);	
+	}
+	
+    this.testLoadXmlOutput = function() {        
+        dom=new ActiveXObject("MSXML.DomDocument");
+        dom.load(xmlFile);
+    }
+    
+    this.testDocumentElement = function() {      
+        de=dom.documentElement;
+        this.assertEquals("test-results", de.tagName);
+    }
+    
+    this.testDocumentElementAttributes = function() {   
+        this.assertEquals("IEUnit Tests", de.attributes.getNamedItem("name").value);
+		this.assertEquals(4, de.attributes.getNamedItem("total").value);
+		this.assertEquals("0", de.attributes.getNamedItem("failures").value);
+		this.assertEquals("0", de.attributes.getNamedItem("not-run").value);
+    }
+
+    this.testTestSuite = function() {      
+        var de=dom.documentElement;
+        var testSuites=de.selectNodes("test-suite")
+        this.assertEquals("1", testSuites.length);
+        testSuite=testSuites[0];
+        this.assertEquals("FindByTag", testSuite.attributes.getNamedItem("name").value);
+        this.assertEquals('true', testSuite.attributes.getNamedItem("success").value);
+       this.assertEquals(false, isNaN(testSuite.attributes.getNamedItem("time").value));
+    }
+    
+    this.testTestSuiteResults = function() { 
+        this.assertEquals("1", testSuite.selectNodes("results").length);
+        this.assertEquals(null, testSuite.selectNodes("results").innerText);
+        this.assertEquals("4", testSuite.selectNodes("results/test-case").length);
+    }
+    
+    this.testTestSuiteCaseOne = function() { 
+		var caseOne=testSuite.selectSingleNode("results/test-case[0]");
+        this.assertEquals("testFindWithoutIdx", caseOne.attributes.getNamedItem("name").value);
+        this.assertEquals("true", caseOne.attributes.getNamedItem("executed").value);
+        this.assertEquals("true", caseOne.attributes.getNamedItem("success").value);
+       this.assertEquals(false, isNaN(caseOne.attributes.getNamedItem("time").value));
+    }
+        
+    this.testTestSuiteCaseTwo = function() { 
+		var caseTwo=testSuite.selectSingleNode("results/test-case[1]");
+        this.assertEquals("testFindWithIdx", caseTwo.attributes.getNamedItem("name").value);
+        this.assertEquals("true", caseTwo.attributes.getNamedItem("executed").value);
+        this.assertEquals("true", caseTwo.attributes.getNamedItem("success").value);
+       this.assertEquals(false, isNaN(caseTwo.attributes.getNamedItem("time").value));
+    }
+    
+    this.testTestSuiteCaseThree = function() { 
+		var caseThree=testSuite.selectSingleNode("results/test-case[2]");
+        this.assertEquals("testWithoutTag", caseThree.attributes.getNamedItem("name").value);
+        this.assertEquals("true", caseThree.attributes.getNamedItem("executed").value);
+        this.assertEquals("true", caseThree.attributes.getNamedItem("success").value);
+       this.assertEquals(false, isNaN(caseThree.attributes.getNamedItem("time").value));
+    }
+    
+    this.testTestSuiteCaseFour = function() { 
+		var caseFour=testSuite.selectSingleNode("results/test-case[3]");
+        this.assertEquals("testNonExistentTag", caseFour.attributes.getNamedItem("name").value);
+        this.assertEquals("true", caseFour.attributes.getNamedItem("executed").value);
+        this.assertEquals("true", caseFour.attributes.getNamedItem("success").value);
+		this.assertEquals(false, isNaN(caseFour.attributes.getNamedItem("time").value));
+    }
+    
+	this.tearDownCase =function() {
+		dom=null;
+		_fso.DeleteFile(xmlFile);
+	}
+
+}

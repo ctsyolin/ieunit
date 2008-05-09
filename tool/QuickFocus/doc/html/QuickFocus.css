@@ -1,0 +1,10 @@
+BODY { background:white; }
+P    { margin-bottom:12pt; }
+IMG  { margin-top:12pt; margin-bottom:12pt; }
+LI   { margin-bottom:6pt; }
+.Topic { background-color:lightsteelblue; 
+    font-size:18pt; margin-top:-12pt; margin-left:-8pt; padding-left:8pt;margin-right:-8pt;}
+.QuickTips LI { margin-bottom:5pt; margin-left:12pt; margin-right:24pt; 
+    padding-left:5pt; padding-right:20pt; padding-top:5pt;padding-bottom:10pt;
+    background-color:#E0E0E0;
+    }

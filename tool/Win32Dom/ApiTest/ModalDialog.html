@@ -1,0 +1,15 @@
+<html>
+<script>
+function openModal()
+{
+    document.all.response.innerText = "Hi, " + showModalDialog("ModalPopup.html", "", "");
+}
+</script>
+
+<body>
+<form>
+<h1 id="response"></h1> <br/><br/>
+<input type="button" value="Open Modal Dialog"  onclick="openModal()">
+</form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!-- saved from url=(0014)about:internet -->
+<html>
+<body>
+<script Language="JavaScript">
+function ShowOptions(s) {
+    OptionX.innerText=s.options[0].selected;
+    OptionY.innerText=s.options[1].selected;
+    OptionZ.innerText=s.options[2].selected;
+}
+</script>
+<form>
+
+<select id="selectA">
+    <option>OptionA</option>
+    <option SELECTED>OptionB</option>
+    <option>OptionC</option>
+</select>
+
+<select id="selectB" onchange="ShowOptions(this)">
+    <option>OptionX</option>
+    <option SELECTED>OptionY</option>
+    <option>OptionZ</option>
+</select>
+
+<br>
+<span id="OptionX"></span>
+<br>
+<span id="OptionY"></span>
+<br>
+<span id="OptionZ"></span>
+</form>
+</body>
+</html>

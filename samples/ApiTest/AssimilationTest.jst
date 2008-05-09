@@ -1,0 +1,48 @@
+//Tested APIs: assimilate(), assertEquals().
+
+function AssimilationTest() {
+    assimilate(this, new IeTestCase());
+
+    function A() { this.className = "A"; }
+    function B() { this.myName = "B"; }
+    function C() { this.myName = "C"; }
+    var a, b, c;
+    
+    this.setUp = function() {
+        a = new A;
+        b = new B;
+        c = new C;
+    }
+
+    this.tearDown = function() {
+        a = b = c = null;
+    }
+
+    this.testNoSuffix = function() {
+        assimilate(a, b);
+        this.assertEquals(a.className, "A");
+        this.assertEquals(a.myName, "B");
+    }
+
+    this.testWithSuffix = function() {
+        assimilate(b, c, "New");
+        this.assertEquals(b.myNameNew, "C");
+    }
+
+    // assimilate b to a must fail because of the name conflict on myName.
+    this.testRejection = function() {
+        this.assertMustFail( function(){assimilate(b, c);} );
+    }
+
+    // override b.myName with c.myName
+    this.testOverride = function() {
+        assimilate(b, c, "", 1);
+        this.assertEquals(b.myName, "C");
+    }
+    
+    // keep b.myName and ignore c.myName
+    this.testOverride = function() {
+        assimilate(b, c, "", 2);
+        this.assertEquals(b.myName, "B");
+    }
+}

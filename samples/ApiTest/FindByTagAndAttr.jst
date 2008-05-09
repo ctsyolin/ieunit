@@ -1,0 +1,50 @@
+//Test APIs: findByTagAndAttr()
+
+function FindByTagAndAttr() {
+    assimilate(this, new IeUnit());
+
+    this.setUp = function() {
+        openLocalFile("InputPage.html");
+    };
+
+    this.tearDown = function() {
+        this.closeWindow();
+    };
+    
+    this.testFindWithoutIdx = function() {
+        var obj = this.findByTagAndAttr("input", "type~radio");
+        this.assertNotNull(obj);
+        this.assertEquals(true, obj.checked);
+    };
+
+    this.testFindWithIdx = function() {
+        var obj = this.findByTagAndAttr("input", "type~radio", 1);
+        this.assertNotNull(obj);
+        this.assertEquals(false, obj.checked);
+    };
+
+    this.testWithoutAttribute = function() {
+        var obj = this.findByTagAndAttr("input", "", 1);
+        this.assertNotNull(obj);
+        this.assertEquals("FieldB", obj.value);
+    };
+    
+    this.testWithoutTag = function() {
+        var obj = this.findByTagAndAttr("", "type~radio", 1);
+        this.assertNotNull(obj);
+        this.assertEquals(false, obj.checked);
+    };
+
+    this.testFindAttribute = function() {
+        _.assertNotNull(_.findByTagAndAttr("input", "id~button_id"));
+        _.assertNotNull(_.findByTagAndAttr("a", "id~FirstLink"));
+        _.assertNotNull(_.findByTagAndAttr("a", "href~TestPage.html"));
+        _.assertNotNull(_.findByTagAndAttr("img", "src~CheckButton.gif"));
+        _.assertNotNull(_.findByTagAndAttr("input", "value~FieldA"));
+        _.assertNotNull(_.findByTagAndAttr("form", "action~TestPage.html"));
+        _.assertNotNull(_.findByTagAndAttr("input", "name~RD", 2));
+        _.assertNotNull(_.findByTagAndAttr("td", "className~TestClass"));
+        _.assertNotNull(_.findByTagAndAttr("td", "class~TestClass"));
+        _.assertNotNull(_.findByTagAndAttr("td", "bgcolor~#90ee90")); // Notice: we can't use 'lightgreen' here.
+    }
+}

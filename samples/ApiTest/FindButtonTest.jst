@@ -1,0 +1,58 @@
+//Test APIs: findButton, assertNull
+//
+
+function FindButtonTest() {
+    // inherite definitions from the 'base class'
+    assimilate(this, new IeUnit());
+
+    this.setUp = function() {
+        openLocalFile("InputButtonPage.html");
+    };
+
+    this.tearDown = function() {
+        this.closeWindow();
+    };
+    
+    this.testFindInputButton = function() {
+        this.assertNotNull( this.findButton("input_submit_1") );
+        this.assertNotNull( this.findButton("input_submit_2") );
+        this.assertNotNull( this.findButton("input_button_3") );
+        this.assertNotNull( this.findButton("input_button_4") );
+        this.assertNotNull( this.findButton("CheckButton.gif") );
+        this.assertNotNull( this.findButton("tag_button_1") );
+        this.assertNotNull( this.findButton("tag_button_2") );
+    };
+
+    // test the substring matching.
+    this.testFindButtonBySubstr = function() {
+        this.assertNotNull( this.findButton("submit_1") );
+        this.assertNotNull( this.findButton("button_3") );
+        this.assertNotNull( this.findButton("CheckButton") );
+        this.assertNotNull( this.findButton("button_1") );
+    };
+
+    // test the absence case
+    this.testFindButtonFail = function() {
+        this.assertNull( this.findButton("AAAsubmit_1") );
+        this.assertNull( this.findButton("AAAbutton_3") );
+        this.assertNull( this.findButton("AAACheckButton") );
+        this.assertNull( this.findButton("AAAbutton_1") );
+    };
+
+    this.testFindButtonById = function() {
+        this.assertNotNull( this.findObjById("test_id_1") );
+        this.assertNotNull( this.findObjById("test_id_2") );
+        this.assertNull( this.findObjById("test_id_3") );
+    };
+
+    this.testClickButtonExeption = function() {
+        this.clickButton("tag_button_1");
+        this.clickObjById("test_id_2");
+        try {
+            this.clickButton("UnknownButton");
+        } catch (e) {
+            this.assertEquals(e.description, 
+                "Can't find button whose label contains 'UnknownButton'");
+        }
+    };    
+}

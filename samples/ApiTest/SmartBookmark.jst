@@ -1,0 +1,16 @@
+function SmartBookmark() {
+    assimilate(this, new IeUnit());
+
+    this.testOpenPage = function () {
+        var cmdShell = new ActiveXObject("WScript.Shell");      
+        cmdShell.Run("SbkTest.sbk", 0, true);
+
+        // validate that the smart bookmark has done its work.
+        this.seekAndSetWindow("Test Page");
+        this.assertNotNull( this.win );
+        this.assertPageHasText("Hello World!");    
+        this.closeWindow();
+    }
+
+}
+    

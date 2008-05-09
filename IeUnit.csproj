@@ -1,0 +1,187 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ECAE5018-0041-489B-B9D1-1837E45ABD29}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>IeUnit</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>IeUnit</RootNamespace>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>.\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="bin\DebugTest.bat" />
+    <None Include="bin\OpenSmartBookmark.bat" />
+    <None Include="bin\OpenTestWin.bat" />
+    <None Include="bin\StartGuiRunner.bat" />
+    <None Include="bin\StartTest.bat" />
+    <None Include="bin\StartTest0.bat" />
+    <None Include="bin\UnInstall.bat" />
+    <None Include="doc\BuildApiRef.bat" />
+    <None Include="doc\Doxyfile" />
+    <None Include="lib\Config.wjs" />
+    <None Include="lib\IeRunner.wjs" />
+    <None Include="lib\TestSuiteReport.wjs" />
+    <None Include="samples\ApiTest\AssertTest.jst" />
+    <None Include="samples\ApiTest\AssimilationTest.jst" />
+    <None Include="samples\ApiTest\CaseFixtureTest.jst" />
+    <None Include="samples\ApiTest\CheckTestSuite.jst" />
+    <None Include="samples\ApiTest\clickLinkRangeTest.jst" />
+    <None Include="samples\ApiTest\DebugUtilTest.jst" />
+    <None Include="samples\ApiTest\FindButtonTest.jst" />
+    <None Include="samples\ApiTest\FindByTagAndAttr.jst" />
+    <None Include="samples\ApiTest\FindByText.jst" />
+    <None Include="samples\ApiTest\FindTag.jst" />
+    <None Include="samples\ApiTest\FrameTest.jst" />
+    <None Include="samples\ApiTest\GlobalVariables.jst" />
+    <None Include="samples\ApiTest\GuiRunnerTest.jst" />
+    <None Include="samples\ApiTest\InputTest.jst" />
+    <None Include="samples\ApiTest\MultipleButtons.jst" />
+    <None Include="samples\ApiTest\MustFailTest.jst" />
+    <None Include="samples\ApiTest\OpenCloseWindow.jst" />
+    <None Include="samples\ApiTest\RunnerTest.jst" />
+    <None Include="samples\ApiTest\RunTest.bat" />
+    <None Include="samples\ApiTest\RunTestCase.jst" />
+    <None Include="samples\ApiTest\SeekWindowTest.jst" />
+    <None Include="samples\ApiTest\SelectTest.jst" />
+    <None Include="samples\ApiTest\SubclassTestCase.jst" />
+    <None Include="samples\ApiTest\SubDir\IncludeOption.jst" />
+    <None Include="samples\ApiTest\SupressPopupWindow.jst" />
+    <None Include="samples\ApiTest\TableTest.jst" />
+    <None Include="samples\ApiTest\TextRunnerTest.jst" />
+    <None Include="samples\ApiTest\WaitForSuccessTest.jst" />
+    <None Include="samples\ApiTest\XmlOutputTest.jst" />
+    <None Include="samples\RunTest.bat" />
+    <None Include="workspace\SampleBookmark.sbk" />
+    <None Include="workspace\SampleTest.jst" />
+    <Content Include="bin\JavaScriptTest.ico" />
+    <Content Include="bin\SmartBookmark.ico" />
+    <Content Include="doc\download.html" />
+    <Content Include="doc\ExtendingIeUnit.html" />
+    <Content Include="doc\FAQ.html" />
+    <Content Include="doc\FrameworkAPI.html" />
+    <Content Include="doc\GettingStarted.html" />
+    <Content Include="doc\GuiRunner.JPG" />
+    <Content Include="doc\IeUnit_Releasenote.html" />
+    <Content Include="doc\index.html" />
+    <Content Include="doc\JsFilter.js" />
+    <Content Include="doc\main.html" />
+    <Content Include="doc\PostFilter.js" />
+    <Content Include="doc\sidemenu.html" />
+    <Content Include="doc\style.css" />
+    <Content Include="doc\TestFramework.html" />
+    <Content Include="doc\UserGuide.html" />
+    <Content Include="lib\IeDebug.js" />
+    <Content Include="lib\IeDhtml.js" />
+    <Content Include="lib\IeGuiRunner.html" />
+    <Content Include="lib\IeGuiRunner.wsf" />
+    <Content Include="lib\IeTextRunner.wsf" />
+    <Content Include="lib\IeUnit.js" />
+    <Content Include="lib\SmartBookmark.wsf" />
+    <Content Include="lib\Win32Dom.js" />
+    <Content Include="samples\ApiTest\ApiTest.js" />
+    <Content Include="samples\ApiTest\CheckButton.gif" />
+    <Content Include="samples\ApiTest\DelayedUpdated.html" />
+    <Content Include="samples\ApiTest\FrameTop.html" />
+    <Content Include="samples\ApiTest\InputButtonPage.html" />
+    <Content Include="samples\ApiTest\InputPage.html" />
+    <Content Include="samples\ApiTest\LeftFrame.html" />
+    <Content Include="samples\ApiTest\LowRightFrame.html" />
+    <Content Include="samples\ApiTest\MultipleButtons.html" />
+    <Content Include="samples\ApiTest\navPage1.html" />
+    <Content Include="samples\ApiTest\navPage2.html" />
+    <Content Include="samples\ApiTest\navPage3.html" />
+    <Content Include="samples\ApiTest\navPage4.html" />
+    <Content Include="samples\ApiTest\PageWithFrames.html" />
+    <Content Include="samples\ApiTest\PopupButton.html" />
+    <Content Include="samples\ApiTest\Readme.txt" />
+    <Content Include="samples\ApiTest\SelectPage.html" />
+    <Content Include="samples\ApiTest\SubDir\LibDir\HelloFct.js" />
+    <Content Include="samples\ApiTest\TestPage.html" />
+    <Content Include="samples\ApiTest\TestTables.html" />
+    <Content Include="samples\ApiTest\UpRightFrame.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dummy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="samples\HelloWorld\" />
+    <Folder Include="samples\LoginDemo\" />
+    <Folder Include="samples\RunTestCase\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>cd  $(TargetDir)doc &amp; BuildApiRef.bat</PostBuildEvent>
+  </PropertyGroup>
+</Project>

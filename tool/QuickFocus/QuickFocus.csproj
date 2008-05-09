@@ -1,0 +1,313 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6F2B7F08-2C61-42B5-A588-56B6D7BA70F5}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>QuickFocusApp.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>QuickFocus</AssemblyName>
+    <AssemblyOriginatorKeyFile>QuickFocus.snk</AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuickFocus</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>QuickFocus.MainForm</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;DEBUG;QA_TEST</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AppTest, Version=1.0.100.17170, Culture=neutral, PublicKeyToken=be268d35b7fdc692, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>AppTest\AppTest.dll</HintPath>
+    </Reference>
+    <Reference Include="AxSHDocVw, Version=1.1.0.0, Culture=neutral, PublicKeyToken=2361d360e55692c8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\AxSHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml">
+      <Name>Microsoft.mshtml</Name>
+      <HintPath>..\..\..\..\Program Files\Microsoft.NET\Primary Interop Assemblies\Microsoft.mshtml.dll</HintPath>
+      <AssemblyFolderKey>hklm\primary interop assemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="SHDocVw, Version=1.1.0.0, Culture=neutral, PublicKeyToken=2361d360e55692c8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\SHDocVw.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageElement\AnchorLink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AppConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AppLogger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PageElement\Button.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PageElement\CheckBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommonUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ElementProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageElement\ForeignFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Frameset.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MsgBox.cs" />
+    <Compile Include="Root.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PageElement\ImageElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PageElement\InputText.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageElement\MapArea.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PageElement\PageElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\Element\AnchorLink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\Gui\AttachPage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\Gui\BackForward.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\Element\CheckBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\Gui\ClickSnip.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\Gui\ContextMenuTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\Gui\ControlStatus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\Element\FrameTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\Element\InputButton.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\Element\InputText.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\Element\MapArea.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\Misc\MultipleNames.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\QaMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\QaTestCase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\Element\RadioButton.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\Gui\RunSnippet.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\Element\SelectOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\Gui\StubSnip.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\Gui\SubmitSnip.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\Element\TextArea.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QA\Misc\UnicodeTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PageElement\RadioButton.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ResourceLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScreenPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ScriptRunner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PageElement\SelectOption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StubGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PageElement\TableElement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PageElement\TextArea.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PageElement\TextBlock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Win32Interop.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppLogger.resx">
+      <DependentUpon>AppLogger.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppOptionsForm.resx">
+      <DependentUpon>AppOptionsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElementProperties.resx">
+      <DependentUpon>ElementProperties.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\AttachButton.bmp" />
+    <EmbeddedResource Include="Images\CopySnippet.bmp" />
+    <EmbeddedResource Include="Images\DetachButton.bmp" />
+    <EmbeddedResource Include="Images\GoBack.bmp" />
+    <EmbeddedResource Include="Images\GoForward.bmp" />
+    <EmbeddedResource Include="Images\GoToURL.bmp" />
+    <EmbeddedResource Include="Images\StopDownload.bmp" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuickFocusApp.ico" />
+    <EmbeddedResource Include="ScreenPanel.resx">
+      <DependentUpon>ScreenPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="samples\AnchorLink.html" />
+    <Content Include="samples\Button.html" />
+    <Content Include="samples\CheckBox.html" />
+    <Content Include="samples\CheckButton.gif" />
+    <Content Include="samples\ChildFrame.html" />
+    <Content Include="samples\Frames.html" />
+    <Content Include="samples\HelloWorld.html" />
+    <Content Include="samples\Iframes.html" />
+    <Content Include="samples\InputText.html" />
+    <Content Include="samples\LongePage.html" />
+    <Content Include="samples\MultipleNames.html" />
+    <Content Include="samples\RadioButton.html" />
+    <Content Include="samples\SelectOption.html" />
+    <Content Include="samples\TestStyle.css" />
+    <Content Include="samples\TextTable.html" />
+    <Content Include="samples\TopFrame.html" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>$(ProjectDir)PreBuild.bat  $(ProjectDir)</PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

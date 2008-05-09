@@ -1,0 +1,24 @@
+function SupressPopupWindow() {
+    assimilate(this, new IeUnit());
+
+    this.setUp = function() {
+        openLocalFile("PopupButton.html");
+    };
+
+    this.tearDown = function() {
+        this.closeWindow();
+   };
+
+   this.testClickButtonWithOK = function() {
+        this.win.confirm = function() { return true; }
+        this.clickButton("submit");
+        this.assertEquals("OK", this.doc.all("response").innerText);
+   };
+
+   this.testClickButtonWithCancel = function() {
+        this.win.confirm = function() { return false; }
+        this.clickButton("submit");
+        this.assertEquals("Cancel", this.doc.all("response").innerText);
+   };
+ }
+

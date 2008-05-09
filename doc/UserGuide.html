@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>IeUnit UserGuide</title>
+             		 		         
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+    		         
+  <link href="style.css" type="text/css" rel="stylesheet">
+    		         
+  <script language="JavaScript" type="text/javascript">
+
+   function SetSectionIndex() {
+
+    var list = document.all;
+
+    var idxH2 = 0;
+
+    var idxH3 = 0;
+
+    for(var i=0; i<list.length; i++) {
+
+        var tag = list[i].tagName;
+
+        if ( tag == "H2" ) {
+
+            idxH2++;
+
+            idxH3 = 0;
+
+            list[i].innerText = idxH2 + ". " + list[i].innerText;
+
+        } else if ( tag == "H3" ) {
+
+            idxH3++;
+
+            list[i].innerText = idxH2 + "." + idxH3 + ". " + list[i].innerText;
+
+        }
+
+    }
+
+}
+
+function Main() {
+
+    SetSectionIndex();
+
+}
+
+		</script>
+</head>
+  <body onload="Main()">
+    		   
+<table class="libnavb" width="95%" id="Table1">
+     <tbody>
+       <tr>
+         <td width="33%">&nbsp;</td>
+         <td width="33%" align="center">&nbsp;</td>
+         <td width="33%" align="right"><a href="GettingStarted.html">Getting 
+ started</a></td>
+       </tr>
+           
+  </tbody>   
+</table>
+    		 		   
+<h1 align="center">IeUnit</h1>
+     		   
+<h2>Introduction</h2>
+    		   
+<p> 			IeUnit is a framework to test logical behaviors of web pages. It helps 
+ users to  			create, organize and execute functional unit tests.</p>
+    		   
+<p>The architecture of IeUnit is based on the <a
+ href="http://www.xprogramming.com/software.htm"> 				xUnit</a> framework 
+ which has been adapted to various languages and  			platforms. IeUnit is 
+implemented in JavaScript language and tailored to Windows  			platform. By
+leveraging services provided by Internet Explorer, its DHTML model  			and 
+related COM technologies IeUnit offers a simple and efficient test  			framework. 
+ 		</p>
+    		   
+<p> 			The main characteristics of IeUnit are: 		</p>
+    		   
+<ul>
+    			<li> 			It is easy to understand and to use for users familiar with
+ Internet Explorer  			and its DHTML model. 			</li>
+     <li> 			It is extensible in an objected oriented manner. 			</li>
+     <li> 			It can work in a non-intrusive manner: You can test HTML pages 
+ without changing  			the page's source code. 			</li>
+     <li> 				All software components required by IeUnit are freely available 
+ on Windows XP  				platform. 			</li>
+    		   
+</ul>
+    		   
+<p> 			As representative examples consider the following use cases for IeUnit:
+  		</p>
+    		   
+<ul>
+    			<li> 			You have developed a web page that allows user to logon with
+user  name and password.  			You want to test that this page accepts user
+with valid password and rejects  			user with invalid password. 			</li>
+     <li> 			You want to test that the response time for you web site for 
+typical   			transactions are below 10 seconds. 			</li>
+     <li> 				Smart bookmark: Some web portal offers service via stateful 
+sessions.  To use  				those services you normally have to manually logon
+to the site, then navigate  to particular  				page. Using the IeUnit you
+can create a short script that  reduces the whole  				navigation work to
+a single mouse click. 			</li>
+    		   
+</ul>
+    		   
+<p>It should be noted that although IeUnit only works on Windows platform 
+ it can be  			used to test HTML pages coming from any web servers as long 
+ as those pages are  			coded according to HTML standard.</p>
+    		   
+<p> 			As mentioned above IeUnit is intended to test the logical behavior 
+ of web  			pages. It is not intended to test artistic aspects of web pages. 
+ Also, IeUnit  			currently doesn't support testing of features implemented 
+ with browser plug-ins  			(like Acrobat Reader, Shockwave etc.).</p>
+    		<a name="GettingStarted"></a>		 		   
+<p> 		</p>
+     
+<p>&nbsp;</p>
+    		   
+<table class="libnavb" width="95%">
+     <tbody>
+       <tr>
+         <td width="33%">&nbsp;</td>
+         <td width="33%" align="center">&nbsp;</td>
+         <td width="33%" align="right"><a href="GettingStarted.html">Getting 
+ started</a></td>
+       </tr>
+           
+  </tbody>   
+</table>
+    		 	<br>
+    <br>
+ <br>
+</body>
+</html>

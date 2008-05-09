@@ -1,0 +1,97 @@
+//Test APIs: assertTrue(), assertEquals(), assertNotNull(), 
+//           assertPageHasText()
+
+function AssertTest() {
+    // inherite definitions from the 'base class'
+    assimilate(this, new IeUnit());
+
+    this.setUp = function() {
+        openLocalFile("TestPage.html");
+    }
+    this.tearDown = function() {
+        this.closeWindow();
+    }
+    
+    this.testAssertTrue = function() {
+        this.assertTrue(true);
+        try {
+            this.assertTrue(false, "Msg Test Failed");
+        } catch (e) {
+            this.assertContains(e.description, "Msg Test Failed", "AAAA");
+        }
+    };
+
+    this.testAssertEquals = function() {
+        var txt = "ABC";
+        this.assertEquals("ABC", txt);
+
+        try {
+            this.assertEquals("xxxABC", txt, "Msg Test Failed");
+        } catch(e) {
+            this.assertContains(e.description, "Msg Test Failed", "BBB");
+        }
+    };
+    
+    this.testAssertNotNull = function() {
+        var txt = "ABC";
+        this.assertNotNull(txt);
+
+        try {
+            this.assertNotNull(null, "Msg Test Failed");
+        } catch(e) {
+            this.assertContains(e.description, "Msg Test Failed", "CCC");
+        }
+    };
+
+    this.testAssertPageHasText = function() {
+        this.assertPageHasText("largest font");
+        this.assertPageHasText("larger font");
+
+        try {
+            this.assertPageHasText("xxxxlargest font", "Msg Test Failed");
+        } catch(e) {
+            this.assertContains(e.description, "Msg Test Failed", "DDD");
+        }
+    };
+
+    this.testAssertTagHasText = function() {
+        this.assertTagHasText("H1",0,"largest font");
+        this.assertTagHasText("H2",0,"larger font");
+        this.assertTagHasText("H3",0,"normal font");
+        this.assertTagHasText("H3",0,"font");
+        this.assertTagHasText("H3",0,"normal");
+        this.assertMustFail( function() { this.assertTagHasText("H3", 1, "normal") } );
+        this.assertMustFail( function() { this.assertTagHasText("H3", 0, "xyznormal") } );
+        this.assertMustFail( function() { this.assertTagHasText("TABLE", 0, "normal") } );
+    };
+
+    this.testAssertContains = function() {
+        this.assertContains("Hello World!", "World");
+        this.assertContains("Hello World!", "Wor");
+        this.assertContains("Hello World!", "Hello");
+
+        try {
+            this.assertContains("Hello World!", "xxxxxHello", "Msg Test Failed");
+        } catch(e) {
+            if ( e.description.indexOf("Msg Test Failed") < 0 ) {
+                this.assertFail("EEE");
+            }
+        }
+    };
+
+    this.testAssertFail = function() {
+        try {
+            this.assertFail("Msg Test Failed");
+        } catch(e) {
+            this.assertContains(e.description, "Msg Test Failed", "FFF");
+        }
+        
+        try {
+            this.assertFail();
+        } catch(e) {
+            this.assertContains(e.description, "Forced failure", "GGG");
+        }
+    };
+
+}
+

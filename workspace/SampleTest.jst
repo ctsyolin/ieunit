@@ -1,0 +1,37 @@
+// Description: This is a sample test case for IeUnit.
+// This test case can be executed in one of the following three
+// ways:
+//   * Issue the command: cscript /NoLogo IeGuiRunner.wsf SampleTest 
+//   * Issue the command: SampleTest.jst
+//   * From Windows Explorer click on the file SampleTest.jst
+//
+// To Create your own test case renamed this file to a different name and fill in your
+// own test code. You can also create test case in different directory.
+//
+function SampleTest() {
+    assimilate(this, new IeUnit());
+    var obj = this;
+
+    this.setUp = function() {
+        this.openWindow("http://ieunit.sourceforge.net/samples/LoginDemo/Login.html");
+    };
+
+    this.tearDown =function() {
+        this.closeWindow();
+    };
+    
+    this.login = function(userName, userPwd) {
+        this.setField(0, userName);
+        this.setField(1, userPwd);
+        this.clickButton("Login");
+
+        this.assertNotNull(this.findByText("Hi! " + userName));
+        this.clickLink("Logout");
+        this.assertNotNull(this.findByText("Login Page"));
+    };
+    
+    this.testValidLogin = function() {
+        this.login("IeUnit", "DemoPwd");
+        this.login("James",  "AdminPwd");
+    };
+}

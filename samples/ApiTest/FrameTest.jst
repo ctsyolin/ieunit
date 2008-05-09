@@ -1,0 +1,118 @@
+//Tested APIs: setFrame(), setFindScopeToFrame();
+
+function FrameTest() {
+    assimilate(this, new IeUnit());
+
+    this.setUp = function() {
+        this.setTime(200, -1);
+    };
+
+    this.tearDown = function() {
+        this.closeWindow();
+    };
+ 
+    this.testSetFrame = function() {
+        openLocalFile("PageWithFrames.html");
+
+        this.setFrame(1);
+        this.clickButton("Who?");
+        var btn = this.findButton("Frame");
+        this.assertEquals("UpRightFrame", btn.value);
+
+        //Set the low right frame to the default frame.
+        this.setFrame(2);
+        this.clickButton("Who?");
+        var btn = this.findButton("Frame");
+        this.assertEquals("LowRightFrame", btn.value);
+
+
+        //Set the left frame to the default frame.
+        this.setFrame(0);
+        this.clickButton("Who?");
+        var btn = this.findButton("Frame");
+        this.assertEquals("LeftFrame", btn.value);
+    };
+
+    // notice: setFindScopeToFrame differs from setFrame that
+    // setFindScope lost its effect after the submision
+    this.testSetFindScopeToFrame = function() {
+        openLocalFile("PageWithFrames.html");
+        this.setFindScopeToFrame(2);
+        this.clickButton("Who?");
+
+        // low left frame now must have changed its button name
+        // but the dfeault frame is still the left frame.
+
+        this.findButton("Who");
+        this.setFindScopeToFrame(2);
+        this.findButton("LowRightFrame");
+    };
+    
+    this.testSetFrameById = function() {
+        openLocalFile("PageWithFrames.html");
+
+        this.setFrame("FrameB");
+        this.clickButton("Who?");
+        var btn = this.findButton("Frame");
+        this.assertEquals("UpRightFrame", btn.value);
+
+        //Set the low right frame to the default frame.
+        this.setFrame("FrameC");
+        this.clickButton("Who?");
+        var btn = this.findButton("Frame");
+        this.assertEquals("LowRightFrame", btn.value);
+
+        //Set the left frame to the default frame.
+        this.setFrame("FrameA");
+        this.clickButton("Who?");
+        var btn = this.findButton("Frame");
+        this.assertEquals("LeftFrame", btn.value);        
+    };
+
+    this.testSetFrameByName = function() {
+        openLocalFile("PageWithFrames.html");
+        //Set the up right frame to the default frame.
+        this.setFrame("nameB");
+        this.clickButton("Who?");
+        var btn = this.findButton("Frame");
+        this.assertEquals("UpRightFrame", btn.value);
+
+        //Set the low right frame to the default frame.
+        this.setFrame("nameC");
+        this.clickButton("Who?");
+        var btn = this.findButton("Frame");
+        this.assertEquals("LowRightFrame", btn.value);
+
+        //Set the left frame to the default frame.
+        this.setFrame("nameA");
+        this.clickButton("Who?");
+        var btn = this.findButton("Frame");
+        this.assertEquals("LeftFrame", btn.value);        
+    };
+
+    this.checkNestedFrame = function(thePath) {
+        openLocalFile("FrameTop.html");    
+        this.setFrame(thePath);
+        this.clickButton("Who?");
+        var btn = this.findButton("Frame");
+        this.assertNotNull(btn);
+        this.assertEquals("UpRightFrame", btn.value);
+    };
+
+    this.testExNestedFrame1 = function() {
+        this.checkNestedFrame("bottomFrame/nameB");
+    };
+    
+    this.testExNestedFrame2 = function() {
+        this.checkNestedFrame("1/1");
+    };
+    
+    this.testExNestedFrame3 = function() {
+        this.checkNestedFrame("1/nameB");
+    };
+    
+    this.testExNestedFrame4 = function() {
+        this.checkNestedFrame("bottomFrame/1");
+    };
+        
+}

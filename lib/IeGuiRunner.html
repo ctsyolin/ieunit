@@ -1,0 +1,70 @@
+<!-- saved from url=(0014)about:internet --> 
+<html>
+<title>IE Unit Test Runner</title>
+<style>
+.testList {
+    border:solid;
+    border-width:1;
+    font-size:xx-small;
+    width:100%;
+}
+
+.testList tr th {
+    background-color:#D0D0D0;
+    font-weight:bold;
+}
+
+.caseName td {
+    background-color:#E8E8E8;
+}
+
+.testWin {
+    display:none; 
+    overflow-y:scroll; 
+    border:solid;
+    height: expression(document.body.clientHeight - 110); 
+    width:expression(document.body.clientWidth-50);
+    border-width:1pt;
+}
+
+body {
+    background-color:#ccccff
+}
+
+</style>
+<head>
+</head>
+
+<body onload="document.win=window">
+
+<table cellspacing="0" style="width:100%">
+<tr valign="bottom">
+<td>
+<input type="button" name="SelectAll"    value="Select All"/>
+<input type="button" name="UnSelectAll"  value="UnSelect All"/>
+<input type="button" name="SelectFailed" value="Select Failed"/>
+<span style="width:50pt; align:right;"></span>
+<input type="button" name="RunSelected"  value="Run"/>
+<input type="button" name="QuitSession"  value="Quit"/>
+<hr width=0 size=1/>
+<b>Test Statistics:</b> <span id="TestResults"/>
+<hr width=0 size=1/>
+</tr>
+
+<tr>
+<td>
+<div id="TestWin" class="testWin">
+<table cellspacing="0" class="testList" id="TestTable" Border=1>
+<tr>
+<th width="1%">&nbsp;</th>
+<th width="1%">Test Name</th>
+<th width="1%">Time</th>
+<th width=>Message</th</tr>
+</table>
+</div>
+</td>
+<tr>
+
+</table>
+</body>
+</html>

@@ -1,0 +1,42 @@
+//Test APIs: findByTag()
+
+function FindByTag() {
+    assimilate(this, new IeUnit());
+
+    this.setUpCase = function() {
+        openLocalFile("InputPage.html");
+    };
+
+    this.tearDownCase = function() {
+		this.closeWindow();
+    };
+    
+    this.testFindWithoutIdx = function() {
+        var obj = this.findByTag("input");
+        this.assertNotNull(obj);
+        this.assertEquals("FieldA", obj.value);
+    };
+
+    this.testFindWithIdx = function() {
+        var obj = this.findByTag("input", 1);
+        this.assertNotNull(obj);
+        this.assertEquals("FieldB", obj.value);
+    };
+    
+    this.testFindWithIdx = function() {
+        var obj = this.findByTag("input", 1);
+        this.assertNotNull(obj);
+        this.assertEquals("FieldB", obj.value);
+    };
+    
+    this.testWithoutTag = function() {
+        var obj = this.findByTag("", 4);
+        this.assertNotNull(obj);
+        this.assertEquals("A", obj.tagName);
+    };
+    
+    this.testNonExistentTag = function() {
+        var obj = this.findByTag("select");
+        this.assertEquals(null, obj);
+    };
+}

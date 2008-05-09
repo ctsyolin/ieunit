@@ -1,0 +1,2688 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FxCopProject Version="1.35" Name="My FxCop Project">
+ <ProjectOptions>
+  <SharedProject>True</SharedProject>
+  <Stylesheet Apply="False">http://www.gotdotnet.com/team/fxcop//xsl/1.35/FxCopReport.xsl</Stylesheet>
+  <SaveMessages>
+   <Project Status="Active, Excluded" NewOnly="False" />
+   <Report Status="Active" NewOnly="False" />
+  </SaveMessages>
+  <ProjectFile Compress="True" DefaultTargetCheck="True" DefaultRuleCheck="True" SaveByRuleGroup="" Deterministic="True" />
+  <EnableMultithreadedLoad>True</EnableMultithreadedLoad>
+  <EnableMultithreadedAnalysis>True</EnableMultithreadedAnalysis>
+  <SourceLookup>True</SourceLookup>
+  <AnalysisExceptionsThreshold>10</AnalysisExceptionsThreshold>
+  <RuleExceptionsThreshold>1</RuleExceptionsThreshold>
+  <Spelling Locale="en-us" />
+  <VersionAware>False</VersionAware>
+  <OverrideRuleVisibilities>False</OverrideRuleVisibilities>
+  <CustomDictionaries SearchFxCopDir="True" SearchUserProfile="True" SearchProjectDir="True" />
+  <SearchGlobalAssemblyCache>False</SearchGlobalAssemblyCache>
+  <DeadlockDetectionTimeout>120</DeadlockDetectionTimeout>
+ </ProjectOptions>
+ <Targets>
+  <Target Name="$(ProjectDir)/bin/Debug/QuickFocus.exe" Analyze="True" AnalyzeAllChildren="True" />
+ </Targets>
+ <Rules>
+  <RuleFiles>
+   <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\GlobalizationRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\InteroperabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\MobilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\UsageRules.dll" Enabled="True" AllRulesEnabled="True" />
+  </RuleFiles>
+  <Groups />
+  <Settings />
+ </Rules>
+ <FxCopReport Version="1.35">
+  <Targets>
+   <Target Name="$(ProjectDir)/bin/Debug/QuickFocus.exe">
+    <Modules>
+     <Module Name="quickfocus.exe">
+      <Namespaces>
+       <Namespace Name="QuickFocus">
+        <Types>
+         <Type Name="AboutBox">
+          <Members>
+           <Member Name=".ctor()">
+            <Messages>
+             <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>AboutBox.AboutBox()</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>QuickFocus Std v____.____.__</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="InitializeComponent():System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>AboutBox.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>A software tool to inspect HTML document and help create IeUnit test scripts</Item>
+              </Issue>
+              <Issue>
+               <Item>AboutBox.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>About QuickFocus</Item>
+              </Issue>
+              <Issue>
+               <Item>AboutBox.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Copyright:</Item>
+              </Issue>
+              <Issue>
+               <Item>AboutBox.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Description:</Item>
+              </Issue>
+              <Issue>
+               <Item>AboutBox.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>End User License Agreement</Item>
+              </Issue>
+              <Issue>
+               <Item>AboutBox.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>OK</Item>
+              </Issue>
+              <Issue>
+               <Item>AboutBox.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Permission to use, copy, modify, distribute and sell this software and its documentation for any purpose is hereby granted without fee, provided that the above copyright notice appear in all copies and that both that copyright notice and this permission notice appear in supporting documentation. VisuMap Technologies Company makes no representations about the suitability of this software for any purpose. It is provided "as is" without express or implied warranty. </Item>
+              </Issue>
+              <Issue>
+               <Item>AboutBox.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>QuickFocus Standard Edition</Item>
+              </Issue>
+              <Issue>
+               <Item>AboutBox.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>TM</Item>
+              </Issue>
+              <Issue>
+               <Item>AboutBox.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Version:</Item>
+              </Issue>
+              <Issue>
+               <Item>AboutBox.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Web Home:</Item>
+              </Issue>
+              <Issue>
+               <Item>AboutBox.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>http://www.visumap.net</Item>
+              </Issue>
+              <Issue>
+               <Item>AboutBox.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>© 2005, VisuMap Technologies Inc.</Item>
+              </Issue>
+             </Message>
+             <Message Id="Visu" TypeName="LiteralsShouldBeSpelledCorrectly" Category="Microsoft.Usage" CheckId="CA2204" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>Visu</Item>
+               <Item>VisuMap</Item>
+              </Issue>
+              <Issue>
+               <Item>Visu</Item>
+               <Item>VisuMap</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="AnchorLink">
+          <Members>
+           <Member Name="AsAnchorLink(mshtml.IHTMLElement):QuickFocus.AnchorLink">
+            <Messages>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>AnchorLink.AsAnchorLink(IHTMLElement):AnchorLink</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="AppConfig">
+          <Members>
+           <Member Name=".ctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>AppConfig.AppConfig()</Item>
+               <Item>appDirectory</Item>
+               <Item>System.String</Item>
+               <Item>null</Item>
+              </Issue>
+              <Issue>
+               <Item>AppConfig.AppConfig()</Item>
+               <Item>appHome</Item>
+               <Item>System.String</Item>
+               <Item>null</Item>
+              </Issue>
+              <Issue>
+               <Item>AppConfig.AppConfig()</Item>
+               <Item>autoClear</Item>
+               <Item>System.Boolean</Item>
+               <Item>false</Item>
+              </Issue>
+              <Issue>
+               <Item>AppConfig.AppConfig()</Item>
+               <Item>focusLevel</Item>
+               <Item>System.Int32</Item>
+               <Item>0</Item>
+              </Issue>
+              <Issue>
+               <Item>AppConfig.AppConfig()</Item>
+               <Item>showAlternatives</Item>
+               <Item>System.Boolean</Item>
+               <Item>false</Item>
+              </Issue>
+              <Issue>
+               <Item>AppConfig.AppConfig()</Item>
+               <Item>simulationMode</Item>
+               <Item>System.Boolean</Item>
+               <Item>false</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="appDirectory">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>appDirectory</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="appHome">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>appHome</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="autoClear">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>autoClear</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="browserPanelHeight">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>browserPanelHeight</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="commentOutAlt">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>commentOutAlt</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="currentFileDir">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>currentFileDir</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="currentScriptDir">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>currentScriptDir</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="focusFrameWidth">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>focusFrameWidth</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="focusLevel">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>focusLevel</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="historyList">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>historyList</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="historyMaxLen">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>historyMaxLen</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="infoWinHeight">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>infoWinHeight</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="infoWinLeft">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>infoWinLeft</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="infoWinTop">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>infoWinTop</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="infoWinWidth">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>infoWinWidth</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="LoadConfiguration():QuickFocus.AppConfig">
+            <Messages>
+             <Message Id="System.Windows.Forms.MessageBox.Show(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>AppConfig.LoadConfiguration():AppConfig</Item>
+               <Item>1</Item>
+               <Item>MessageBox.Show(String):DialogResult</Item>
+               <Item>QuickFocus can only be installed in IeUnit or QuickFocus directory</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="mainWinHeight">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>mainWinHeight</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="mainWinLeft">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>mainWinLeft</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="mainWinTop">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>mainWinTop</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="mainWinWidth">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>mainWinWidth</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="maxKeyTextLength">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>maxKeyTextLength</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="outActionSnip">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>outActionSnip</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="outAssertSnip">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>outAssertSnip</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="pageAttached">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>pageAttached</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="showAlternatives">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>showAlternatives</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="simulationMode">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>simulationMode</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="AppLogger">
+          <Members>
+           <Member Name="InitializeComponent():System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>AppLogger.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item />
+              </Issue>
+              <Issue>
+               <Item>AppLogger.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Clear</Item>
+              </Issue>
+              <Issue>
+               <Item>AppLogger.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>QuickFocus Logger Window</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="AppOptionsForm">
+          <Members>
+           <Member Name="InitializeComponent():System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>AppOptionsForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>10</Item>
+              </Issue>
+              <Issue>
+               <Item>AppOptionsForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>15</Item>
+              </Issue>
+              <Issue>
+               <Item>AppOptionsForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>2</Item>
+              </Issue>
+              <Issue>
+               <Item>AppOptionsForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Application Configuration</Item>
+              </Issue>
+              <Issue>
+               <Item>AppOptionsForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Cancel</Item>
+              </Issue>
+              <Issue>
+               <Item>AppOptionsForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Clear snippet window automatically</Item>
+              </Issue>
+              <Issue>
+               <Item>AppOptionsForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Comment out alternative statements</Item>
+              </Issue>
+              <Issue>
+               <Item>AppOptionsForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Focus Frame Width:</Item>
+              </Issue>
+              <Issue>
+               <Item>AppOptionsForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Max History Length:</Item>
+              </Issue>
+              <Issue>
+               <Item>AppOptionsForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Max Key Text Length:</Item>
+              </Issue>
+              <Issue>
+               <Item>AppOptionsForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>OK</Item>
+              </Issue>
+              <Issue>
+               <Item>AppOptionsForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Run QuickFocus in simulation mode</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="AppState">
+          <Members>
+           <Member Name="StAttached">
+            <Messages>
+             <Message Id="Member" TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Member">
+               <Item>St</Item>
+               <Item>AppState.StAttached</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="StAttaching">
+            <Messages>
+             <Message Id="Member" TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Member">
+               <Item>St</Item>
+               <Item>AppState.StAttaching</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="StInitialized">
+            <Messages>
+             <Message Id="Member" TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Member">
+               <Item>St</Item>
+               <Item>AppState.StInitialized</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="StOpen">
+            <Messages>
+             <Message Id="Member" TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Member">
+               <Item>St</Item>
+               <Item>AppState.StOpen</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="StOpening">
+            <Messages>
+             <Message Id="Member" TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Member">
+               <Item>St</Item>
+               <Item>AppState.StOpening</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Button">
+          <Members>
+           <Member Name="AsButton(mshtml.IHTMLElement):QuickFocus.Button">
+            <Messages>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>Button.AsButton(IHTMLElement):Button</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>'e'</Item>
+               <Item>Button.AsButton(IHTMLElement):Button</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="CheckBox">
+          <Members>
+           <Member Name=".ctor(mshtml.IHTMLElement,mshtml.IHTMLInputElement)">
+            <Messages>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>CheckBox.CheckBox(IHTMLElement, IHTMLInputElement)</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="AsCheckBox(mshtml.IHTMLElement):QuickFocus.CheckBox">
+            <Messages>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>CheckBox.AsCheckBox(IHTMLElement):CheckBox</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="CommonUtil">
+          <Messages>
+           <Message Id="Util" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+            <Issue Name="Type">
+             <Item>Util</Item>
+             <Item>QuickFocus.CommonUtil</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="GetDataFilePath(System.Windows.Forms.IDataObject):System.String">
+            <Messages>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>'data'</Item>
+               <Item>CommonUtil.GetDataFilePath(IDataObject):String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ElementProperties">
+          <Members>
+           <Member Name=".ctor(QuickFocus.FramedElement)">
+            <Messages>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>'fe'</Item>
+               <Item>ElementProperties.ElementProperties(FramedElement)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="InitializeComponent():System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>ElementProperties.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item />
+              </Issue>
+              <Issue>
+               <Item>ElementProperties.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Element Properties</Item>
+              </Issue>
+              <Issue>
+               <Item>ElementProperties.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>propertyGrid1</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ElementProperty">
+          <Members>
+           <Member Name=".ctor(QuickFocus.FramedElement)">
+            <Messages>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>'fe'</Item>
+               <Item>ElementProperty.ElementProperty(FramedElement)</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ForeignFrame">
+          <Members>
+           <Member Name=".ctor(mshtml.IHTMLElement)">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>ForeignFrame.ForeignFrame(IHTMLElement)</Item>
+               <Item>zoomedPage</Item>
+               <Item>System.Boolean</Item>
+               <Item>false</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="AsForeignFrame(mshtml.IHTMLElement):QuickFocus.ForeignFrame">
+            <Messages>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>ForeignFrame.AsForeignFrame(IHTMLElement):ForeignFrame</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ZoomingIntoFrame():System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.MessageBox.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>ForeignFrame.ZoomingIntoFrame():Void</Item>
+               <Item>1</Item>
+               <Item>MessageBox.Show(String, String, MessageBoxButtons):DialogResult</Item>
+               <Item>The selected object is a foreign frame/iframe object.&#xA;DHTML API doesn't allow in-place inspection.&#xA;Do you want to zoom into the frame/iframe  object?</Item>
+              </Issue>
+              <Issue>
+               <Item>ForeignFrame.ZoomingIntoFrame():Void</Item>
+               <Item>2</Item>
+               <Item>MessageBox.Show(String, String, MessageBoxButtons):DialogResult</Item>
+               <Item>Zooming into foreign frame/iframe</Item>
+              </Issue>
+             </Message>
+             <Message Id="iframe" TypeName="LiteralsShouldBeSpelledCorrectly" Category="Microsoft.Usage" CheckId="CA2204" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>iframe</Item>
+               <Item>The selected object is a foreign frame/iframe object.&#xA;DHTML API doesn't allow in-place inspection.&#xA;Do you want to zoom into the frame/iframe  object?</Item>
+              </Issue>
+              <Issue>
+               <Item>iframe</Item>
+               <Item>The selected object is a foreign frame/iframe object.&#xA;DHTML API doesn't allow in-place inspection.&#xA;Do you want to zoom into the frame/iframe  object?</Item>
+              </Issue>
+              <Issue>
+               <Item>iframe</Item>
+               <Item>Zooming into foreign frame/iframe</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>ForeignFrame.ZoomingIntoFrame():Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="FramedElement">
+          <Members>
+           <Member Name=".ctor(mshtml.IHTMLElement,mshtml.IHTMLElement)">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>FramedElement.FramedElement(IHTMLElement, IHTMLElement)</Item>
+               <Item>clientLeft</Item>
+               <Item>System.Int32</Item>
+               <Item>0</Item>
+              </Issue>
+              <Issue>
+               <Item>FramedElement.FramedElement(IHTMLElement, IHTMLElement)</Item>
+               <Item>clientTop</Item>
+               <Item>System.Int32</Item>
+               <Item>0</Item>
+              </Issue>
+             </Message>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>FramedElement.FramedElement(IHTMLElement, IHTMLElement)</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name=".ctor(mshtml.IHTMLElement,mshtml.IHTMLElement,System.Int32,System.Int32)">
+            <Messages>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>FramedElement.FramedElement(IHTMLElement, IHTMLElement, Int32, Int32)</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="clientLeft">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>clientLeft</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="clientTop">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>clientTop</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="e">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+             <Message Id="e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="MemberOneLetter">
+               <Item>e</Item>
+               <Item>FramedElement.e</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="frame">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>frame</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Frameset">
+          <Members>
+           <Member Name="GetFramesetSnip(mshtml.IHTMLDocument2,mshtml.IHTMLDocument2):System.Collections.ArrayList">
+            <Messages>
+             <Message TypeName="DoNotConcatenateStringsInsideLoops" Category="Microsoft.Performance" CheckId="CA1818" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>Frameset.GetFramesetSnip(IHTMLDocument2, IHTMLDocument2):ArrayList</Item>
+              </Issue>
+              <Issue>
+               <Item>Frameset.GetFramesetSnip(IHTMLDocument2, IHTMLDocument2):ArrayList</Item>
+              </Issue>
+              <Issue>
+               <Item>Frameset.GetFramesetSnip(IHTMLDocument2, IHTMLDocument2):ArrayList</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>'focusedDoc'</Item>
+               <Item>Frameset.GetFramesetSnip(IHTMLDocument2, IHTMLDocument2):ArrayList</Item>
+              </Issue>
+              <Issue>
+               <Item>'rootDoc'</Item>
+               <Item>Frameset.GetFramesetSnip(IHTMLDocument2, IHTMLDocument2):ArrayList</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="IsForeignFrame(mshtml.IHTMLWindow2):System.Boolean">
+            <Messages>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>'win'</Item>
+               <Item>Frameset.IsForeignFrame(IHTMLWindow2):Boolean</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ImageElement">
+          <Members>
+           <Member Name="AsImageElement(mshtml.IHTMLElement):QuickFocus.ImageElement">
+            <Messages>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>ImageElement.AsImageElement(IHTMLElement):ImageElement</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FileName(System.String):System.String">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Excluded" Created="2006-11-27 23:52:49Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>ImageElement.FileName(String):String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="InputText">
+          <Members>
+           <Member Name="AsInputText(mshtml.IHTMLElement):QuickFocus.InputText">
+            <Messages>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>InputText.AsInputText(IHTMLElement):InputText</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="isPassword">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>InputText.isPassword</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="MainForm">
+          <Members>
+           <Member Name=".cctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>MainForm.MainForm()</Item>
+               <Item>preItem</Item>
+               <Item>mshtml.IHTMLElement</Item>
+               <Item>null</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name=".ctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>MainForm.MainForm()</Item>
+               <Item>scriptName</Item>
+               <Item>System.String</Item>
+               <Item>null</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotUseTimersThatPreventPowerStateChanges" Category="Microsoft.Mobility" CheckId="CA1601" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>Timer.set_Interval(Int32):Void</Item>
+               <Item>MainForm.MainForm()</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="AddToHistory(System.String):System.Void">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Excluded" Created="2006-11-27 23:52:49Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>MainForm.AddToHistory(String):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="CheckSelectedElement():System.Boolean">
+            <Messages>
+             <Message Id="System.Windows.Forms.MessageBox.Show(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>MainForm.CheckSelectedElement():Boolean</Item>
+               <Item>1</Item>
+               <Item>MessageBox.Show(String):DialogResult</Item>
+               <Item>Please press Ctrl-X then select a submit element in the page for&#xA;generating smart bookmark stub.</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.CheckSelectedElement():Boolean</Item>
+               <Item>1</Item>
+               <Item>MessageBox.Show(String):DialogResult</Item>
+               <Item>Please select a submit element in the page for&#xA;generating smart bookmark stub.</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="CurrentUrl">
+            <Messages>
+             <Message TypeName="UriPropertiesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1056" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>CurrentUrl</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FillFavoritesMenu(System.Windows.Forms.MenuItem):System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.Menu+MenuItemCollection.Add(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>MainForm.FillFavoritesMenu(MenuItem):Void</Item>
+               <Item>1</Item>
+               <Item>MenuItemCollection.Add(String):MenuItem</Item>
+               <Item>?</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetFavoritePath(System.Windows.Forms.MenuItem):System.String">
+            <Messages>
+             <Message TypeName="DoNotConcatenateStringsInsideLoops" Category="Microsoft.Performance" CheckId="CA1818" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>MainForm.GetFavoritePath(MenuItem):String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetHistoryList():System.String[]">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Excluded" Created="2006-11-27 23:52:49Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>MainForm.GetHistoryList():String[]</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="InitializeComponent():System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item />
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>&amp;Run Snippet</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>&amp;Submit</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Action</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Alternatives</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Assertion</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>C&amp;lear Snippet</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Create Snippet</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>QuickFocus</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>S&amp;BK Submit</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>Test &amp;Case</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>URL:</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>statusbar</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Windows.Forms.MenuItem.set_Text(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;About QuickFocus...</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Copy</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Debug Snippet...</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Debug Snippet...</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;File</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Help</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;IeUnit API Help...</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Load Script...</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Logger Window...</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Open File...</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Options...</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Paste</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Run Snippet</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Save Script...</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Toggle Mode</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>&amp;Tools</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>-</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>-</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>-</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>Clear Snippet</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>Cu&amp;t</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>E&amp;xit</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>F&amp;avorites</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>Online &amp;Help...</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.set_Text(String):Void</Item>
+               <Item>Save Script As...</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Windows.Forms.ToolTip.SetToolTip(System.Windows.Forms.Control,System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>2</Item>
+               <Item>ToolTip.SetToolTip(Control, String):Void</Item>
+               <Item>Attach/Detach to current page</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>2</Item>
+               <Item>ToolTip.SetToolTip(Control, String):Void</Item>
+               <Item>Back</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>2</Item>
+               <Item>ToolTip.SetToolTip(Control, String):Void</Item>
+               <Item>Clear the snippet window      Alt+L</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>2</Item>
+               <Item>ToolTip.SetToolTip(Control, String):Void</Item>
+               <Item>Drag this to desktop to copy current snip code to external script file</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>2</Item>
+               <Item>ToolTip.SetToolTip(Control, String):Void</Item>
+               <Item>Execute selected snippet      Alt+R</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>2</Item>
+               <Item>ToolTip.SetToolTip(Control, String):Void</Item>
+               <Item>Forward</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>2</Item>
+               <Item>ToolTip.SetToolTip(Control, String):Void</Item>
+               <Item>Generate action snips.</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>2</Item>
+               <Item>ToolTip.SetToolTip(Control, String):Void</Item>
+               <Item>Generate alternative code</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>2</Item>
+               <Item>ToolTip.SetToolTip(Control, String):Void</Item>
+               <Item>Generate assertion snips.</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>2</Item>
+               <Item>ToolTip.SetToolTip(Control, String):Void</Item>
+               <Item>Generate initial test case stub      Alt+C</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>2</Item>
+               <Item>ToolTip.SetToolTip(Control, String):Void</Item>
+               <Item>Generate smart bookmark snippet      Alt+B</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>2</Item>
+               <Item>ToolTip.SetToolTip(Control, String):Void</Item>
+               <Item>Generate submit snippet      Alt+S</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>2</Item>
+               <Item>ToolTip.SetToolTip(Control, String):Void</Item>
+               <Item>Navigate to the specified URL.</Item>
+              </Issue>
+              <Issue>
+               <Item>MainForm.InitializeComponent():Void</Item>
+               <Item>2</Item>
+               <Item>ToolTip.SetToolTip(Control, String):Void</Item>
+               <Item>Stop downloading current page</Item>
+              </Issue>
+             </Message>
+             <Message Id="statusbar" TypeName="LiteralsShouldBeSpelledCorrectly" Category="Microsoft.Usage" CheckId="CA2204" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>statusbar</Item>
+               <Item>statusbar</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="InsertSnipList(System.Text.StringBuilder,System.Collections.ArrayList):System.Text.StringBuilder">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Excluded" Created="2006-11-27 23:52:49Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>MainForm.InsertSnipList(StringBuilder, ArrayList):StringBuilder</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="IsDocReady(mshtml.IHTMLDocument2):System.Boolean">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Excluded" Created="2006-11-27 23:52:49Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>MainForm.IsDocReady(IHTMLDocument2):Boolean</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="LoadScript(System.String):System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.MessageBox.Show(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>MainForm.LoadScript(String):Void</Item>
+               <Item>1</Item>
+               <Item>MessageBox.Show(String):DialogResult</Item>
+               <Item>Can't read script file __</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="MakeSafeFileName(System.String):System.String">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Excluded" Created="2006-11-27 23:52:49Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>MainForm.MakeSafeFileName(String):String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="OpenUrl(System.String):System.Void">
+            <Messages>
+             <Message Id="0#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>url</Item>
+               <Item>MainForm.OpenUrl(String):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="SaveScriptFile(System.String):System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.MessageBox.Show(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>MainForm.SaveScriptFile(String):Void</Item>
+               <Item>1</Item>
+               <Item>MessageBox.Show(String):DialogResult</Item>
+               <Item>Can't write to script file __</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="SetWindowTitle():System.Void">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>MainForm.SetWindowTitle():Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="SetWindowTitle(System.String):System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.Control.set_Text(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>MainForm.SetWindowTitle(String):Void</Item>
+               <Item>1</Item>
+               <Item>Control.set_Text(String):Void</Item>
+               <Item>QuickFocus - __</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="MapArea">
+          <Members>
+           <Member Name="AsMapArea(mshtml.IHTMLElement):QuickFocus.MapArea">
+            <Messages>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>MapArea.AsMapArea(IHTMLElement):MapArea</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="MsgBox">
+          <Members>
+           <Member Name="Alert(System.String):System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.MessageBox.Show(System.String,System.String,System.Windows.Forms.MessageBoxButtons)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-28 00:52:10Z">
+              <Issue>
+               <Item>MsgBox.Alert(String):Void</Item>
+               <Item>2</Item>
+               <Item>MessageBox.Show(String, String, MessageBoxButtons):DialogResult</Item>
+               <Item>Information</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Excluded" Created="2006-11-28 00:52:10Z">
+              <Issue>
+               <Item>MsgBox.Alert(String):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="PageElement">
+          <Members>
+           <Member Name=".ctor(mshtml.IHTMLElement)">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>PageElement.PageElement(IHTMLElement)</Item>
+               <Item>inSubmitMode</Item>
+               <Item>System.Boolean</Item>
+               <Item>false</Item>
+              </Issue>
+             </Message>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>PageElement.PageElement(IHTMLElement)</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="e">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+             <Message Id="e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="MemberOneLetter">
+               <Item>e</Item>
+               <Item>PageElement.e</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FindParentOfTag(mshtml.IHTMLElement,System.String,System.Int32):mshtml.IHTMLElement">
+            <Messages>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>PageElement.FindParentOfTag(IHTMLElement, String, Int32):IHTMLElement</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FindParentWithId(mshtml.IHTMLElement,System.Int32):mshtml.IHTMLElement">
+            <Messages>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>PageElement.FindParentWithId(IHTMLElement, Int32):IHTMLElement</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Excluded" Created="2006-11-27 23:52:49Z" FixCategory="Breaking">
+              <Issue>
+               <Item>PageElement.FindParentWithId(IHTMLElement, Int32):IHTMLElement</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="IsUnique(System.String):System.Boolean">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Excluded" Created="2006-11-27 23:52:49Z" FixCategory="Breaking">
+              <Issue>
+               <Item>PageElement.IsUnique(String):Boolean</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="MakeKeyString(System.String):System.String">
+            <Messages>
+             <Message Id="0#Str" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-28 00:12:23Z">
+              <Issue Name="Parameter">
+               <Item>PageElement.MakeKeyString(String):String</Item>
+               <Item>Str</Item>
+               <Item>rawStr</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Excluded" Created="2006-11-27 23:52:49Z" FixCategory="Breaking">
+              <Issue>
+               <Item>PageElement.MakeKeyString(String):String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="snipList">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>snipList</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ToPageElement(mshtml.IHTMLElement):QuickFocus.PageElement">
+            <Messages>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>PageElement.ToPageElement(IHTMLElement):PageElement</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Position">
+          <Members>
+           <Member Name=".ctor(System.Int32,System.Int32,System.Single,System.Single)">
+            <Messages>
+             <Message Id="0#x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>Position.Position(Int32, Int32, Single, Single)</Item>
+               <Item>x</Item>
+              </Issue>
+             </Message>
+             <Message Id="1#y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>Position.Position(Int32, Int32, Single, Single)</Item>
+               <Item>y</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="height">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>height</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="width">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>width</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="x">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>x</Item>
+              </Issue>
+             </Message>
+             <Message Id="x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="MemberOneLetter">
+               <Item>x</Item>
+               <Item>Position.x</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="y">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>y</Item>
+              </Issue>
+             </Message>
+             <Message Id="y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="MemberOneLetter">
+               <Item>y</Item>
+               <Item>Position.y</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="QfBrowser">
+          <Messages>
+           <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2006-11-27 23:52:49Z">
+            <Issue Name="Type">
+             <Item>Qf</Item>
+             <Item>QuickFocus.QfBrowser</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name=".ctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>QfBrowser.QfBrowser()</Item>
+               <Item>isControlDown</Item>
+               <Item>System.Boolean</Item>
+               <Item>false</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="RadioButton">
+          <Members>
+           <Member Name=".ctor(mshtml.IHTMLElement,mshtml.IHTMLInputElement)">
+            <Messages>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>RadioButton.RadioButton(IHTMLElement, IHTMLInputElement)</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="AsRadioButton(mshtml.IHTMLElement):QuickFocus.RadioButton">
+            <Messages>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>RadioButton.AsRadioButton(IHTMLElement):RadioButton</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Root">
+          <Members>
+           <Member Name="appConfig">
+            <Messages>
+             <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Excluded" Created="2006-11-28 00:30:48Z">
+              <Issue>
+               <Item>appConfig</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="mainForm">
+            <Messages>
+             <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Excluded" Created="2006-11-28 00:30:48Z">
+              <Issue>
+               <Item>mainForm</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ScreenPanel">
+          <Members>
+           <Member Name="ClickFocusedElement(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>ScreenPanel.ClickFocusedElement(Object, EventArgs):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ExtractUrlFromFile(System.String):System.String">
+            <Messages>
+             <Message Id="System.Windows.Forms.MessageBox.Show(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>ScreenPanel.ExtractUrlFromFile(String):String</Item>
+               <Item>1</Item>
+               <Item>MessageBox.Show(String):DialogResult</Item>
+               <Item>Can't find file __</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="UriReturnValuesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1055" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>ScreenPanel.ExtractUrlFromFile(String):String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FindElement(System.Int32,System.Int32):QuickFocus.FramedElement">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Local">
+               <Item>pFrame</Item>
+               <Item>mshtml.HTMLFrameElementClass</Item>
+               <Item>ScreenPanel.FindElement(Int32, Int32):FramedElement</Item>
+               <Item>isint</Item>
+              </Issue>
+              <Issue Name="Local">
+               <Item>selectedE</Item>
+               <Item>mshtml.IHTMLElement2</Item>
+               <Item>ScreenPanel.FindElement(Int32, Int32):FramedElement</Item>
+               <Item>isint</Item>
+              </Issue>
+              <Issue Name="Local">
+               <Item>tElement</Item>
+               <Item>mshtml.IHTMLElement2</Item>
+               <Item>ScreenPanel.FindElement(Int32, Int32):FramedElement</Item>
+               <Item>isint</Item>
+              </Issue>
+             </Message>
+             <Message Id="0#x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>ScreenPanel.FindElement(Int32, Int32):FramedElement</Item>
+               <Item>x</Item>
+              </Issue>
+             </Message>
+             <Message Id="1#y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>ScreenPanel.FindElement(Int32, Int32):FramedElement</Item>
+               <Item>y</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FocusedElement(mshtml.IHTMLElement):mshtml.IHTMLElement">
+            <Messages>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>ScreenPanel.FocusedElement(IHTMLElement):IHTMLElement</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Excluded" Created="2006-11-27 23:52:49Z" FixCategory="Breaking">
+              <Issue>
+               <Item>ScreenPanel.FocusedElement(IHTMLElement):IHTMLElement</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>'e'</Item>
+               <Item>ScreenPanel.FocusedElement(IHTMLElement):IHTMLElement</Item>
+              </Issue>
+              <Issue>
+               <Item>'e'</Item>
+               <Item>ScreenPanel.FocusedElement(IHTMLElement):IHTMLElement</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetClientPosition(QuickFocus.FramedElement):QuickFocus.Position">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Local">
+               <Item>e2</Item>
+               <Item>mshtml.HTMLAreaElementClass</Item>
+               <Item>ScreenPanel.GetClientPosition(FramedElement):Position</Item>
+               <Item>isint</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Excluded" Created="2006-11-27 23:52:49Z" FixCategory="Breaking">
+              <Issue>
+               <Item>ScreenPanel.GetClientPosition(FramedElement):Position</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>'fe'</Item>
+               <Item>ScreenPanel.GetClientPosition(FramedElement):Position</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="InitContextMenu():System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.Menu+MenuItemCollection.Add(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>ScreenPanel.InitContextMenu():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItemCollection.Add(String):MenuItem</Item>
+               <Item>&lt;None&gt;</Item>
+              </Issue>
+              <Issue>
+               <Item>ScreenPanel.InitContextMenu():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItemCollection.Add(String):MenuItem</Item>
+               <Item>&lt;None&gt;</Item>
+              </Issue>
+              <Issue>
+               <Item>ScreenPanel.InitContextMenu():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItemCollection.Add(String):MenuItem</Item>
+               <Item>&lt;None&gt;</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Windows.Forms.MenuItem.#ctor(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>ScreenPanel.InitContextMenu():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.MenuItem(String)</Item>
+               <Item>-</Item>
+              </Issue>
+              <Issue>
+               <Item>ScreenPanel.InitContextMenu():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.MenuItem(String)</Item>
+               <Item>-</Item>
+              </Issue>
+              <Issue>
+               <Item>ScreenPanel.InitContextMenu():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.MenuItem(String)</Item>
+               <Item>-</Item>
+              </Issue>
+              <Issue>
+               <Item>ScreenPanel.InitContextMenu():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.MenuItem(String)</Item>
+               <Item>Select Ancestor Element</Item>
+              </Issue>
+              <Issue>
+               <Item>ScreenPanel.InitContextMenu():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.MenuItem(String)</Item>
+               <Item>Select Child Element</Item>
+              </Issue>
+              <Issue>
+               <Item>ScreenPanel.InitContextMenu():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.MenuItem(String)</Item>
+               <Item>Select Sibling Element</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.Windows.Forms.MenuItem.#ctor(System.String,System.EventHandler)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>ScreenPanel.InitContextMenu():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.MenuItem(String, EventHandler)</Item>
+               <Item>Click Focused Element</Item>
+              </Issue>
+              <Issue>
+               <Item>ScreenPanel.InitContextMenu():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.MenuItem(String, EventHandler)</Item>
+               <Item>Detach Page</Item>
+              </Issue>
+              <Issue>
+               <Item>ScreenPanel.InitContextMenu():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.MenuItem(String, EventHandler)</Item>
+               <Item>Element Properties...</Item>
+              </Issue>
+              <Issue>
+               <Item>ScreenPanel.InitContextMenu():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.MenuItem(String, EventHandler)</Item>
+               <Item>Enlarge Focus Scope</Item>
+              </Issue>
+              <Issue>
+               <Item>ScreenPanel.InitContextMenu():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.MenuItem(String, EventHandler)</Item>
+               <Item>Reset Focus Scope</Item>
+              </Issue>
+              <Issue>
+               <Item>ScreenPanel.InitContextMenu():Void</Item>
+               <Item>1</Item>
+               <Item>MenuItem.MenuItem(String, EventHandler)</Item>
+               <Item>Shrink Focus Scope</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="miSelectAcenstor_Select(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.Menu+MenuItemCollection.Add(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>ScreenPanel.miSelectAcenstor_Select(Object, EventArgs):Void</Item>
+               <Item>1</Item>
+               <Item>MenuItemCollection.Add(String):MenuItem</Item>
+               <Item>&lt;None&gt;</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="miSelectChildren_Select(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.Menu+MenuItemCollection.Add(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>ScreenPanel.miSelectChildren_Select(Object, EventArgs):Void</Item>
+               <Item>1</Item>
+               <Item>MenuItemCollection.Add(String):MenuItem</Item>
+               <Item>&lt;None&gt;</Item>
+              </Issue>
+              <Issue>
+               <Item>ScreenPanel.miSelectChildren_Select(Object, EventArgs):Void</Item>
+               <Item>1</Item>
+               <Item>MenuItemCollection.Add(String):MenuItem</Item>
+               <Item>&lt;None&gt;</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="miSelectSibling_Select(System.Object,System.EventArgs):System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.Menu+MenuItemCollection.Add(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>ScreenPanel.miSelectSibling_Select(Object, EventArgs):Void</Item>
+               <Item>1</Item>
+               <Item>MenuItemCollection.Add(String):MenuItem</Item>
+               <Item>&lt;None&gt;</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Reset():System.Void">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>ScreenPanel.Reset():Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="SelMenuItemLabel(mshtml.IHTMLElement):System.String">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Excluded" Created="2006-11-27 23:52:49Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>ScreenPanel.SelMenuItemLabel(IHTMLElement):String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ShowElementAt(System.Int32,System.Int32):System.Void">
+            <Messages>
+             <Message Id="0#x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>ScreenPanel.ShowElementAt(Int32, Int32):Void</Item>
+               <Item>x</Item>
+              </Issue>
+             </Message>
+             <Message Id="1#y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>ScreenPanel.ShowElementAt(Int32, Int32):Void</Item>
+               <Item>y</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ScriptRunner">
+          <Members>
+           <Member Name="OrgScriptSrc">
+            <Messages>
+             <Message Id="Src" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Member">
+               <Item>Src</Item>
+               <Item>ScriptRunner.OrgScriptSrc:String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Run(System.String,System.Boolean):System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.MessageBox.Show(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>ScriptRunner.Run(String, Boolean):Void</Item>
+               <Item>1</Item>
+               <Item>MessageBox.Show(String):DialogResult</Item>
+               <Item>No document present in the current page</Item>
+              </Issue>
+              <Issue>
+               <Item>ScriptRunner.Run(String, Boolean):Void</Item>
+               <Item>1</Item>
+               <Item>MessageBox.Show(String):DialogResult</Item>
+               <Item>No script present in the snip window</Item>
+              </Issue>
+              <Issue>
+               <Item>ScriptRunner.Run(String, Boolean):Void</Item>
+               <Item>1</Item>
+               <Item>MessageBox.Show(String):DialogResult</Item>
+               <Item>No statements in the code snippet</Item>
+              </Issue>
+              <Issue>
+               <Item>ScriptRunner.Run(String, Boolean):Void</Item>
+               <Item>1</Item>
+               <Item>MessageBox.Show(String):DialogResult</Item>
+               <Item>Script contains only comments</Item>
+              </Issue>
+              <Issue>
+               <Item>ScriptRunner.Run(String, Boolean):Void</Item>
+               <Item>1</Item>
+               <Item>MessageBox.Show(String):DialogResult</Item>
+               <Item>Script contains only comments</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>'script'</Item>
+               <Item>ScriptRunner.Run(String, Boolean):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="RunnerProc():System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.MessageBox.Show(System.String,System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>ScriptRunner.RunnerProc():Void</Item>
+               <Item>2</Item>
+               <Item>MessageBox.Show(String, String):DialogResult</Item>
+               <Item>QuickFocus - Script Runner Result</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>ScriptRunner.RunnerProc():Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="SaveScript(System.String,System.String):System.Void">
+            <Messages>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>'script'</Item>
+               <Item>ScriptRunner.SaveScript(String, String):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="SelectOption">
+          <Members>
+           <Member Name="AsSelectOption(mshtml.IHTMLElement):QuickFocus.SelectOption">
+            <Messages>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>SelectOption.AsSelectOption(IHTMLElement):SelectOption</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>'e'</Item>
+               <Item>SelectOption.AsSelectOption(IHTMLElement):SelectOption</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="StubGenerator">
+          <Members>
+           <Member Name=".cctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>StubGenerator.StubGenerator()</Item>
+               <Item>preFilePath</Item>
+               <Item>System.String</Item>
+               <Item>null</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GenerateSbkStub(System.Boolean):System.String">
+            <Messages>
+             <Message Id="Sbk" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Member">
+               <Item>Sbk</Item>
+               <Item>StubGenerator.GenerateSbkStub(Boolean):String</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="IsAscii(System.String):System.Boolean">
+            <Messages>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>'code'</Item>
+               <Item>StubGenerator.IsAscii(String):Boolean</Item>
+              </Issue>
+              <Issue>
+               <Item>'code'</Item>
+               <Item>StubGenerator.IsAscii(String):Boolean</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TableElement">
+          <Members>
+           <Member Name="AsTableElement(mshtml.IHTMLElement):QuickFocus.TableElement">
+            <Messages>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>TableElement.AsTableElement(IHTMLElement):TableElement</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>'e'</Item>
+               <Item>TableElement.AsTableElement(IHTMLElement):TableElement</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TextArea">
+          <Members>
+           <Member Name="AsTextArea(mshtml.IHTMLElement):QuickFocus.TextArea">
+            <Messages>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>TextArea.AsTextArea(IHTMLElement):TextArea</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TextBlock">
+          <Members>
+           <Member Name="AsTextBlock(mshtml.IHTMLElement):QuickFocus.TextBlock">
+            <Messages>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>TextBlock.AsTextBlock(IHTMLElement):TextBlock</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>'e'</Item>
+               <Item>TextBlock.AsTextBlock(IHTMLElement):TextBlock</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FindTableIndex(mshtml.HTMLTableClass):System.Int32">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Excluded" Created="2006-11-27 23:52:49Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>TextBlock.FindTableIndex(HTMLTableClass):Int32</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Win32Interop">
+          <Members>
+           <Member Name="EC_LEFTMARGIN">
+            <Messages>
+             <Message Id="Member" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Member">
+               <Item>EC_LEFTMARGIN</Item>
+              </Issue>
+             </Message>
+             <Message Id="Member" TypeName="LongAcronymsShouldBePascalCased" Category="Microsoft.Naming" CheckId="CA1705" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Member">
+               <Item>Win32Interop.EC_LEFTMARGIN</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="EC_RIGHTMARGIN">
+            <Messages>
+             <Message Id="Member" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Member">
+               <Item>EC_RIGHTMARGIN</Item>
+              </Issue>
+             </Message>
+             <Message Id="Member" TypeName="LongAcronymsShouldBePascalCased" Category="Microsoft.Naming" CheckId="CA1705" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Member">
+               <Item>Win32Interop.EC_RIGHTMARGIN</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="EM_SETMARGINS">
+            <Messages>
+             <Message Id="Member" TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Member">
+               <Item>EM_SETMARGINS</Item>
+              </Issue>
+             </Message>
+             <Message Id="Member" TypeName="LongAcronymsShouldBePascalCased" Category="Microsoft.Naming" CheckId="CA1705" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Member">
+               <Item>Win32Interop.EM_SETMARGINS</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="SendMessage(System.IntPtr,System.UInt32,System.UInt32,System.Int32):System.IntPtr">
+            <Messages>
+             <Message Id="2#Param" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Parameter">
+               <Item>Win32Interop.SendMessage(IntPtr, UInt32, UInt32, Int32):IntPtr</Item>
+               <Item>Param</Item>
+               <Item>wParam</Item>
+              </Issue>
+             </Message>
+             <Message Id="2#w" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Parameter">
+               <Item>Win32Interop.SendMessage(IntPtr, UInt32, UInt32, Int32):IntPtr</Item>
+               <Item>w</Item>
+               <Item>wParam</Item>
+              </Issue>
+             </Message>
+             <Message Id="3#Param" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Parameter">
+               <Item>Win32Interop.SendMessage(IntPtr, UInt32, UInt32, Int32):IntPtr</Item>
+               <Item>Param</Item>
+               <Item>lParam</Item>
+              </Issue>
+             </Message>
+             <Message Id="3#l" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Parameter">
+               <Item>Win32Interop.SendMessage(IntPtr, UInt32, UInt32, Int32):IntPtr</Item>
+               <Item>l</Item>
+               <Item>lParam</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>Win32Interop.SendMessage(IntPtr, UInt32, UInt32, Int32):IntPtr</Item>
+              </Issue>
+             </Message>
+             <Message Id="2" TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901" Status="Excluded" Created="2006-11-27 23:52:49Z" FixCategory="Breaking">
+              <Issue Name="Parameter">
+               <Item>wParam</Item>
+               <Item>Win32Interop.SendMessage(IntPtr, UInt32, UInt32, Int32):IntPtr</Item>
+               <Item>4</Item>
+               <Item>64-bit</Item>
+               <Item>8</Item>
+               <Item>System.UInt32</Item>
+              </Issue>
+             </Message>
+             <Message Id="3" TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901" Status="Excluded" Created="2006-11-27 23:52:49Z" FixCategory="Breaking">
+              <Issue Name="Parameter">
+               <Item>lParam</Item>
+               <Item>Win32Interop.SendMessage(IntPtr, UInt32, UInt32, Int32):IntPtr</Item>
+               <Item>4</Item>
+               <Item>64-bit</Item>
+               <Item>8</Item>
+               <Item>System.Int32</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>Win32Interop.SendMessage(IntPtr, UInt32, UInt32, Int32):IntPtr</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="QuickFocus.QA">
+        <Types>
+         <Type Name="QaMain">
+          <Messages>
+           <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2006-11-27 23:52:49Z">
+            <Issue Name="Type">
+             <Item>Qa</Item>
+             <Item>QuickFocus.QA.QaMain</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="StartByArguments(System.String[]):System.Void">
+            <Messages>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>'appArgs'</Item>
+               <Item>QaMain.StartByArguments(String[]):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="QaTestCase">
+          <Messages>
+           <Message TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706" Status="Excluded" Created="2006-11-27 23:52:49Z">
+            <Issue Name="Type">
+             <Item>Qa</Item>
+             <Item>QuickFocus.QA.QaTestCase</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="appChecker">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>appChecker</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ClickAreaElement(mshtml.IHTMLElement2,mshtml.IHTMLElement2):System.Void">
+            <Messages>
+             <Message Id="0#img" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Parameter">
+               <Item>QaTestCase.ClickAreaElement(IHTMLElement2, IHTMLElement2):Void</Item>
+               <Item>img</Item>
+               <Item>img</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>'area'</Item>
+               <Item>QaTestCase.ClickAreaElement(IHTMLElement2, IHTMLElement2):Void</Item>
+              </Issue>
+              <Issue>
+               <Item>'img'</Item>
+               <Item>QaTestCase.ClickAreaElement(IHTMLElement2, IHTMLElement2):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ClickElement(mshtml.IHTMLElement2):System.Void">
+            <Messages>
+             <Message Id="0#e" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>QaTestCase.ClickElement(IHTMLElement2):Void</Item>
+               <Item>e</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ClickPoint(System.Int32,System.Int32):System.Void">
+            <Messages>
+             <Message Id="0#x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>QaTestCase.ClickPoint(Int32, Int32):Void</Item>
+               <Item>x</Item>
+              </Issue>
+             </Message>
+             <Message Id="1#y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>QaTestCase.ClickPoint(Int32, Int32):Void</Item>
+               <Item>y</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="CurrentDoc">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Excluded" Created="2006-11-27 23:52:49Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>QaTestCase.CurrentDoc:IHTMLDocument2</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="homeDir">
+            <Messages>
+             <Message TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>homeDir</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="MoveMouseToElement(mshtml.IHTMLElement2):System.Void">
+            <Messages>
+             <Message TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>'e2'</Item>
+               <Item>QaTestCase.MoveMouseToElement(IHTMLElement2):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="MoveToPoint(System.Int32,System.Int32):System.Void">
+            <Messages>
+             <Message Id="0#x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>QaTestCase.MoveToPoint(Int32, Int32):Void</Item>
+               <Item>x</Item>
+              </Issue>
+             </Message>
+             <Message Id="1#y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="ParameterOneLetter">
+               <Item>QaTestCase.MoveToPoint(Int32, Int32):Void</Item>
+               <Item>y</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="OpenSampleFile(System.String):System.Void">
+            <Messages>
+             <Message Id="System.Windows.Forms.MessageBox.Show(System.String)" TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>QaTestCase.OpenSampleFile(String):Void</Item>
+               <Item>1</Item>
+               <Item>MessageBox.Show(String):DialogResult</Item>
+               <Item>Sample file ____ not found</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="OpenUrl(System.String):System.Void">
+            <Messages>
+             <Message Id="0#" TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue>
+               <Item>url</Item>
+               <Item>QaTestCase.OpenUrl(String):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Wait(System.Int32):System.Void">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Excluded" Created="2006-11-27 23:52:49Z" FixCategory="Breaking">
+              <Issue>
+               <Item>QaTestCase.Wait(Int32):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="WaitMin():System.Void">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Excluded" Created="2006-11-27 23:52:49Z" FixCategory="Breaking">
+              <Issue>
+               <Item>QaTestCase.WaitMin():Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="QuickFocus.QA.Element">
+        <Types>
+         <Type Name="AnchorLink">
+          <Members>
+           <Member Name="MultiLineAnchor():System.Void">
+            <Messages>
+             <Message Id="Multi" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Member">
+               <Item>Multi</Item>
+               <Item>AnchorLink.MultiLineAnchor():Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="FrameTest">
+          <Members>
+           <Member Name="ForeignIframe():System.Void">
+            <Messages>
+             <Message Id="Iframe" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Member">
+               <Item>Iframe</Item>
+               <Item>FrameTest.ForeignIframe():Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="QuickFocus.QA.Gui">
+        <Types>
+         <Type Name="ContextMenuTest">
+          <Members>
+           <Member Name="SnippetCtxMenu():System.Void">
+            <Messages>
+             <Message Id="Ctx" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Member">
+               <Item>Ctx</Item>
+               <Item>ContextMenuTest.SnippetCtxMenu():Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="RunSnippet">
+          <Members>
+           <Member Name="RunSbkSnippet():System.Void">
+            <Messages>
+             <Message Id="Sbk" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2006-11-27 23:52:49Z">
+              <Issue Name="Member">
+               <Item>Sbk</Item>
+               <Item>RunSnippet.RunSbkSnippet():Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+  </Targets>
+  <Rules>
+   <Rule TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823">
+    <Resolution Name="Default">It appears that field '{0}' is never used or is only ever assigned to. Use this field or remove it.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800">
+    <Resolution Name="Local">'{0}', a local, is cast to type '{1}' multiple times in method {2}. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant {3} instruction.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+    <Resolution Name="Default">Modify '{0}' to catch a more specific exception than '{1}' or rethrow the exception.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotConcatenateStringsInsideLoops" Category="Microsoft.Performance" CheckId="CA1818">
+    <Resolution Name="Default">Change {0} to use StringBuilder instead of String.Concat or +=</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotDeclareVisibleInstanceFields" Category="Microsoft.Design" CheckId="CA1051">
+    <Resolution Name="Default">Make '{0}' private or internal (Friend in VB, public private in C++) and provide a public or protected property to access it.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805">
+    <Resolution Name="Default">{0} initializes field {1} of type {2} to {3}. Remove this initialization as it will be done automatically by the runtime.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotPassLiteralsAsLocalizedParameters" Category="Microsoft.Globalization" CheckId="CA1303">
+    <Resolution Name="Default">{0} passes a literal as parameter {1} of a call to {2}. Retrieve the following string argument from a resource table instead: '{3}'</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotUseTimersThatPreventPowerStateChanges" Category="Microsoft.Mobility" CheckId="CA1601">
+    <Resolution Name="Default">Modify the call to {0} in method {1} to set the timer interval to a value that's greater than or equal to one second.</Resolution>
+   </Rule>
+   <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+    <Resolution Name="Member">Correct the spelling of the unrecognized token '{0}' in member name '{1}'.</Resolution>
+    <Resolution Name="MemberOneLetter">Consider providing a more meaningful name than the one-letter token '{0}' in member name '{1}'.</Resolution>
+    <Resolution Name="Parameter">In method {0}, correct the spelling of the unrecognized token '{1}' in parameter name '{2}' or strip it entirely if it represents any sort of hungarian notation.</Resolution>
+    <Resolution Name="ParameterOneLetter">In method {0}, consider providing a more meaningful name than the one-letter parameter name '{1}'.</Resolution>
+    <Resolution Name="Type">Correct the spelling of the unrecognized token '{0}' in type name '{1}'.</Resolution>
+   </Rule>
+   <Rule TypeName="IdentifiersShouldNotContainUnderscores" Category="Microsoft.Naming" CheckId="CA1707">
+    <Resolution Name="Member">Remove all underscores from member '{0}'.</Resolution>
+   </Rule>
+   <Rule TypeName="LiteralsShouldBeSpelledCorrectly" Category="Microsoft.Usage" CheckId="CA2204">
+    <Resolution Name="Default">Correct the spelling of the unrecognized token '{0}' in the literal '{1}'.</Resolution>
+   </Rule>
+   <Rule TypeName="LongAcronymsShouldBePascalCased" Category="Microsoft.Naming" CheckId="CA1705">
+    <Resolution Name="Member">Correct the capitalization of member name '{0}'.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+    <Resolution Name="Default">The 'this' parameter (or 'Me' in VB) of {0} is never used. Mark the member as static (or Shared in VB) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
+   </Rule>
+   <Rule TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060">
+    <Resolution Name="Default">Because it is a DllImport method, {0} should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Resolution>
+   </Rule>
+   <Rule TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211">
+    <Resolution Name="Default">Consider making '{0}' non-public or a constant.</Resolution>
+   </Rule>
+   <Rule TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901">
+    <Resolution Name="Parameter">As it is declared in your code, parameter '{0}' of PInvoke {1} will be {2} bytes wide on {3} platforms. This is not correct, as the actual native declaration of this API indicates it should be {4} bytes wide on {3} platforms. Consult the MSDN Platform SDK documentation for help determining what data type should be used instead of '{5}'.</Resolution>
+   </Rule>
+   <Rule TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401">
+    <Resolution Name="Default">Change the accessibility of DllImport '{0}' so that it is no longer visible from outside its assembly.</Resolution>
+   </Rule>
+   <Rule TypeName="ShortAcronymsShouldBeUppercase" Category="Microsoft.Naming" CheckId="CA1706">
+    <Resolution Name="Member">Correct the capitalization of '{0}' in member name '{1}'.</Resolution>
+    <Resolution Name="Type">Correct the capitalization of '{0}' in type name '{1}'.</Resolution>
+   </Rule>
+   <Rule TypeName="SpecifyMessageBoxOptions" Category="Microsoft.Globalization" CheckId="CA1300">
+    <Resolution Name="Default">Change {0} to call the MessageBox.Show overload that specifies MessageBoxOptions, and make sure to set MessageBoxOptions.RightAlign and MessageBoxOptions.RtlReading if RightToLeft is set to RightToLeft.Yes on the parent control. If it is set to RightTolLeft.Inherit, check its parent until a value indicating Yes or No is found.</Resolution>
+   </Rule>
+   <Rule TypeName="UriParametersShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1054">
+    <Resolution Name="Default">Change the type of parameter '{0}' of method {1} from string to System.Uri, or provide an overload of {1}, that allows '{0}' to be passed as a System.Uri object.</Resolution>
+   </Rule>
+   <Rule TypeName="UriPropertiesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1056">
+    <Resolution Name="Default">Change the type of property '{0}' from string to System.Uri.</Resolution>
+   </Rule>
+   <Rule TypeName="UriReturnValuesShouldNotBeStrings" Category="Microsoft.Design" CheckId="CA1055">
+    <Resolution Name="Default">Change the return type of {0} from string to System.Uri.</Resolution>
+   </Rule>
+   <Rule TypeName="ValidateArgumentsOfPublicMethods" Category="Microsoft.Design" CheckId="CA1062">
+    <Resolution Name="Default">Validate parameter {0} passed to externally visible method {1}.</Resolution>
+   </Rule>
+  </Rules>
+ </FxCopReport>
+</FxCopProject>
