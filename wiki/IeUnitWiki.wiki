@@ -1,6 +1,5 @@
 #summary Welcome to IeUnit Wiki
+#labels Featured
 = Introduction =
 
 Welcome to the new home of !IeUnit web testing framework.
-
-Source code will be checked-in soon.
