@@ -100,7 +100,7 @@ namespace QuickFocus
             it = eList.GetEnumerator();
             while ( it.MoveNext() ) {
                 // We issue the submit statement at the end of the snip.
-                if ( submitElement.Equals( it.Current ) ) {
+                if ( submitElement == it.Current ) {
                     continue;
                 }
 
