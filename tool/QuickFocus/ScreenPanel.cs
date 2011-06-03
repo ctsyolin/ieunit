@@ -509,12 +509,12 @@ namespace QuickFocus {
             return new FramedElement(e, frame, clientLeft, clientTop);
         }
 
-        public HTMLWindow2Class ContentWindow {
+        public DispHTMLWindow2 ContentWindow {
             get {
                 if ( frame is HTMLFrameElementClass ) {
-                    return (frame as HTMLFrameElementClass).contentWindow as HTMLWindow2Class;
+                    return (frame as HTMLFrameElementClass).contentWindow as DispHTMLWindow2;
                 } else if ( frame is HTMLIFrameClass ) {
-                    return (frame as HTMLIFrameClass).contentWindow as HTMLWindow2Class;
+                    return (frame as HTMLIFrameClass).contentWindow as DispHTMLWindow2;
                 } else {
                     return null;
                 }

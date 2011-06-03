@@ -34,7 +34,7 @@ using System.Security.Permissions;
 [assembly: CLSCompliant(false)]
 [assembly: ComVisible(false)]
 [assembly: AssemblyKeyName("")]
-[assembly: AssemblyVersion("2.3.240")]
+[assembly: AssemblyVersion("2.3.241")]
 
 
 

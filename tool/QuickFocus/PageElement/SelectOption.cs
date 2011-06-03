@@ -41,7 +41,7 @@ namespace QuickFocus
             return idx;
         }
 
-        private void AddNewSnip(HTMLOptionElementClass op, string snippet) {
+        private void AddNewSnip(DispHTMLOptionElement op, string snippet) {
             if ( op.selected ) {
                 InsertSnip(snippet);
             } else {
@@ -56,13 +56,13 @@ namespace QuickFocus
             string  name    = ElementName;
 
             for(int i=0; i<opts.length; i++) {
-                HTMLOptionElementClass op = (HTMLOptionElementClass) opts.item(i, 0);
+                DispHTMLOptionElement op = (DispHTMLOptionElement) opts.item(i, 0);
                 AddNewSnip(op, "_.setSelectOption(" + idx + ", \"" + op.innerText + "\");");
             }
 
 
             for(int i=0; i<opts.length; i++) {
-                HTMLOptionElementClass op = (HTMLOptionElementClass) opts.item(i, 0);
+                DispHTMLOptionElement op = (DispHTMLOptionElement) opts.item(i, 0);
                 AddNewSnip(op, "_.setSelectOption(" + idx + ", " + i + ");");
                 if (name!=null) {
                     AddNewSnip(op, "_.setSelectOption(\"" + name + "\", " + i + ");");
@@ -72,7 +72,7 @@ namespace QuickFocus
 
             if ( (e.id != null) && IsUnique(e.id) ) {
                 for(int i=0; i<opts.length; i++) {
-                    HTMLOptionElementClass op = (HTMLOptionElementClass) opts.item(i, 0);
+                    DispHTMLOptionElement op = (DispHTMLOptionElement) opts.item(i, 0);
                     AddNewSnip(op,"_.setSelectOption(\"" + e.id + "\", \"" + op.innerText + "\");");
                 }
             }
@@ -80,7 +80,7 @@ namespace QuickFocus
 
             if ( name != null ) {
                 for(int i=0; i<opts.length; i++) {
-                    HTMLOptionElementClass op = (HTMLOptionElementClass) opts.item(i, 0);
+                    DispHTMLOptionElement op = (DispHTMLOptionElement) opts.item(i, 0);
                     AddNewSnip(op, "_.setSelectOption(\"" + name + "\", \"" + op.innerText + "\");");
                 }
             }
@@ -97,7 +97,8 @@ namespace QuickFocus
             AddSnip("_.assertNotNull(_.findSelect(" + idx + "));");
 
             for(int i=0; i<opts.length; i++) {
-                HTMLOptionElementClass op = (HTMLOptionElementClass) opts.item(i, 0);
+                DispHTMLOptionElement op = (DispHTMLOptionElement)opts.item(i, 0);
+                // DispHTMLOptionElement op = (DispHTMLOptionElement) opts.item(i, 0);
                 AddNewSnip(op, "_.assertSelectHasOption(" + idx + ", \"" + op.innerText + "\");");
             }
             AddSnip("");
@@ -107,7 +108,7 @@ namespace QuickFocus
             string name = ElementName;
             if ( (name != null) && IsUnique(name) ) {
                 for(int i=0; i<opts.length; i++) {
-                    HTMLOptionElementClass op = (HTMLOptionElementClass) opts.item(i, 0);
+                    DispHTMLOptionElement op = (DispHTMLOptionElement)opts.item(i, 0);
                     AddNewSnip(op, "_.assertSelectHasOption(\"" + name + "\", \"" + op.innerText + "\");");
                 }
                 AddSnip("");
@@ -115,7 +116,7 @@ namespace QuickFocus
 
             if ( (e.id != null) && IsUnique(e.id) ) {
                 for(int i=0; i<opts.length; i++) {
-                    HTMLOptionElementClass op = (HTMLOptionElementClass) opts.item(i, 0);
+                    DispHTMLOptionElement op = (DispHTMLOptionElement)opts.item(i, 0);
                     AddNewSnip(op, "_.assertSelectHasOption(\"" + e.id + "\", \"" + op.innerText + "\");");
                 }
                 AddSnip("");
