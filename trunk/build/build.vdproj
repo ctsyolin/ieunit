@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_0AE9FBCF462E487F8551ADD9AC282B8E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0DE9DB09030E43A48D6926A939C34CDC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -129,12 +135,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2F4052A3D38249148297312EE0750D53"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_312F22875B5D43E5BADA626922F1B6F6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -190,6 +190,12 @@
         "Entry"
         {
         "MsmKey" = "8:_4359F0C3FA714C97A4E58EC701290CDF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4430076CA74946298884149F7E639A2A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -345,6 +351,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_6E93D1F492F268B2F02EFD741468414B"
+        "OwnerKey" = "8:_C6290EB8AF699CE4FA918FEB1EDBDA70"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_70F63BA4203741D99ED99CA78F711F6C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -358,12 +370,6 @@
         "Entry"
         {
         "MsmKey" = "8:_74E172F1809F40948EC888C1A972A5D5"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_770DD014AF0142EFA851179FE6909C03"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -436,18 +442,6 @@
         "Entry"
         {
         "MsmKey" = "8:_8CF175A1DC4E4B648F83FB2FFB8043F2"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_903D4BC51ECFB08E0BBDBC8455A80F55"
-        "OwnerKey" = "8:_5D88F070D62A46CFBE6300F4138A3FD2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_91667605EE1D4F9DB05309F40FEA07E7"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -561,6 +555,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_BE76E4413C2D40D4B591E430EBDFA071"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BF9101914A94E67F7318259C73332414"
+        "OwnerKey" = "8:_6E93D1F492F268B2F02EFD741468414B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C127F370E22744FAA02EDD34E79687AC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -569,6 +575,12 @@
         {
         "MsmKey" = "8:_C5358B3328CE46B5815E550F4120F375"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C6290EB8AF699CE4FA918FEB1EDBDA70"
+        "OwnerKey" = "8:_5D88F070D62A46CFBE6300F4138A3FD2"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -627,25 +639,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_D05B6830776043218068219A7A3287DE"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D0F87538F1D89ED37E9E55845EBAE949"
-        "OwnerKey" = "8:_903D4BC51ECFB08E0BBDBC8455A80F55"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_D1B1316645F043E8AA1E183BA46DE062"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D5538E6098654D2B9251A388318B1FBD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -706,6 +700,12 @@
         "Entry"
         {
         "MsmKey" = "8:_E3B59D7308134DA0BC06C11C3218DB99"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E4F2C42C2D5A4287B98A20990CD9AAD3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -825,8 +825,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_FEED184B2643C9492304432FF8F3F153"
-        "OwnerKey" = "8:_D0F87538F1D89ED37E9E55845EBAE949"
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_288807608DAC4C7782FFC388E045AC12"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -838,19 +838,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_903D4BC51ECFB08E0BBDBC8455A80F55"
+        "OwnerKey" = "8:_C6290EB8AF699CE4FA918FEB1EDBDA70"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D0F87538F1D89ED37E9E55845EBAE949"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_288807608DAC4C7782FFC388E045AC12"
+        "OwnerKey" = "8:_6E93D1F492F268B2F02EFD741468414B"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -888,7 +882,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:IeUnit_2_3_240.msi"
+        "OutputFilename" = "8:IeUnit_2_3_241.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -944,6 +938,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0AE9FBCF462E487F8551ADD9AC282B8E"
+            {
+            "SourcePath" = "8:..\\doc\\ApiDoc\\IeDebug_8js_source.html"
+            "TargetName" = "8:IeDebug_8js_source.html"
+            "Tag" = "8:"
+            "Folder" = "8:_E03C5340F5FF491C8EF6DCCEDFDD6B37"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0DE9DB09030E43A48D6926A939C34CDC"
             {
             "SourcePath" = "8:..\\samples\\ApiTest\\UpRightFrame.html"
@@ -1330,26 +1344,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2F4052A3D38249148297312EE0750D53"
-            {
-            "SourcePath" = "8:..\\doc\\ApiDoc\\Win32Dom_8js-source.html"
-            "TargetName" = "8:Win32Dom_8js-source.html"
-            "Tag" = "8:"
-            "Folder" = "8:_E03C5340F5FF491C8EF6DCCEDFDD6B37"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_312F22875B5D43E5BADA626922F1B6F6"
             {
             "SourcePath" = "8:..\\samples\\ApiTest\\TextAreaTest.jst"
@@ -1536,6 +1530,26 @@
             "TargetName" = "8:FrameworkAPI.html"
             "Tag" = "8:"
             "Folder" = "8:_B154D6CA91F54E7DB25982F359E5902C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4430076CA74946298884149F7E639A2A"
+            {
+            "SourcePath" = "8:..\\doc\\ApiDoc\\IeDhtml_8js_source.html"
+            "TargetName" = "8:IeDhtml_8js_source.html"
+            "Tag" = "8:"
+            "Folder" = "8:_E03C5340F5FF491C8EF6DCCEDFDD6B37"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2056,6 +2070,32 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6E93D1F492F268B2F02EFD741468414B"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:SHDocVw, Version=1.1.0.0, Culture=neutral, PublicKeyToken=2361d360e55692c8, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                }
+            "SourcePath" = "8:SHDocVw.DLL"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_25897D37BCD6441A98E228886DC7B994"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_70F63BA4203741D99ED99CA78F711F6C"
             {
             "SourcePath" = "8:..\\samples\\ApiTest\\Hello.html"
@@ -2102,26 +2142,6 @@
             "TargetName" = "8:ModalDialog.html"
             "Tag" = "8:"
             "Folder" = "8:_9E546BE435034C57A023BFCEA6C0CDF5"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_770DD014AF0142EFA851179FE6909C03"
-            {
-            "SourcePath" = "8:..\\doc\\ApiDoc\\IeUnit_8js-source.html"
-            "TargetName" = "8:IeUnit_8js-source.html"
-            "Tag" = "8:"
-            "Folder" = "8:_E03C5340F5FF491C8EF6DCCEDFDD6B37"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2360,52 +2380,6 @@
             {
             "SourcePath" = "8:..\\doc\\ApiDoc\\IeUnit_8js.html"
             "TargetName" = "8:IeUnit_8js.html"
-            "Tag" = "8:"
-            "Folder" = "8:_E03C5340F5FF491C8EF6DCCEDFDD6B37"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_903D4BC51ECFB08E0BBDBC8455A80F55"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AxSHDocVw, Version=1.1.0.0, Culture=neutral, PublicKeyToken=2361d360e55692c8, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                }
-            "SourcePath" = "8:AxSHDocVw.DLL"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_25897D37BCD6441A98E228886DC7B994"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_91667605EE1D4F9DB05309F40FEA07E7"
-            {
-            "SourcePath" = "8:..\\doc\\ApiDoc\\IeDhtml_8js-source.html"
-            "TargetName" = "8:IeDhtml_8js-source.html"
             "Tag" = "8:"
             "Folder" = "8:_E03C5340F5FF491C8EF6DCCEDFDD6B37"
             "Condition" = "8:"
@@ -2782,6 +2756,46 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BE76E4413C2D40D4B591E430EBDFA071"
+            {
+            "SourcePath" = "8:..\\doc\\ApiDoc\\IeUnit_8js_source.html"
+            "TargetName" = "8:IeUnit_8js_source.html"
+            "Tag" = "8:"
+            "Folder" = "8:_E03C5340F5FF491C8EF6DCCEDFDD6B37"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BF9101914A94E67F7318259C73332414"
+            {
+            "SourcePath" = "8:ieframe.dll"
+            "TargetName" = "8:ieframe.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_25897D37BCD6441A98E228886DC7B994"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:4"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C127F370E22744FAA02EDD34E79687AC"
             {
             "SourcePath" = "8:..\\bin\\JavaScriptTest.ico"
@@ -2820,6 +2834,32 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C6290EB8AF699CE4FA918FEB1EDBDA70"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:AxSHDocVw, Version=1.1.0.0, Culture=neutral, PublicKeyToken=2361d360e55692c8, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                }
+            "SourcePath" = "8:AxSHDocVw.DLL"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_25897D37BCD6441A98E228886DC7B994"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C743EA448D314CEEA6677DC5092723BD"
@@ -3002,78 +3042,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D05B6830776043218068219A7A3287DE"
-            {
-            "SourcePath" = "8:..\\doc\\ApiDoc\\dir_000000.html"
-            "TargetName" = "8:dir_000000.html"
-            "Tag" = "8:"
-            "Folder" = "8:_E03C5340F5FF491C8EF6DCCEDFDD6B37"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D0F87538F1D89ED37E9E55845EBAE949"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SHDocVw, Version=1.1.0.0, Culture=neutral, PublicKeyToken=2361d360e55692c8, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                }
-            "SourcePath" = "8:SHDocVw.DLL"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_25897D37BCD6441A98E228886DC7B994"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D1B1316645F043E8AA1E183BA46DE062"
             {
             "SourcePath" = "8:..\\samples\\LoginDemo\\Hello.pl"
             "TargetName" = "8:Hello.pl"
             "Tag" = "8:"
             "Folder" = "8:_10F6C72F08A74F228878C2613CAD74DF"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D5538E6098654D2B9251A388318B1FBD"
-            {
-            "SourcePath" = "8:..\\doc\\ApiDoc\\IeDebug_8js-source.html"
-            "TargetName" = "8:IeDebug_8js-source.html"
-            "Tag" = "8:"
-            "Folder" = "8:_E03C5340F5FF491C8EF6DCCEDFDD6B37"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3274,6 +3248,26 @@
             "TargetName" = "8:RunTest.bat"
             "Tag" = "8:"
             "Folder" = "8:_497FE03D8D7542B494944CCE32FBF99D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E4F2C42C2D5A4287B98A20990CD9AAD3"
+            {
+            "SourcePath" = "8:..\\doc\\ApiDoc\\Win32Dom_8js_source.html"
+            "TargetName" = "8:Win32Dom_8js_source.html"
+            "Tag" = "8:"
+            "Folder" = "8:_E03C5340F5FF491C8EF6DCCEDFDD6B37"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3668,26 +3662,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FEED184B2643C9492304432FF8F3F153"
-            {
-            "SourcePath" = "8:ieframe.dll"
-            "TargetName" = "8:ieframe.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_25897D37BCD6441A98E228886DC7B994"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:4"
-            "Exclude" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
         }
         "FileType"
         {
@@ -4001,14 +3975,14 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:IeUnit"
-        "ProductCode" = "8:{EEC01F7C-997D-4BA4-A297-59597943FA65}"
-        "PackageCode" = "8:{E3D554ED-125A-478A-930E-5693FF469C17}"
+        "ProductCode" = "8:{46AB239B-9C5F-4A2B-AF5D-8EC7E4651367}"
+        "PackageCode" = "8:{0292B4FF-CD63-499D-BC72-5ADEA092115A}"
         "UpgradeCode" = "8:{AE6AF53D-0273-4E4F-ABBA-53BCE379EB17}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:2.3.240"
+        "ProductVersion" = "8:2.3.241"
         "Manufacturer" = "8:IeUnit Team"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:http://ieunit.sourceforge.net"

@@ -951,7 +951,8 @@ namespace QuickFocus
             if ( frameCount > 0 ) {
                 for(int i=0; i<frameCount; i++) {
                     object x = i;
-                    HTMLWindow2Class frameWin = doc.frames.item(ref x) as HTMLWindow2Class;
+                    object frameObj = doc.frames.item(ref x);
+                    DispHTMLWindow2 frameWin = frameObj as DispHTMLWindow2;
                     try {
                         if ( ! IsDocReady( frameWin.document ) ) {
                             return;

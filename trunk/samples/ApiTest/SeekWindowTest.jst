@@ -3,6 +3,7 @@
 // Notice: To run this case successfully the IE browser must disable 
 // "Reuse windows for launching shortcuts"
 // in configuration menu tools->options->Advanced.
+// Also: IE must be set as default browser: Tools>Internet Options>Programs>Make default.
 //
 function SeekWindowTest() {
     assimilate(this, new IeUnit());
@@ -10,7 +11,9 @@ function SeekWindowTest() {
 
     this.setUp = function() {
         cmdShell.Run("\"" + this.getCaseDir() +"\\" + "TestPage.html\"", 1, false);
+	this._sleep(1000);
         cmdShell.Run("\"" + this.getCaseDir() +"\\" + "InputPage.html\"", 1, false);
+	this._sleep(1000);
     };
 
     this.tearDown = function() {

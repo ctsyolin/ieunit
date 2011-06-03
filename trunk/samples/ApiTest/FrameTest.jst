@@ -1,4 +1,7 @@
 //Tested APIs: setFrame(), setFindScopeToFrame();
+// 
+// Notice: To run this script successfully, IE needs to enable 
+// to enable Tools>Options>Advanced>Security>Allow active content to run in files on My Computer.
 
 function FrameTest() {
     assimilate(this, new IeUnit());
@@ -32,6 +35,7 @@ function FrameTest() {
         var btn = this.findButton("Frame");
         this.assertEquals("LeftFrame", btn.value);
     };
+
 
     // notice: setFindScopeToFrame differs from setFrame that
     // setFindScope lost its effect after the submision
@@ -114,5 +118,6 @@ function FrameTest() {
     this.testExNestedFrame4 = function() {
         this.checkNestedFrame("bottomFrame/1");
     };
-        
+      
+  
 }

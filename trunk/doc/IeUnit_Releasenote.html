@@ -1,51 +1,50 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-    <head>
-        <title>IeUnit Releasenote</title>
-        <link href="style.css" type="text/css" rel="stylesheet">
-            <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-    </head>
+<html><head>
+        
+        <title>IeUnit Releasenote</title><link href="style.css" type="text/css" rel="stylesheet">
+            <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"></head>
+
     <body>
         <h1>Release Notes</h1>
         <hr width="100%">
-        <P>
-        </P>
-        <P><STRONG>Changes in version 2.3.240 (Dec 9, 2006) </STRONG>
-        </P>
-        <OL>
-            <LI>Upgraded the system to .Net 2.0 platform.&nbsp;</li>
+        <p>
+        <strong>Changes in version 2.3.241 (June 4, 2011)</strong></p><ol><li><strong><span style="font-weight: normal;">Adaptation to Windows 7 with Interenet Explorer 8. </span></strong></li></ol>
+        <p><strong>Changes in version 2.3.240 (Dec 9, 2006) </strong>
+        </p>
+        <ol>
+            <li>Upgraded the system to .Net 2.0 platform.&nbsp;</li>
             <li>Open sourced the QuickFocus tool that is implemented in C# 2.0.</li>
         </ol>
         <p>
             <strong>Changes in version 2.1.238 (May&nbsp; 26, 2006) </strong>
         </p>
-        <OL>
-            <LI>
-                Extended Win32Dom to allow fetch text property. Added test case GetUrl.jst.</LI></OL>
-        <P><STRONG>Changes in version 2.1.237 (May&nbsp; 17, 2006) </STRONG>
-        </P>
-        <OL>
-            <LI>
+        <ol>
+            <li>
+                Extended Win32Dom to allow fetch text property. Added test case GetUrl.jst.</li></ol>
+        <p><strong>Changes in version 2.1.237 (May&nbsp; 17, 2006) </strong>
+        </p>
+        <ol>
+            <li>
                 Changed the default value&nbsp;for&nbsp;_ieWindowVisible from "false" to "true" 
-                (thanks to Stephen Newton).</LI></OL>
-        <P><B><B>Changes in version 2.1.236 (May&nbsp; 8, 2006)</B> </B>
-        </P>
+                (thanks to Stephen Newton).</li></ol>
+        <p><b><b>Changes in version 2.1.236 (May&nbsp; 8, 2006)</b> </b>
+        </p>
         <ol>
             <li>
                 Extended file type configuration for ".jst" and ".sbk" to enable extra script 
                 command-line arguments.</li>
         </ol>
-        <P><B><B>Changes in version 2.1.234 (May&nbsp; 2, 2006)</B> </B>
-        </P>
+        <p><b><b>Changes in version 2.1.234 (May&nbsp; 2, 2006)</b> </b>
+        </p>
         <ol>
             <li>
             Removed obsolate file IeGuiRunner.html and IeGuiRunner.wsf.
-            <li>
+            </li><li>
             Added default break points for debugging mode.
-            <LI>
+            </li><li>
                 Added an entry to the Explorer's Send To menu. We can now execute a selected 
                 set of jst script by sending them to the IeUnit entry.<br>
-            </LI>
+            </li>
         </ol>
         <p><b><b> Changes in version 2.1.225(April 12, 2006)</b> </b>
         </p>
@@ -63,7 +62,7 @@
                 are not initialized with <tt>this.doc.parentWidnow</tt> instead of <tt>this.doc.window,
                 </tt>
             the formmer allows provides more access the the modal dialog window.
-            <li>
+            </li><li>
                 Added methods <tt>findTextArea() </tt>and <tt>setTextArea() </tt>methods to 
                 support TextArea elements (code contributed by Andy Rosenbaum).<br>
             </li>
@@ -74,10 +73,10 @@
         <ol>
             <li>
             Fixed a defect relating to the -v option for hidding&nbsp;IE window.
-            <li>
+            </li><li>
             Extended Win32Dom to enable accessing modal dialog window through DHTM model. 
             See ModalDialogTest.jst for more details.
-            <li>
+            </li><li>
                 Deprecated the <tt>IeGuiRunner.wsf. </tt>Removed all related documentation and 
                 test code, the test runner <tt>IeGuiRunner.wsf </tt>itself will be supported 
                 till the next major release.
@@ -89,7 +88,7 @@
                 Added the global variable <tt>_ </tt>to replace the variable <tt>_currentCase. </tt>
                 The variable <tt>_currentCae </tt>
             remain defined to maintain compatibility with older versions.
-            <li>
+            </li><li>
                 Fixed problem findByTagAndAttr(): can't search for&nbsp; 'class' attributes.<br>
             </li>
         </ol>
@@ -99,7 +98,7 @@
             <li>
                 Added <tt>_TestRunInit() </tt>
             to allow invidual configuration for each repeated test runs.
-            <li>
+            </li><li>
                 Fixed a defect in <tt>findByTagAndAttr(): </tt>some attribute are not detected.<br>
             </li>
         </ol>
@@ -107,7 +106,7 @@
         <ol>
             <li>
             Fixed yet another unicode problem.
-            <li>
+            </li><li>
                 The <tt>SmartBookmark.init</tt>, if exisits, is now included directly before 
                 the code in <tt>.sbk</tt> file. &nbsp;Previously, it was loaded outsides of the<tt> 
                     SmartBookmarkTest </tt>class. &nbsp;With this change we can assimilate 
@@ -120,25 +119,25 @@
                 Set the global variable <tt>_currentCase</tt> ( or simply <tt>_</tt>) for 
                 smartbook scripts, so that we can directly access the <tt>IeDhtml</tt>
             &nbsp;methods in any generic JavaScript functions.
-            <li>
+            </li><li>
             Fixed an unicode related defect in QuickFocus: it&nbsp;now handles 
             properly&nbsp;characters in the range 128-255. Thanks Kiril Jovchev for 
             reporting this problem.
-            <li>
+            </li><li>
             Varius bug fixes and enhancements in QuickFocus&nbsp; (NullReferences, IFrames, 
             fonts,&nbsp;property&nbsp;details for&nbsp;focused elements,&nbsp;etc.).
-            <li>
+            </li><li>
                 Extended <tt>Win32Dom </tt>to support mouse controls. The test <tt>MouseTest.jst </tt>
             demonstrates how to use these new features to drive modal dialogs.
-            <li>
+            </li><li>
                 The class <tt>Win32Dom </tt>is now assimilated by the <tt>IeUnit </tt>class. 
                 Thus, normal test cases that assimilates <tt>IeUnit </tt>no long need to 
                 assimilate <tt>Win32Dom.</tt> Notice: this change might cause name conflict 
                 &nbsp;if &nbsp;existing scripts have used &nbsp;method names which are used by <tt>Win32Dom.</tt>
-            <li>
+            </li><li>
                 Updated IeUnit FAQ page. It contains now more information about handling of 
                 various kinds of popup windows<br>
-            <li>
+            </li><li>
                 Added global function <tt>RequireVersion() </tt>to allow a script to require 
                 particular version (or higher) of IeUnit.</li>
         </ol>
@@ -149,42 +148,42 @@
         <ol>
             <li>
                 Added index parameter to <tt>setField()</tt>
-            <li>
+            </li><li>
                 Added index parameter to <tt>clickButton(), findButton(), clickLink(), findLink().</tt>
-            <li>
+            </li><li>
                 Renamed <tt>IeRun.wsf</tt> to <tt>SmarkBookmark.wsf.</tt>
-            <li>
+            </li><li>
                 Made <tt>findLink(), clickLink() </tt>
             polymorphic. The substring can also be a regular expression in the format like 
             /goto here/i.
-            <li>
+            </li><li>
                 Split <tt>setBox() </tt>into <tt>setCheckBox() </tt>and <tt>checkRadioButton().</tt>
-            <li>
+            </li><li>
                 Removed <tt>hasSelect()</tt>. Renamed <tt>assertSelectHas() </tt>to &nbsp;<tt>assertSelectHasOption().</tt>
                 &nbsp;Renamed <tt>setSelect() </tt>to &nbsp;<tt>setSelectOption(). </tt>Added <tt>fireEvent()
                 </tt>and <tt>checkSubmit() </tt>call into <tt>setSelectOption().</tt>
-            <li>
+            </li><li>
                 Added polymorphic to <tt>findObjById(), findField(), findRadionButton(), 
                     findSelect()</tt>. These methods now accept both index and id as 
             parameter.
-            <li>
+            </li><li>
                 The smart-bookmark script now access the IeUnit framework through the <tt>'this' </tt>
                 instead of the <tt>'theApp' </tt>
             variable.
-            <li>
+            </li><li>
                 Renamed <tt>assertHasText</tt> to <tt>assertPageHasText().</tt>
-            <li>
+            </li><li>
                 Added <tt>findTableCell(idOrIdx, rowIdx, columIdx), </tt>where <tt>idOrIdx </tt>
             can be either the table index or table id.
-            <li>
+            </li><li>
                 Added the global variable <tt>_currentCase </tt>
             to allow stand-alone function to access the currently executing test 
             case.&nbsp;
-            <li>
+            </li><li>
                 The property <tt>this.win </tt>now points to <tt>this.doc.parentWindow</tt> that 
                 corresponds to the '<tt>window</tt>' &nbsp;object in in-browser JavaScript 
                 enviornment. The old <tt>this.win</tt> is now called <tt>this.comWin.</tt>
-            <li>
+            </li><li>
                 Added the command-line option <tt>-runfiles </tt>to run a list of <tt>.jst </tt>
                 files. The file name no long has to match the test case name. IeTextRunner 
                 scans the <tt>.jst </tt>file to figure out the test case name. IeTextRunner now 
@@ -192,42 +191,42 @@
                 multiple variations of the same test cases in the same directory. The option <tt>-run
                 </tt>
             no long accept file name as parameter.
-            <li>
+            </li><li>
                 Smart bookmark script can now be encoded in unicode. Added test case <tt>UnicodeTest.jst</tt>
             to demo the usage. Notice that test case scripts has already been able to 
             handle unicode scripts..
-            <li>
+            </li><li>
                 Added the script DebugTest.bat to start IeUnit test script in debugger (a 
                 script debugger must be installed). &nbsp;Extended Windows file types for <tt>.jst </tt>
                 and <tt>.sbk </tt>
             we can launch the debugger by right-mous clicking on script files in the 
             windows explorer.
-            <li>
+            </li><li>
                 The IeUnit installation program now installs <tt>Win32Dom.dll</tt> that enables 
                 users to access to normal desktop windows. Several test cases &nbsp;in <tt>samples\Win32DomTest
                 </tt>directory demostrate the usage of &nbsp;<tt>Win32Dom.dll</tt>. 
                 &nbsp;Because of&nbsp; the <tt>Win32Dom.dll </tt>
             module IeUnit now requires the Microsoft .NET 1.1 runtime enviornment which can 
             be downloaded free of change from Microsoft web site.
-            <li>
+            </li><li>
                 Added QuickFocus as a third-party GUI tool that helps inspect HTML pages and 
                 create IeUnit scripts. QuickFocus is donated by <a href="http://www.visumap.net">VisuMap 
                     Technologies Inc.</a>
-            <li>
+            </li><li>
                 IeUnit no long sets the first frame as default frame when a page has frames or 
                 iframes. The test script has to use <tt>setFrame(idxOrId) </tt>to set the 
                 current frame explicitly. &nbsp;If the frame structure is specified by multiple 
                 nested framed documents, the argument <tt>idxOrId </tt>must be of the syntax "<tt><i>idxOrId1/idxOrId2/</i>...</tt>". 
             If the frame structure is specified by only one top level framed document, then 
             a single &nbsp;index or id can address any nested frame.
-            <li>
+            </li><li>
                 Added <tt>clickImage()</tt>
             method.
-            <li>
+            </li><li>
                 Added the <tt>%IEUNIT_HOME%/local</tt> as a place holder for custom libraries 
                 which will be searched for <tt>*.jst </tt>and <tt>*.js</tt>
             files by the default configuration.
-            <li>
+            </li><li>
                 Added &nbsp;<tt>assertTextContains() </tt>and <tt>assertTagHasText().</tt><br>
             </li>
         </ol>
@@ -250,26 +249,26 @@
         <ol>
             <li>
             Replaced the attributes method by special file type to control test case list.
-            <li>
+            </li><li>
             Packaged the framework in a Microsoft Installer package to simplify 
             installation.
-            <li>
+            </li><li>
             Added IeUnit specific file types to allow direct launch of test cases from 
             Windows Desktop.
-            <li>
+            </li><li>
                 Added more assert and action methods, e.g. <tt>navigateTo</tt>, <tt>assertContains</tt>,
                 <tt>assertFail</tt>, etc. All assert method now accept an optional message 
             agument.
-            <li>
+            </li><li>
             Improved exception handling and debugging support.
-            <li>
+            </li><li>
                 Added batch scripts <tt>StartGuiRunner.bat</tt> and <tt>StartTest.bat</tt> to 
                 simlify execution of test cases.<br>
-            <li>
+            </li><li>
             Various code refactoring and simplication.
-            <li>
+            </li><li>
             Added regluar expression matching for findLink and clickLink methods.
-            <li>
+            </li><li>
                 Added <tt>-n </tt>option to IeTextRunner.wsf that allows repeating a test run 
                 mulitple times.<br>
             </li>
@@ -279,22 +278,22 @@
         <ol>
             <li>
                 Fixed bug where an open window would remain open if a test failed.<br>
-            <li>
+            </li><li>
                 Added Xml output to the IeTextRunner.<br>
-            <li>
+            </li><li>
         Added the following methods to the IeDhtml object:
         <ol>
             <li>
             getTag
-            <li>
+            </li><li>
                 clickLinkRange
                 <br>
             </li>
         </ol>
-        <li>
+        </li><li>
             Added a command line option to IeTextRunner to enable tests to run without 
             displaying an IE window<br>
-        <li>
+        </li><li>
             Added compilation error reporting to IeTextRunner</li>
         </ol>
         <p><b>Changes in version 1.2:</b><br>
@@ -346,5 +345,4 @@
         <br>
         <br>
         <br>
-    </body>
-</html>
+    </body></html>

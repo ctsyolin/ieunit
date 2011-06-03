@@ -67,7 +67,7 @@ namespace QuickFocus
                 if ( pwin.name != null ) {
                     framePath = pwin.name + "/" +  framePath;
                 } else {
-                    HTMLWindow2Class win2 = pwin as HTMLWindow2Class;
+                    DispHTMLWindow2 win2 = pwin as DispHTMLWindow2;
                     HTMLFrameElementClass frm = win2.frameElement as HTMLFrameElementClass;
                     if ( (frm != null) && (frm.id != null) ) {
                         framePath = frm.id + "/" + framePath;

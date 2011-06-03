@@ -19,7 +19,7 @@ namespace QuickFocus.QA
 	/// </summary>
 	public class QaTestCase : TestCase
 	{
-        protected string homeDir = @"C:\dev\IeUnit\";
+        protected string homeDir = @"C:\work\IeUnit\";
         private FormChecker appChecker;
 
         public QaTestCase() {
