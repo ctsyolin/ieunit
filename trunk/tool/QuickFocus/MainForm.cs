@@ -137,6 +137,8 @@ namespace QuickFocus
             rtbSnipWin.MouseEnter += new EventHandler(rtbSnipWin_MouseEnter);     
             Win32Interop.SendMessage(rtbSnipWin.Handle, 
                 Win32Interop.EM_SETMARGINS, Win32Interop.EC_LEFTMARGIN|Win32Interop.EC_RIGHTMARGIN, 5);
+
+            browserMain.Select();            
         }
 
         public ScreenPanel TheScreen {

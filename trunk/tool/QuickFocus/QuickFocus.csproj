@@ -73,10 +73,6 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AppTest, Version=1.0.100.17170, Culture=neutral, PublicKeyToken=be268d35b7fdc692, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>AppTest\AppTest.dll</HintPath>
-    </Reference>
     <Reference Include="AxSHDocVw, Version=1.1.0.0, Culture=neutral, PublicKeyToken=2361d360e55692c8, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\AxSHDocVw.dll</HintPath>
@@ -154,7 +150,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="PageElement\MapArea.cs">
       <SubType>Code</SubType>
@@ -303,6 +299,12 @@
     <Content Include="samples\TestStyle.css" />
     <Content Include="samples\TextTable.html" />
     <Content Include="samples\TopFrame.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\VisuMap\AppTest\AppTest.csproj">
+      <Project>{6B97183B-011C-4F26-8D41-BB9B6FB2EA84}</Project>
+      <Name>AppTest</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
