@@ -12,6 +12,7 @@ namespace QuickFocus.QA.Element
 	{
         string successMsg = "Test finished successfully";
         private void TestPoint(int x, int y) {
+            FormChecker.ClickMsgBoxAsync("Zooming into foreign frame/iframe", "&Yes");
             ClickPoint(x, y);
             AssertWaitStatusHas(successMsg);   
         }
@@ -21,12 +22,14 @@ namespace QuickFocus.QA.Element
 		{
             SetFlags(true,true,false,true,true,true);
             AttachSampleFile("Frames.html");
+            TestPoint(120, 100);
 
-            TestPoint(100, 100);
+            /*
             TestPoint(100, 230);
             TestPoint(100, 490);
             TestPoint(350, 300);
             TestPoint(400, 350);
+             */
         }
 
         [Test] 
