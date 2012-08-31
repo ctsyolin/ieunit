@@ -27,6 +27,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_0E7AF13DB9D349019006DEE865597277"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_144C38688BA94CED99A76D1922A553D7"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -411,6 +417,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_87D5E19AA6B44162969C1EBD5982EF93"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_882AF3301480454BAA32D7564C7AF75F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -454,6 +466,12 @@
         "Entry"
         {
         "MsmKey" = "8:_97D1C754E6924D8BA7A041A58BD14822"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9CD0844DFDF14CA8BFE1521F327E87CC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -526,6 +544,12 @@
         "Entry"
         {
         "MsmKey" = "8:_B2AF105B023041DEA42674716DA0E0E6"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B83F5E1A8C764A3D949E63C0EA4D1F6A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -777,6 +801,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_F68B4859A0F8411D8B3F71BE5C9691A2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_F7260D8460BB49D1AF446FE20B5823D4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -827,6 +857,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_288807608DAC4C7782FFC388E045AC12"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9CD0844DFDF14CA8BFE1521F327E87CC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -914,6 +950,34 @@
     {
         "CustomAction"
         {
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_994EA1B197034DFDB696E1593D01B24A"
+            {
+            "Name" = "8:cmd.exe"
+            "Condition" = "8:VersionNT64"
+            "Object" = "8:_F68B4859A0F8411D8B3F71BE5C9691A2"
+            "FileType" = "3:2"
+            "InstallAction" = "3:2"
+            "Arguments" = "8:/c \"[TARGETDIR]bin\\RegisterWin32Dom.bat\""
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_A2EE4FDC_0A59_4DD2_9D4E_9A84808D0464"
+            "InstallerClass" = "11:FALSE"
+            "CustomActionData" = "8:"
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_AF0C32138D0C40E19AAECC254C9A57AE"
+            {
+            "Name" = "8:cmd.exe"
+            "Condition" = "8:VersionNT64"
+            "Object" = "8:_F68B4859A0F8411D8B3F71BE5C9691A2"
+            "FileType" = "3:2"
+            "InstallAction" = "3:4"
+            "Arguments" = "8:/c \"[TARGETDIR]bin\\UnRegisterWin32Dom.bat\""
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_C1B8D933_4DF2_4A2B_934E_B4D4FBB02536"
+            "InstallerClass" = "11:FALSE"
+            "CustomActionData" = "8:"
+            }
         }
         "DefaultFeature"
         {
@@ -964,6 +1028,26 @@
             "TargetName" = "8:UpRightFrame.html"
             "Tag" = "8:"
             "Folder" = "8:_37876C7DECDB4C719F2E8C7E25D1F5D7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0E7AF13DB9D349019006DEE865597277"
+            {
+            "SourcePath" = "8:..\\bin\\RegisterWin32Dom.bat"
+            "TargetName" = "8:RegisterWin32Dom.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_25897D37BCD6441A98E228886DC7B994"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1908,7 +1992,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:QuickFocus, Version=2.3.240.0, Culture=neutral, PublicKeyToken=2361d360e55692c8, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:QuickFocus, Version=2.3.241.0, Culture=neutral, PublicKeyToken=2361d360e55692c8, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                 }
@@ -2276,6 +2360,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_87D5E19AA6B44162969C1EBD5982EF93"
+            {
+            "SourcePath" = "8:..\\bin\\UnRegisterWin32Dom.bat"
+            "TargetName" = "8:UnRegisterWin32Dom.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_25897D37BCD6441A98E228886DC7B994"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_882AF3301480454BAA32D7564C7AF75F"
             {
             "SourcePath" = "8:..\\samples\\ApiTest\\TestPage.html"
@@ -2422,6 +2526,32 @@
             "TargetName" = "8:InputPage.html"
             "Tag" = "8:"
             "Folder" = "8:_37876C7DECDB4C719F2E8C7E25D1F5D7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9CD0844DFDF14CA8BFE1521F327E87CC"
+            {
+            "AssemblyRegister" = "3:2"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Win32Dom, Version=2.3.240.0, Culture=neutral, PublicKeyToken=7ded5e61f0924b0e, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                }
+            "SourcePath" = "8:..\\tool\\Win32Dom\\Release\\Win32Dom.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_25897D37BCD6441A98E228886DC7B994"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2673,6 +2803,26 @@
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B83F5E1A8C764A3D949E63C0EA4D1F6A"
+            {
+            "SourcePath" = "8:C:\\Windows\\SysWOW64\\cmd.exe"
+            "TargetName" = "8:cmd.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_8FC23BABA7664A2A83AD5D4746B3D9B4"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:TRUE"
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
@@ -3502,6 +3652,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F68B4859A0F8411D8B3F71BE5C9691A2"
+            {
+            "SourcePath" = "8:C:\\Windows\\System32\\cmd.exe"
+            "TargetName" = "8:cmd.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_8FC23BABA7664A2A83AD5D4746B3D9B4"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F7260D8460BB49D1AF446FE20B5823D4"
             {
             "SourcePath" = "8:..\\samples\\ApiTest\\FindByText.jst"
@@ -3976,7 +4146,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:IeUnit"
         "ProductCode" = "8:{46AB239B-9C5F-4A2B-AF5D-8EC7E4651367}"
-        "PackageCode" = "8:{0292B4FF-CD63-499D-BC72-5ADEA092115A}"
+        "PackageCode" = "8:{C633530E-76AF-47AD-878F-893652876AFF}"
         "UpgradeCode" = "8:{AE6AF53D-0273-4E4F-ABBA-53BCE379EB17}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
