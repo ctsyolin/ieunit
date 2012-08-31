@@ -77,10 +77,12 @@
     <None Include="bin\DebugTest.bat" />
     <None Include="bin\OpenSmartBookmark.bat" />
     <None Include="bin\OpenTestWin.bat" />
+    <None Include="bin\RegisterWin32Dom.bat" />
     <None Include="bin\StartGuiRunner.bat" />
     <None Include="bin\StartTest.bat" />
     <None Include="bin\StartTest0.bat" />
     <None Include="bin\UnInstall.bat" />
+    <None Include="bin\UnRegisterWin32Dom.bat" />
     <None Include="doc\BuildApiRef.bat" />
     <None Include="doc\Doxyfile" />
     <None Include="lib\Config.wjs" />
