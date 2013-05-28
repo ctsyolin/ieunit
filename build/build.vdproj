@@ -918,7 +918,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:IeUnit_2_3_241.msi"
+        "OutputFilename" = "8:IeUnit_2_3_242.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -1309,6 +1309,11 @@
             "AssemblyAsmDisplayName" = "8:Win32Dom, Version=2.3.240.0, Culture=neutral, PublicKeyToken=7ded5e61f0924b0e, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_288807608DAC4C7782FFC388E045AC12"
+                    {
+                    "Name" = "8:Win32Dom.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:..\\tool\\Win32Dom\\Release\\Win32Dom.dll"
             "TargetName" = "8:"
@@ -1995,6 +2000,11 @@
             "AssemblyAsmDisplayName" = "8:QuickFocus, Version=2.3.241.0, Culture=neutral, PublicKeyToken=2361d360e55692c8, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_5D88F070D62A46CFBE6300F4138A3FD2"
+                    {
+                    "Name" = "8:QuickFocus.exe"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:..\\tool\\QuickFocus\\bin\\Release\\QuickFocus.exe"
             "TargetName" = "8:"
@@ -2161,6 +2171,11 @@
             "AssemblyAsmDisplayName" = "8:SHDocVw, Version=1.1.0.0, Culture=neutral, PublicKeyToken=2361d360e55692c8, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_6E93D1F492F268B2F02EFD741468414B"
+                    {
+                    "Name" = "8:SHDocVw.DLL"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:SHDocVw.DLL"
             "TargetName" = "8:"
@@ -2547,6 +2562,11 @@
             "AssemblyAsmDisplayName" = "8:Win32Dom, Version=2.3.240.0, Culture=neutral, PublicKeyToken=7ded5e61f0924b0e, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_9CD0844DFDF14CA8BFE1521F327E87CC"
+                    {
+                    "Name" = "8:Win32Dom.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:..\\tool\\Win32Dom\\Release\\Win32Dom.dll"
             "TargetName" = "8:"
@@ -2993,6 +3013,11 @@
             "AssemblyAsmDisplayName" = "8:AxSHDocVw, Version=1.1.0.0, Culture=neutral, PublicKeyToken=2361d360e55692c8, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_C6290EB8AF699CE4FA918FEB1EDBDA70"
+                    {
+                    "Name" = "8:AxSHDocVw.DLL"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:AxSHDocVw.DLL"
             "TargetName" = "8:"
@@ -4146,7 +4171,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:IeUnit"
         "ProductCode" = "8:{46AB239B-9C5F-4A2B-AF5D-8EC7E4651367}"
-        "PackageCode" = "8:{C633530E-76AF-47AD-878F-893652876AFF}"
+        "PackageCode" = "8:{957A47E1-E8E9-4A2A-9001-A4EF0FE5E1D2}"
         "UpgradeCode" = "8:{AE6AF53D-0273-4E4F-ABBA-53BCE379EB17}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"

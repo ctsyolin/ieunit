@@ -57,27 +57,38 @@ namespace QuickFocus
                 } else if ( e is HTMLFrameElementClass ) {
                     HTMLFrameElementClass frame = e as HTMLFrameElementClass;
                     Root.mainForm.OpenUrl( frame.src );
-                } else if ( e is IHTMLElement) { 
+                } else if (e is IHTMLElement) {
                     // This happens with IE 10 on windows 7.
-                    string url = (e as IHTMLElement).getAttribute("src", 0).ToString();
-                    if (url.StartsWith("http:") || url.StartsWith("https:")) {
-                        // Nothing to do
-                    } else {
-                        string pUrl = ((mshtml.HTMLDocumentClass)((e as IHTMLElement).document)).url;
-                        if (url.StartsWith("/")) {
-                            // append the frame's src attribute to the parent's host string.
-                            Uri pUri = new Uri(pUrl);
-                            string host = pUri.Scheme + "://" + pUri.DnsSafeHost;
-                            if (!pUri.IsDefaultPort) {
-                                host += ":" + pUri.Port;
-                            }
-                            url = host + url;
+                    try {
+                        string url = (e as IHTMLElement).getAttribute("src", 0).ToString();
+                        if (url.StartsWith("http:") || url.StartsWith("https:")) {
+                            // Nothing to do
                         } else {
-                            int idx = Math.Max(pUrl.LastIndexOf('/'), pUrl.LastIndexOf('\\'));
-                            url = pUrl.Substring(0, idx + 1) + url;
+                            string pUrl = ((mshtml.HTMLDocumentClass)((e as IHTMLElement).document)).url;
+                            if (url.StartsWith("/")) {
+                                // append the frame's src attribute to the parent's host string.
+                                Uri pUri = new Uri(pUrl);
+                                string host = pUri.Scheme + "://" + pUri.DnsSafeHost;
+                                if (!pUri.IsDefaultPort) {
+                                    host += ":" + pUri.Port;
+                                }
+                                url = host + url;
+                            } else {
+                                int idx = Math.Max(pUrl.LastIndexOf('/'), pUrl.LastIndexOf('\\'));
+                                url = pUrl.Substring(0, idx + 1) + url;
+                            }
                         }
+                        Root.mainForm.OpenUrl(url);
+                    } catch(Exception ex) {
+                        MessageBox.Show("Cannot switch to iframe/frame element information:" + ex.Message, 
+                            "Warning", MessageBoxButtons.OK);
+                        zoomedPage = false;
+                        return;
                     }
-                    Root.mainForm.OpenUrl(url);
+                } else {
+                    MessageBox.Show("Cannot find iframe/frame element information.", "Warning", MessageBoxButtons.OK);
+                    zoomedPage = false;
+                    return;
                 }
             }
             zoomedPage = true;
